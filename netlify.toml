@@ -1,0 +1,56 @@
+# Force a single canonical host + scheme so Google/AI crawlers
+# stop indexing www + non-www as duplicates (splits ranking signal).
+# Canonical = https://auroriq.com (non-www).
+
+[[redirects]]
+  from = "https://www.auroriq.com/*"
+  to = "https://auroriq.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.auroriq.com/*"
+  to = "https://auroriq.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://auroriq.com/*"
+  to = "https://auroriq.com/:splat"
+  status = 301
+  force = true
+
+# --- Caching (v6 performance) ---
+# Fonts and images are content-stable; the CSS bundle is version-queried in
+# HTML (?v=) so long cache is safe. JS is unversioned in markup — kept on
+# short cache + revalidation so deploys propagate.
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# --- Security headers (Best Practices) ---
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
