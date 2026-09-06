@@ -1,0 +1,150 @@
+/* memory.css — Working-Memory Span instrument (v6.1).
+ * Reuses the design system throughout; only tool-specific surfaces live here. */
+
+.mem-app {
+  max-width: 40rem;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-surface);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-card), var(--glow-ambient-primary);
+  text-align: center;
+}
+
+.mem-app__hint {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.mem-meta {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.mem-digit {
+  display: grid;
+  place-items: center;
+  height: 9rem;
+  font-family: var(--font-mono);
+  font-size: clamp(4rem, 14vw, 6rem);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.mem-form {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: center;
+}
+
+.mem-input {
+  width: min(100%, 20rem);
+  padding: var(--space-4);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  letter-spacing: 0.35em;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-lg);
+}
+.mem-input:focus-visible {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: var(--glow-ambient-primary);
+}
+
+.mem-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(3.5rem, 5rem));
+  gap: var(--space-2);
+  justify-content: center;
+}
+.mem-keypad button {
+  min-height: 3rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.mem-keypad button:hover { border-color: var(--color-border-focus); }
+.mem-keypad button:focus-visible { outline: 2px solid var(--color-border-focus); outline-offset: 2px; }
+.mem-keypad [data-key="go"] {
+  color: #06121f;
+  background: var(--gradient-primary);
+  border: none;
+  font-weight: var(--weight-bold);
+}
+
+.mem-results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-xs);
+  margin-block: var(--space-5);
+  text-align: left;
+}
+@media (min-width: 30em) { .mem-results { grid-template-columns: repeat(3, 1fr); } }
+.mem-result {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.mem-result__k {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+.mem-result__v {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+.mem-result__sub {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-accent);
+}
+.mem-result--composite { border-color: var(--color-border-primary); }
+
+.mem-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.mem-note {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mem-digit { animation: none; } /* presentation timing is task-critical, not decorative */
+}

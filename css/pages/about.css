@@ -1,0 +1,31 @@
+.article--wide {
+  max-width: 46rem;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 36em) {
+  .research-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.research-card {
+  padding: var(--space-5);
+}
+
+.research-card__name {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+}
+
+.research-card__note {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}

@@ -1,0 +1,51 @@
+/* fonts.css — self-hosted variable fonts (v6 performance).
+ * Replaces the render-blocking Google Fonts request chain (2 origins,
+ * DNS+TLS+CSS+font) with same-origin woff2, latin-subset, immutable-cached.
+ * Fallback faces carry metric overrides so the swap causes no layout shift. */
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/assets/fonts/syne-var.woff2') format('woff2-variations');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2026, U+2039-203A, U+2190-2199, U+2212;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/dmsans-var.woff2') format('woff2-variations');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2026, U+2039-203A, U+2190-2199, U+2212;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/jetbrainsmono-var.woff2') format('woff2-variations');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2026, U+2039-203A, U+2190-2199, U+2212;
+}
+
+/* Metric-matched local fallbacks: text renders instantly in Arial with the
+   webfont's metrics, so the swap is visually silent (CLS ≈ 0). */
+@font-face {
+  font-family: 'Syne Fallback';
+  src: local('Arial'), local('Helvetica');
+  size-adjust: 107.0%;
+  ascent-override: 86.4%;
+  descent-override: 25.7%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'DM Sans Fallback';
+  src: local('Arial'), local('Helvetica');
+  size-adjust: 107.6%;
+  ascent-override: 92.2%;
+  descent-override: 28.8%;
+  line-gap-override: 0%;
+}

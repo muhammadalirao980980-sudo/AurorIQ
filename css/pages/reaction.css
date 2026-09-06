@@ -1,0 +1,139 @@
+/* reaction.css — Reaction Time instrument (v6.2).
+ * Arena state changes pair color with TEXT ("Wait…" / "GO!"), never color
+ * alone — colorblind-safe by construction. */
+
+.rt-app {
+  max-width: 40rem;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-surface);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-card), var(--glow-ambient-primary);
+  text-align: center;
+}
+
+.rt-app__hint {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.rt-meta {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.rt-arena {
+  display: grid;
+  place-items: center;
+  min-height: 14rem;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-extrabold);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background 80ms linear;
+}
+.rt-arena:focus-visible {
+  outline: 3px solid var(--color-border-focus);
+  outline-offset: 3px;
+}
+.rt-arena[data-state="wait"] {
+  background: var(--color-surface-3);
+  color: var(--color-text-secondary);
+}
+.rt-arena[data-state="go"] {
+  background: var(--color-success-500, #10b981);
+  color: #051b12;
+}
+.rt-arena[data-state="false"] {
+  background: var(--color-warning-500, #f59e0b);
+  color: #1f1303;
+}
+.rt-arena[data-state="done"] {
+  background: var(--color-surface-2);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.rt-status {
+  margin-top: var(--space-4);
+  min-height: 1.5em;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.rt-results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-xs);
+  margin-block: var(--space-5);
+  text-align: left;
+}
+@media (min-width: 30em) { .rt-results { grid-template-columns: repeat(3, 1fr); } }
+.rt-result {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.rt-result--pct { border-color: var(--color-border-primary); }
+.rt-result__k {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+.rt-result__v {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.rt-result__sub {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-accent);
+}
+
+.rt-trials {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.rt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.rt-note {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}

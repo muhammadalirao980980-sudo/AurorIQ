@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  TOOL PAGE TEMPLATE (v6) — not deployed; copy to create a new tool.
+  Procedure: docs/ARCHITECTURE.md. Replace every {{PLACEHOLDER}}.
+  Trust framework (BRAND.md §5) is structural, not optional:
+  the four blocks in #about-instrument must always ship, and
+  Psychology-category screeners must include the screening
+  disclaimer block marked below.
+============================================================ -->
+<html lang="en">
+<head>
+<script>(function(){try{var p=localStorage.getItem('auroriq_theme');var t=(p==='light'||p==='dark')?p:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+
+<title>{{TOOL_NAME}} — Free {{TOOL_KIND}} | AurorIQ</title>
+<meta name="description" content="{{150-160 chars: what it measures + duration + free/no-email}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://auroriq.com/{{TOOL_SLUG}}/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AurorIQ">
+<meta property="og:url" content="https://auroriq.com/{{TOOL_SLUG}}/">
+<meta property="og:title" content="{{TOOL_NAME}} | AurorIQ">
+<meta property="og:description" content="{{OG description}}">
+<meta property="og:image" content="https://auroriq.com/assets/images/og/og-{{TOOL_SLUG}}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TOOL_NAME}} | AurorIQ">
+<meta name="twitter:description" content="{{OG description}}">
+<meta name="twitter:image" content="https://auroriq.com/assets/images/og/og-{{TOOL_SLUG}}.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/css/bundle.css?v={{VERSION}}">
+
+<link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
+<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://auroriq.com/{{TOOL_SLUG}}/#app",
+      "name": "{{TOOL_NAME}}",
+      "url": "https://auroriq.com/{{TOOL_SLUG}}/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript",
+      "isPartOf": { "@id": "https://auroriq.com/#website" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://auroriq.com/{{TOOL_SLUG}}/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/" },
+        { "@type": "ListItem", "position": 2, "name": "{{CATEGORY_NAME}}", "item": "https://auroriq.com/{{CATEGORY_SLUG}}/" },
+        { "@type": "ListItem", "position": 3, "name": "{{TOOL_NAME}}", "item": "https://auroriq.com/{{TOOL_SLUG}}/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://auroriq.com/{{TOOL_SLUG}}/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "{{Q1 — must match visible FAQ verbatim}}",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{A1}}" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Standard site header: copy verbatim from /cognition/index.html -->
+{{HEADER}}
+
+<main id="main">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/{{CATEGORY_SLUG}}/">{{CATEGORY_NAME}}</a></li>
+      <li><span aria-current="page">{{TOOL_NAME}}</span></li>
+    </ol>
+  </nav>
+
+  <section class="cat-hero" aria-labelledby="tool-h">
+    <div class="cat-hero__glow" aria-hidden="true"></div>
+    <div class="cat-hero__inner">
+      <p class="eyebrow"><span class="eyebrow__dot"></span>{{CATEGORY_NAME}} · {{DURATION}}</p>
+      <h1 id="tool-h" class="cat-hero__title">{{H1 — intent-matching, plain}}</h1>
+      <p class="cat-hero__sub">{{Subheadline: what it measures + what you get. Voice: honest over impressive.}}</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--lg" href="#start">Start the assessment</a>
+        <a class="btn btn--ghost btn--lg" href="#about-instrument">How it works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The instrument itself mounts here (intake → test → results flow) -->
+  <section class="section" id="start" aria-label="Assessment">
+    {{TOOL_APP_MARKUP}}
+  </section>
+
+  <!-- ============================================================
+       TRUST FRAMEWORK — BRAND.md §5. All four blocks REQUIRED.
+  ============================================================ -->
+  <section class="section section--alt" id="about-instrument" aria-labelledby="about-h">
+    <div class="section__head">
+      <p class="eyebrow">About this instrument</p>
+      <h2 id="about-h" class="section__title">What this measures — and what it doesn't</h2>
+    </div>
+
+    <ul class="engine">
+      <li class="engine-card">
+        <span class="engine-card__k">Measures</span>
+        <h3 class="engine-card__title">What it measures</h3>
+        <p class="engine-card__text">{{Construct in plain language.}}</p>
+      </li>
+      <li class="engine-card">
+        <span class="engine-card__k">Method</span>
+        <h3 class="engine-card__title">How it measures it</h3>
+        <p class="engine-card__text">{{Method, item count, duration, scoring model.}}</p>
+      </li>
+      <li class="engine-card">
+        <span class="engine-card__k">Result</span>
+        <h3 class="engine-card__title">What your result means</h3>
+        <p class="engine-card__text">{{How to read it — and explicitly what it does NOT mean.}}</p>
+      </li>
+      <li class="engine-card">
+        <span class="engine-card__k">Limits</span>
+        <h3 class="engine-card__title">Honest limits</h3>
+        <p class="engine-card__text">{{Plain-language disclaimer. An estimate for reflection — never a clinical claim.}}</p>
+      </li>
+    </ul>
+
+    <!-- PSYCHOLOGY SCREENERS ONLY (ADHD, autism, stress, burnout):
+         this block is MANDATORY, verbatim spirit per BRAND.md §5. -->
+    <!--
+    <p class="section__lead">This is a screening instrument, not a diagnosis. A positive
+    screen means a conversation with a clinician is worth having — nothing more,
+    nothing less.</p>
+    -->
+  </section>
+
+  <!-- Related guides: 3 post-cards linking relevant /blog/ posts -->
+  <section class="section" id="learn" aria-labelledby="learn-h">
+    <div class="section__head">
+      <p class="eyebrow">Go deeper</p>
+      <h2 id="learn-h" class="section__title">The science behind this instrument</h2>
+    </div>
+    <div class="posts">
+      {{3 × post-card}}
+    </div>
+  </section>
+
+  <!-- FAQ: 3-5 items; MUST mirror FAQPage schema verbatim -->
+  <section class="section section--alt" id="faq" aria-labelledby="faq-h">
+    <div class="section__head">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-h" class="section__title">Before you begin</h2>
+    </div>
+    <div class="faq">
+      {{faq__item × N}}
+    </div>
+  </section>
+
+</main>
+
+<!-- Standard site footer: copy verbatim from /cognition/index.html -->
+{{FOOTER}}
+
+<script src="/js/core/utils.js" defer></script>
+<script src="/js/core/state.js" defer></script>
+<script src="/js/main.js" defer></script>
+{{TOOL_SCRIPTS defer}}
+
+{{CONSENT_BANNER — copy verbatim from /cognition/index.html}}
+<script src="/js/consent.js"></script>
+<script src="/js/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* processingspeed.css — Processing Speed instrument (v6.18).
+ * A same/different comparison arena: two monospaced strings stacked, two big
+ * choice buttons. Reuses tokens; visually consistent with the other timed
+ * cognition tools. */
+
+.ps-app {
+  max-width: 40rem;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-surface);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-card), var(--glow-ambient-primary);
+  text-align: center;
+}
+
+.ps-app__hint {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.ps-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.ps-arena {
+  display: grid;
+  gap: var(--space-3);
+  place-items: center;
+  min-height: 11rem;
+  padding: var(--space-6) var(--space-4);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-3);
+  margin-bottom: var(--space-5);
+}
+
+.ps-string {
+  font-family: var(--font-mono);
+  font-size: clamp(1.6rem, 7vw, 2.6rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.28em;
+  padding-left: 0.28em;               /* balance the trailing letter-spacing */
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  word-break: break-all;
+}
+
+.ps-vs {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.ps-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.ps-choice {
+  padding: var(--space-5) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-primary);
+  background: var(--color-surface-2);
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease, transform 60ms ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.ps-choice:hover { border-color: var(--color-border-focus); background: var(--color-surface-3); }
+.ps-choice:active { transform: translateY(1px); }
+.ps-choice:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 3px; }
+.ps-choice__key {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs, 0.68rem);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.ps-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+}
+.ps-result {
+  padding: var(--space-4) var(--space-3);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-primary);
+}
+.ps-result--composite {
+  background: var(--gradient-accent-soft, var(--color-surface-3));
+  border-color: var(--color-border-focus);
+}
+.ps-result__k {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs, 0.68rem);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+.ps-result__v {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text-primary);
+}
+
+.ps-verdict {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+.ps-note {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+.ps-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}

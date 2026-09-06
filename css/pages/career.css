@@ -1,0 +1,235 @@
+/* career.css — Career Interest Profiler (v6.9). */
+
+.ca-app {
+  max-width: 44rem;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-surface);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-card), var(--glow-ambient-primary);
+}
+
+.ca-app__center { text-align: center; }
+
+.ca-app__hint {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.ca-meta {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.ca-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  background: var(--color-surface);
+}
+.ca-item__legend {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  padding-inline: var(--space-2);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-snug);
+}
+
+.ca-scale {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  max-width: 24rem;
+}
+.ca-scale__opt { cursor: pointer; }
+.ca-scale__opt input { position: absolute; opacity: 0; width: 0; height: 0; }
+.ca-scale__dot {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-medium);
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  transition: var(--transition-fast);
+}
+.ca-scale__opt:hover .ca-scale__dot { border-color: var(--color-border-focus); color: var(--color-text-primary); }
+.ca-scale__opt input:checked + .ca-scale__dot {
+  border-color: transparent;
+  background: var(--gradient-primary);
+  color: #06121f;
+  font-weight: var(--weight-bold);
+}
+.ca-scale__opt input:focus-visible + .ca-scale__dot { outline: 2px solid var(--color-border-focus); outline-offset: 2px; }
+
+.ca-scale-legend {
+  display: flex;
+  justify-content: space-between;
+  max-width: 24rem;
+  margin: 0 auto var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.ca-submitbar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  margin-top: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+}
+.ca-progress {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* results */
+.ca-code {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+.ca-code__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+.ca-code__value {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: 0.15em;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ca-bars {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.ca-bar {
+  display: grid;
+  grid-template-columns: 7rem 1fr 3rem;
+  align-items: center;
+  gap: var(--space-3);
+}
+.ca-bar__label { font-size: var(--text-sm); color: var(--color-text-secondary); }
+.ca-bar__track {
+  height: 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-3);
+  overflow: hidden;
+}
+.ca-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+}
+.ca-bar__val {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  text-align: right;
+}
+
+.ca-tops { display: grid; gap: var(--space-4); margin-bottom: var(--space-5); }
+.ca-top {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-primary);
+}
+.ca-top__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+.ca-top__blurb { color: var(--color-text-secondary); font-size: var(--text-sm); line-height: var(--leading-relaxed); margin-bottom: var(--space-2); }
+.ca-top__careers { color: var(--color-text-accent); font-size: var(--text-sm); }
+
+.ca-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.ca-note {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* work style — bipolar preference spectrums */
+.ws-spectrums { display: grid; gap: var(--space-5); margin: var(--space-5) 0; }
+.ws-dim { display: grid; gap: var(--space-2); }
+.ws-dim__poles {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.ws-dim__pole--on { color: var(--color-text-accent); font-weight: var(--weight-bold); }
+.ws-dim__track {
+  position: relative;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg,
+    color-mix(in srgb, #9269f3 30%, var(--color-surface-2)) 0%,
+    var(--color-surface-2) 50%,
+    color-mix(in srgb, #22d3ee 30%, var(--color-surface-2)) 100%);
+  border: 1px solid var(--color-border);
+}
+.ws-dim__marker {
+  position: absolute;
+  top: 50%;
+  width: 18px; height: 18px;
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  border: 2px solid var(--color-surface);
+  box-shadow: var(--glow-ambient-primary);
+}
+.ws-dim__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+.ws-dim__desc strong { color: var(--color-text-primary); }

@@ -1,0 +1,356 @@
+/* ============================================================
+   INTAKE SCREEN (v5.4)
+   Pre-test "Before you begin" information step.
+   Collects name / age / gender / education for age-normed
+   scoring + personalised results. Themed entirely through
+   tokens, so light + dark are automatic.
+   ============================================================ */
+
+.screen--intake {
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--space-8) var(--space-5) var(--space-12);
+}
+
+@media (min-width: 48em) {
+  .screen--intake {
+    padding: var(--space-12) var(--space-8) var(--space-16);
+    justify-content: center;
+  }
+}
+
+.intake__glow {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.intake__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 34rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+/* ---- Header ---- */
+.intake__head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.intake__title {
+  font-size: var(--text-4xl);
+  letter-spacing: var(--tracking-tight);
+}
+
+.intake__sub {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  max-width: 28rem;
+  line-height: var(--leading-relaxed);
+}
+
+/* ---- Form ---- */
+.intake__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.field__label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.field__label-text {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-snug);
+}
+
+.field__optional {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ---- Text / number inputs ---- */
+.field__input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  transition: var(--transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field__input::placeholder {
+  color: var(--color-text-disabled);
+}
+
+.field__input:hover {
+  border-color: var(--color-border-strong);
+}
+
+.field__input:focus,
+.field__input:focus-visible {
+  outline: none;
+  border-color: var(--color-border-focus);
+  background: var(--color-surface);
+  box-shadow: var(--glow-active-primary);
+}
+
+/* Kill number spinner for a cleaner age field */
+.field__input[type="number"]::-webkit-outer-spin-button,
+.field__input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.field__input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ---- Age row: input + live band readout ---- */
+.field--age .field__age-row {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-3);
+}
+
+.field--age .field__input {
+  flex: 0 0 8rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+}
+
+.field__age-band {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-5);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  min-height: 3.5rem;
+  transition: var(--transition-fast);
+}
+
+.field__age-band.is-set {
+  border-style: solid;
+  border-color: var(--color-border-accent);
+  color: var(--color-text-secondary);
+}
+
+.field__age-band-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-text-disabled);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.field__age-band.is-set .field__age-band-dot {
+  background: var(--color-accent-400);
+  box-shadow: 0 0 0 4px var(--color-border-accent);
+}
+
+.field__age-band strong {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* ---- Choice chips (gender / education) ---- */
+.field__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.field--stack .field__choices {
+  flex-direction: column;
+}
+
+.choice {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 5.5rem;
+}
+
+.field--stack .choice {
+  min-width: 100%;
+}
+
+.choice__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-align: center;
+  width: 100%;
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.field--stack .choice__label {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.choice__label:hover {
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
+}
+
+.choice__input:checked + .choice__label {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-primary);
+  background: var(--color-surface);
+  box-shadow: var(--glow-active-primary);
+}
+
+.choice__input:focus-visible + .choice__label {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.choice__check {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity var(--duration-fast) var(--ease-spring),
+              transform var(--duration-fast) var(--ease-spring);
+  color: var(--color-accent-400);
+}
+
+.choice__input:checked + .choice__label .choice__check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---- Privacy note + actions ---- */
+.intake__privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.intake__privacy svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--color-text-muted);
+}
+
+.intake__privacy p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+.intake__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.intake__error {
+  font-size: var(--text-sm);
+  color: var(--color-danger-400);
+  text-align: center;
+  min-height: 1.25rem;
+  transition: var(--transition-opacity);
+}
+
+.intake__skip {
+  align-self: center;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: color var(--duration-fast) var(--ease-out-quart);
+}
+
+.intake__skip:hover {
+  color: var(--color-text-secondary);
+}
+
+/* ---- Entrance motion (staggered field reveal) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .screen--intake:not([hidden]) .intake__head,
+  .screen--intake:not([hidden]) .field,
+  .screen--intake:not([hidden]) .intake__privacy,
+  .screen--intake:not([hidden]) .intake__actions {
+    animation: intake-rise var(--duration-slow) var(--ease-out-expo) both;
+  }
+  .screen--intake:not([hidden]) .field:nth-of-type(1) { animation-delay: 60ms; }
+  .screen--intake:not([hidden]) .field:nth-of-type(2) { animation-delay: 120ms; }
+  .screen--intake:not([hidden]) .field:nth-of-type(3) { animation-delay: 180ms; }
+  .screen--intake:not([hidden]) .field:nth-of-type(4) { animation-delay: 240ms; }
+  .screen--intake:not([hidden]) .intake__privacy { animation-delay: 300ms; }
+  .screen--intake:not([hidden]) .intake__actions { animation-delay: 360ms; }
+}
+
+@keyframes intake-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

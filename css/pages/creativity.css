@@ -1,0 +1,171 @@
+/* creativity.css — Divergent Thinking instrument (v6.8). */
+
+.cr-app {
+  max-width: 42rem;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-surface);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-card), var(--glow-ambient-primary);
+  text-align: center;
+}
+
+.cr-app__hint {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.cr-meta {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.cr-object {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+.cr-object__lead { color: var(--color-text-secondary); font-weight: var(--weight-regular); font-size: var(--text-lg); }
+
+.cr-hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-accent);
+  margin-bottom: var(--space-4);
+}
+
+.cr-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.cr-timer {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.cr-timer--low { color: var(--color-warning-500, #f59e0b); }
+.cr-count {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-accent);
+}
+
+.cr-input {
+  width: 100%;
+  min-height: 12rem;
+  padding: var(--space-4);
+  resize: vertical;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-lg);
+}
+.cr-input:focus-visible { outline: none; border-color: var(--color-border-focus); box-shadow: var(--glow-ambient-primary); }
+.cr-input:disabled { opacity: 0.6; }
+
+.cr-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-xs);
+  margin-block: var(--space-5);
+  text-align: left;
+}
+.cr-result {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.cr-result--fluency { border-color: var(--color-border-primary); }
+.cr-result__k {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+.cr-result__v {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.cr-ideas {
+  margin-block: var(--space-4);
+  text-align: left;
+}
+.cr-ideas__k {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+.cr-ideas ul {
+  list-style: none;
+  display: grid;
+  gap: var(--space-1);
+  max-height: 16rem;
+  overflow-y: auto;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.cr-ideas li {
+  padding: var(--space-1) 0;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+.cr-ideas li:last-child { border-bottom: none; }
+.cr-ideas li::first-letter { text-transform: uppercase; }
+
+.cr-verdict {
+  margin-top: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  text-align: left;
+}
+
+.cr-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.cr-note {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}

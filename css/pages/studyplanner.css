@@ -1,0 +1,125 @@
+/* studyplanner.css — Spaced Study Planner (v6.14). */
+
+.sp-field-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.sp-date {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  color-scheme: dark light;
+}
+.sp-date:focus-visible { outline: none; border-color: var(--color-border-focus); box-shadow: var(--glow-ambient-primary); }
+
+.sp-topics { display: grid; gap: var(--space-2); margin-bottom: var(--space-3); }
+.sp-topic { display: flex; gap: var(--space-2); align-items: center; }
+.sp-topic__field {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+}
+.sp-topic__field:focus-visible { outline: none; border-color: var(--color-border-focus); box-shadow: var(--glow-ambient-primary); }
+.sp-topic__rm {
+  flex: 0 0 auto;
+  width: 2.5rem; height: 2.5rem;
+  display: grid; place-items: center;
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.sp-topic__rm:hover { color: var(--color-text-primary); border-color: var(--color-border-focus); }
+
+.sp-add {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-accent);
+  background: transparent;
+  border: 1px dashed var(--color-border-medium);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-bottom: var(--space-5);
+}
+.sp-add:hover { border-color: var(--color-border-focus); color: var(--color-text-primary); }
+
+.sp-error {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-warning-500, #f59e0b);
+  color: var(--color-warning-500, #f59e0b);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.sp-summary {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-primary);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.sp-schedule { display: grid; gap: var(--space-3); }
+.sp-day {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.sp-day__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.sp-day__date { font-family: var(--font-display); font-weight: var(--weight-bold); color: var(--color-text-primary); }
+.sp-day__load { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); }
+.sp-day__sessions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+.sp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+}
+.sp-chip strong { font-weight: var(--weight-semibold); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.03em; }
+.sp-chip--learn { border-color: color-mix(in srgb, #22d3ee 45%, transparent); }
+.sp-chip--learn strong { color: #67e8f9; }
+.sp-chip--recall { border-color: color-mix(in srgb, #3b82f6 45%, transparent); }
+.sp-chip--recall strong { color: #93c5fd; }
+.sp-chip--final { border-color: color-mix(in srgb, #fde68a 55%, transparent); }
+.sp-chip--final strong { color: #fde68a; }

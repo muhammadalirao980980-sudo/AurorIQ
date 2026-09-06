@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){try{var p=localStorage.getItem('auroriq_theme');var t=(p==='light'||p==='dark')?p:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="google-adsense-account" content="ca-pub-2335913078491957">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<meta name="format-detection" content="telephone=no">
+
+<title>Your Result | AurorIQ</title>
+<meta name="description" content="Your AurorIQ cognitive profile: percentile, archetype, and domain breakdown.">
+<meta name="robots" content="noindex, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AurorIQ">
+<meta property="og:url" content="https://auroriq.com/iq-test/results/">
+<meta property="og:title" content="My AurorIQ Result">
+<meta property="og:description" content="I just measured my cognitive profile on AurorIQ.">
+<meta property="og:image" content="https://auroriq.com/assets/images/og/og-test.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My AurorIQ Result">
+<meta name="twitter:description" content="I just measured my cognitive profile on AurorIQ.">
+<meta name="twitter:image" content="https://auroriq.com/assets/images/og/og-test.png">
+
+<link rel="preload" href="/assets/fonts/syne-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="/css/bundle.css?v=6.18">
+
+<link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
+<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body class="results-body">
+
+<header class="test-header">
+  <a class="nav__brand" href="/" aria-label="AurorIQ home">
+    <svg class="nav__mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="auroraMark" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#9269f3"/>
+          <stop offset="0.55" stop-color="#22d3ee"/>
+          <stop offset="1" stop-color="#fde68a"/>
+        </linearGradient>
+      </defs>
+      <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="16" cy="27" r="1.6" fill="#22d3ee"/>
+    </svg>
+    <span class="nav__name">AurorIQ</span>
+  </a>
+  <div class="test-header__actions">
+    <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <a class="test-header__exit" href="/">Done</a>
+  </div>
+</header>
+
+<div class="last-result-banner" data-last-result-banner hidden></div>
+
+<main id="resultsMain" class="results-main">
+<h1 class="sr-only">Your AurorIQ Result</h1>
+
+  <section class="result-empty" data-empty-state hidden>
+    <div class="result-empty__inner">
+      <p class="eyebrow"><span class="eyebrow__dot"></span>No result found</p>
+      <h2 class="result-empty__title">Nothing to show yet.</h2>
+      <p class="result-empty__text">Take the adaptive assessment to generate your cognitive profile.</p>
+      <a class="btn btn--primary btn--lg" href="/iq-test/">Begin the assessment</a>
+    </div>
+  </section>
+
+  <div class="reveal" data-reveal-root hidden>
+
+    <section class="reveal-stage reveal-stage--score" data-stage="score">
+      <div class="reveal-glow" aria-hidden="true"></div>
+      <p class="reveal-greeting" data-greeting hidden></p>
+      <p class="reveal-band" data-band aria-live="polite">&nbsp;</p>
+      <div class="reveal-score">
+        <span class="reveal-score__num" data-score-num>0</span>
+      </div>
+      <p class="reveal-score__ci" data-ci>&nbsp;</p>
+      <p class="reveal-age-note" data-age-note hidden></p>
+    </section>
+
+    <section class="reveal-stage reveal-stage--identity" data-stage="identity">
+      <p class="reveal-tier" data-tier>&nbsp;</p>
+      <h2 class="reveal-archetype" data-archetype-name>&nbsp;</h2>
+      <p class="reveal-tagline" data-archetype-tagline>&nbsp;</p>
+      <p class="reveal-rarity" data-rarity>&nbsp;</p>
+      <p class="reveal-description" data-archetype-desc>&nbsp;</p>
+    </section>
+
+    <section class="reveal-stage reveal-stage--curve" data-stage="curve">
+      <h2 class="reveal-heading">Where you land</h2>
+      <div class="curve" data-curve>
+        <svg class="curve__svg" viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+          <path class="curve__fill" data-curve-fill></path>
+          <path class="curve__line" data-curve-line></path>
+          <line class="curve__marker-line" data-curve-marker-line x1="0" y1="0" x2="0" y2="200"></line>
+          <circle class="curve__marker" data-curve-marker r="6" cy="0"></circle>
+        </svg>
+      </div>
+      <p class="curve__caption" data-curve-caption>&nbsp;</p>
+    </section>
+
+    <section class="reveal-stage reveal-stage--peers" data-stage="peers" hidden>
+      <h2 class="reveal-heading">How you compare</h2>
+      <div class="peers">
+        <div class="peers__chart">
+          <svg class="peers__svg" viewBox="0 0 600 175" preserveAspectRatio="none" data-peers-svg aria-hidden="true">
+            <path class="peers__line" data-peers-line></path>
+            <g class="peers__marker peers__marker--everyone" data-peers-everyone>
+              <line data-peers-stem x1="0" y1="0" x2="0" y2="156"></line>
+              <circle r="6" cx="0" cy="0"></circle>
+            </g>
+            <g class="peers__marker peers__marker--peers" data-peers-peers hidden>
+              <line data-peers-stem x1="0" y1="0" x2="0" y2="156"></line>
+              <circle r="6" cx="0" cy="0"></circle>
+            </g>
+          </svg>
+        </div>
+
+        <ul class="peers__legend" data-peers-legend>
+          <li class="peers__row peers__row--everyone">
+            <span class="peers__swatch" aria-hidden="true"></span>
+            <span class="peers__row-label" data-peers-everyone-label>vs. everyone</span>
+            <span class="peers__row-value" data-peers-everyone-value>&nbsp;</span>
+          </li>
+          <li class="peers__row peers__row--peers" data-peers-peer-row hidden>
+            <span class="peers__swatch" aria-hidden="true"></span>
+            <span class="peers__row-label" data-peers-peers-label>vs. your age group</span>
+            <span class="peers__row-value" data-peers-peers-value>&nbsp;</span>
+          </li>
+        </ul>
+      </div>
+      <p class="peers__caption" data-peers-caption>&nbsp;</p>
+    </section>
+
+    <section class="reveal-stage reveal-stage--breakdown" data-stage="breakdown">
+      <h2 class="reveal-heading">Your cognitive breakdown</h2>
+      <div class="breakdown">
+        <div class="radar" data-radar>
+          <svg class="radar__svg" viewBox="0 0 280 280" data-radar-svg aria-hidden="true"></svg>
+        </div>
+        <ul class="breakdown__bars" data-breakdown-bars></ul>
+      </div>
+      <p class="breakdown__note">Domain estimates are based on roughly five questions each and shown as relative strengths, not precise sub-scores.</p>
+    </section>
+
+    <section class="reveal-stage reveal-stage--report" data-stage="report">
+      <h2 class="reveal-heading">Detailed score report</h2>
+      <div class="report-grid" data-report-grid></div>
+    </section>
+
+    <section class="reveal-stage reveal-stage--personica" data-stage="personica">
+      <div class="personica-cta">
+        <div class="personica-cta__glow" aria-hidden="true"></div>
+        <span class="personica-cta__badge">New · From the makers of AurorIQ</span>
+        <h2 class="personica-cta__title">You know how you think. Now discover who you are.</h2>
+        <p class="personica-cta__sub">Your IQ measures cognitive ability — but what about the traits that shape how you use it? Personica maps your personality across scientifically grounded dimensions. See how intelligence and identity connect.</p>
+        <a class="personica-cta__link" href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">
+          Discover your personality
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="reveal-stage reveal-stage--actions" data-stage="actions">
+      <h2 class="reveal-heading">Share your result</h2>
+      <div class="share-cta">
+        <button class="btn btn--primary btn--lg" type="button" data-action="share">Share my result</button>
+        <button class="btn btn--ghost btn--lg" type="button" data-action="challenge">Challenge a friend</button>
+      </div>
+      <div class="share-cta share-cta--secondary">
+        <button class="btn btn--ghost btn--sm" type="button" data-action="download-pdf" data-pdf-btn>Download PDF report</button>
+      </div>
+      <div class="secondary-actions">
+        <a class="text-link" href="/iq-test/" data-action="retake">Retake the assessment</a>
+        <a class="text-link" href="/about-our-test/">What this does and doesn't measure</a>
+      </div>
+    </section>
+
+  </div>
+<noscript>
+<div style="max-width:40rem;margin:4rem auto;padding:2rem;color:#e0e0e0;font-family:sans-serif;line-height:1.7;">
+<h2>Your AurorIQ Result</h2>
+<p>This page displays your adaptive IQ test result, including your estimated IQ score, percentile ranking, cognitive archetype, domain-level performance across five reasoning areas, and a detailed breakdown of your cognitive profile.</p>
+<p><strong>JavaScript is required to view your result.</strong> Your result is stored locally in your browser and is never transmitted to our servers.</p>
+<p>If you haven't taken the test yet, <a href="/iq-test/">start the assessment here</a>. To learn more about what your score means, visit our <a href="/iq-scores/">score ranges guide</a> or read about <a href="/blog/reading-your-percentile/">how to interpret your percentile</a>.</p>
+</div>
+</noscript>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__brand" href="/" aria-label="AurorIQ home">
+        <svg class="nav__mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav__name">AurorIQ</span>
+      </a>
+      <p class="footer__tagline">A precise instrument for understanding how you think.</p>
+    </div>
+
+    <nav class="footer__grid" aria-label="Footer">
+      <div class="footer__col">
+        <h3 class="footer__heading">Test</h3>
+        <a href="/iq-test/">Take the test</a>
+        <a href="/iq-scores/">Score ranges</a>
+        <a href="/#archetypes">Archetypes</a>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Learn</h3>
+        <a href="/blog/">All guides</a>
+        <a href="/blog/what-is-iq/">What is IQ</a>
+        <a href="/blog/iq-test-accuracy/">Test accuracy</a>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">About</h3>
+        <a href="/about-our-test/">Our methodology</a>
+        <a href="/about-our-test/#research">Research foundations</a>
+        <a href="/contact/">Contact us</a>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Platform</h3>
+        <a href="/#platform">All instruments</a>
+        <a href="/cognition/">Cognition hub</a>
+        <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Psychology &mdash; Personica</a>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Legal</h3>
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/terms-of-service/">Terms</a>
+        <a href="/disclaimer/">Disclaimer</a>
+        <a href="#" data-consent-open>Cookie settings</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__base">
+    <p class="footer__disclaimer">AurorIQ is an educational self-reflection tool, not a clinical instrument. Scores are estimates and cannot be used for clinical, educational, or legal purposes.</p>
+    <p class="footer__copy">&copy; 2026 AurorIQ. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/js/core/utils.js" defer></script>
+<script src="/js/core/state.js" defer></script>
+<script src="/js/test-engine/questions.js" defer></script>
+<script src="/js/test-engine/domains.js" defer></script>
+<script src="/js/test-engine/adaptive.js" defer></script>
+<script src="/js/test-engine/scoring.js" defer></script>
+<script src="/js/identity/archetypes.js" defer></script>
+<script src="/js/identity/age-norms.js" defer></script>
+<script src="/js/identity/rarity.js" defer></script>
+<script src="/js/components/curve.js" defer></script>
+<script src="/js/components/peers.js" defer></script>
+<script src="/js/components/radar.js" defer></script>
+<script src="/js/sharing/share-cards.js" defer></script>
+<script src="/js/sharing/result-pdf.js" defer></script>
+<script src="/js/sharing/share-modal.js" defer></script>
+<script src="/js/sharing/challenge.js" defer></script>
+<script src="/js/pages/results.js" defer></script>
+
+<div class="consent-banner" id="consentBanner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
+  <div class="consent-banner__actions">
+    <button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
+    <button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
+  </div>
+</div>
+
+<script src="/js/consent.js" defer></script>
+<script src="/js/theme.js" defer></script>
+</body>
+</html>

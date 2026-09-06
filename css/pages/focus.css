@@ -1,0 +1,131 @@
+/* focus.css — Sustained-Attention instrument (v6.4).
+ * Arena pairs shape (circle=GO, square=NO-GO) with color AND text, so the
+ * task never depends on color alone — colorblind-safe by construction. */
+
+.fc-app {
+  max-width: 40rem;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-surface);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-card), var(--glow-ambient-primary);
+  text-align: center;
+}
+
+.fc-app__hint {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.fc-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+.fc-legend span { display: inline-flex; align-items: center; gap: var(--space-2); }
+.fc-legend b { font-size: 1.3em; line-height: 1; }
+.fc-legend .fc-go { color: var(--color-accent-400); }
+.fc-legend .fc-nogo { color: var(--color-warning-500, #f59e0b); }
+
+.fc-meta {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.fc-arena {
+  display: grid;
+  place-items: center;
+  min-height: 14rem;
+  width: 100%;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background 60ms linear, border-color 60ms linear;
+  background: var(--color-surface-2);
+}
+.fc-arena:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 3px; }
+.fc-arena[data-state="go"]    { border-color: var(--color-accent-400); }
+.fc-arena[data-state="nogo"]  { border-color: var(--color-warning-500, #f59e0b); }
+.fc-arena[data-state="hit"]   { background: rgba(34, 211, 238, 0.14); border-color: var(--color-accent-400); }
+.fc-arena[data-state="error"] { background: rgba(245, 158, 11, 0.18); border-color: var(--color-warning-500, #f59e0b); }
+.fc-arena[data-state="blank"] { background: var(--color-surface); border-color: var(--color-border); }
+
+.fc-glyph {
+  font-size: clamp(4rem, 16vw, 7rem);
+  line-height: 1;
+}
+.fc-arena[data-state="go"] .fc-glyph,
+.fc-arena[data-state="hit"] .fc-glyph  { color: var(--color-accent-400); }
+.fc-arena[data-state="nogo"] .fc-glyph,
+.fc-arena[data-state="error"] .fc-glyph { color: var(--color-warning-500, #f59e0b); }
+
+.fc-status {
+  margin-top: var(--space-4);
+  min-height: 1.5em;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.fc-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-xs);
+  margin-block: var(--space-5);
+  text-align: left;
+}
+@media (min-width: 40em) { .fc-results { grid-template-columns: repeat(3, 1fr); } }
+.fc-result {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.fc-result--focus { grid-column: 1 / -1; border-color: var(--color-border-primary); }
+@media (min-width: 40em) { .fc-result--focus { grid-column: auto; } }
+.fc-result__k {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+.fc-result__v {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.fc-result--focus .fc-result__v { font-size: var(--text-3xl); }
+
+.fc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.fc-note {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
