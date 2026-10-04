@@ -1,378 +1,294 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <script>(function(){try{var p=localStorage.getItem('auroriq_theme');var t=(p==='light'||p==='dark')?p:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta charset="UTF-8">
-<meta name="google-adsense-account" content="ca-pub-2335913078491957">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)">
-<meta name="color-scheme" content="dark light">
-<meta name="format-detection" content="telephone=no">
-
-<title>Productivity — Chronotype & Work-Rhythm Tools | AurorIQ</title>
-<meta name="description" content="The Productivity hub on AurorIQ: a science-grounded chronotype test that finds your peak hours, plus honest tools for working with your rhythm. Free.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<link rel="canonical" href="https://auroriq.com/productivity/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="AurorIQ">
-<meta property="og:url" content="https://auroriq.com/productivity/">
-<meta property="og:title" content="Productivity — Find Your Peak Hours | AurorIQ">
-<meta property="og:description" content="A science-grounded chronotype test and honest tools for working with your natural rhythm. Free, on-device.">
-<meta property="og:image" content="https://auroriq.com/assets/images/og/og-chronotype-test.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Productivity — Find Your Peak Hours | AurorIQ">
-<meta name="twitter:description" content="A science-grounded chronotype test and honest tools for working with your natural rhythm. Free, on-device.">
-<meta name="twitter:image" content="https://auroriq.com/assets/images/og/og-chronotype-test.png">
-
-<link rel="preload" href="/assets/fonts/syne-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
-
-<link rel="stylesheet" href="/css/bundle.css?v=6.18">
-
-<link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
-<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://auroriq.com/productivity/#page",
-      "name": "Productivity — AurorIQ",
-      "url": "https://auroriq.com/productivity/",
-      "description": "The Productivity hub on AurorIQ: a chronotype test and honest tools for working with your natural rhythm.",
-      "isPartOf": { "@id": "https://auroriq.com/#website" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://auroriq.com/productivity/#breadcrumbs",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Productivity", "item": "https://auroriq.com/productivity/" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://auroriq.com/productivity/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does the Productivity category measure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It starts with chronotype — your natural morning-versus-evening preference — which is one of the few genuinely evidence-backed levers for scheduling demanding work. Habit and time-audit instruments are in development. The focus is on working with your rhythm rather than generic hustle advice."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is chronotype real science?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Circadian preference is well established and partly heritable — some people really are sharper in the morning and others at night. What our test can't do is diagnose sleep disorders or replace tracking your own energy; it's a self-report snapshot that points you toward your likely peak window."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I change my chronotype?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Only somewhat. Chronotype shifts naturally with age and can be nudged by light exposure and consistent sleep timing, but you can't fully override your biology by willpower. The more useful move is usually to schedule your hardest work into your natural peak rather than fight it."
-          }
-        }
-      ]
-    }
-  ]
-}
+<meta charset="utf-8"/>
+<meta content="ca-pub-2335913078491957" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#060a14" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="#f7f7fb" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<title>Productivity — Chronotype &amp; Work-Rhythm Tools | AurorIQ</title>
+<meta content="The Productivity hub on AurorIQ: a science-grounded chronotype test that finds your peak hours, plus honest tools for working with your rhythm. Free." name="description"/>
+<meta content="AurorIQ" name="application-name"/>
+<meta content="AurorIQ — Find a test for your curious mind." name="twitter:image:alt"/>
+<meta content="AurorIQ — Find a test for your curious mind." property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link href="https://auroriq.com/productivity/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="AurorIQ" property="og:site_name"/>
+<meta content="https://auroriq.com/productivity/" property="og:url"/>
+<meta content="Productivity — Chronotype &amp; Work-Rhythm Tools | AurorIQ" property="og:title"/>
+<meta content="The Productivity hub on AurorIQ: a science-grounded chronotype test that finds your peak hours, plus honest tools for working with your rhythm. Free." property="og:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-discover-v623.png" property="og:image"/>
+<meta content="1730" property="og:image:width"/>
+<meta content="909" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Productivity — Chronotype &amp; Work-Rhythm Tools | AurorIQ" name="twitter:title"/>
+<meta content="The Productivity hub on AurorIQ: a science-grounded chronotype test that finds your peak hours, plus honest tools for working with your rhythm. Free." name="twitter:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-discover-v623.png" name="twitter:image"/>
+<link as="font" crossorigin="" href="/assets/fonts/syne-var.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dmsans-var.woff2" rel="preload" type="font/woff2"/>
+<link href="/css/bundle.css?v=6.24" rel="stylesheet"/>
+<link href="/assets/images/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/images/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/assets/images/icons/favicon.ico" rel="shortcut icon"/>
+<link href="/assets/images/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://auroriq.com/productivity/#page", "name": "Productivity — AurorIQ", "url": "https://auroriq.com/productivity/", "description": "The Productivity hub on AurorIQ: a chronotype test and honest tools for working with your natural rhythm.", "isPartOf": {"@id": "https://auroriq.com/#website"}, "inLanguage": "en"}, {"@type": "BreadcrumbList", "@id": "https://auroriq.com/productivity/#breadcrumbs", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/"}, {"@type": "ListItem", "position": 2, "name": "Productivity", "item": "https://auroriq.com/productivity/"}]}, {"@type": "FAQPage", "@id": "https://auroriq.com/productivity/#faq", "mainEntity": [{"@type": "Question", "name": "What does the Productivity category measure?", "acceptedAnswer": {"@type": "Answer", "text": "It starts with chronotype — your natural morning-versus-evening preference — which is one of the few genuinely evidence-backed levers for scheduling demanding work. Habit and time-audit instruments are in development. The focus is on working with your rhythm rather than generic hustle advice."}}, {"@type": "Question", "name": "Is chronotype real science?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Circadian preference is well established and partly heritable — some people really are sharper in the morning and others at night. What our test can't do is diagnose sleep disorders or replace tracking your own energy; it's a self-report snapshot that points you toward your likely peak window."}}, {"@type": "Question", "name": "Can I change my chronotype?", "acceptedAnswer": {"@type": "Answer", "text": "Only somewhat. Chronotype shifts naturally with age and can be nudged by light exposure and consistent sleep timing, but you can't fully override your biology by willpower. The more useful move is usually to schedule your hardest work into your natural peak rather than fight it."}}]}]}</script>
+<link href="/css/discover.css?v=6.24" rel="stylesheet"/><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+window.adsbygoogle = window.adsbygoogle || [];
+window.adsbygoogle.pauseAdRequests = 1;
+window.adsbygoogle.requestNonPersonalizedAds = 1;
 </script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2335913078491957" crossorigin="anonymous"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
-<header class="nav" data-nav>
-  <div class="nav__inner">
-    <a class="nav__brand" href="/" aria-label="AurorIQ home">
-      <svg class="nav__mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="auroraMark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#9269f3"/>
-            <stop offset="0.55" stop-color="#22d3ee"/>
-            <stop offset="1" stop-color="#fde68a"/>
-          </linearGradient>
-        </defs>
-        <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 25 C 12 14, 20 14, 24 25" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
-        <circle cx="16" cy="27" r="1.6" fill="#22d3ee"/>
-      </svg>
-      <span class="nav__name">AurorIQ</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="/#platform">Platform</a>
-      <a href="/#how">How it works</a>
-      <a href="/#archetypes">Archetypes</a>
-      <a href="/blog/">Learn</a>
-      <a href="/about-our-test/">About</a>
-      <a class="nav__personica" href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener"><span class="nav__personica-dot" aria-hidden="true"></span>Personality</a>
-    </nav>
-    <div class="nav__actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Toggle theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </button>
-      <a class="btn btn--primary btn--sm" href="/iq-test/">Take the test</a>
-      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nav__mobile" id="mobileMenu" data-nav-menu hidden>
-    <a href="/#platform">Platform</a>
-    <a href="/#how">How it works</a>
-    <a href="/#archetypes">Archetypes</a>
-    <a href="/blog/">Learn</a>
-    <a href="/about-our-test/">About</a>
-    <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Personality →</a>
-    <a class="btn btn--primary btn--block" href="/iq-test/">Take the test</a>
-  </div>
-</header>
-
-<main id="main">
-
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="/">Home</a></li>
-      <li><span aria-current="page">Productivity</span></li>
-    </ol>
-  </nav>
-
-  <section class="cat-hero" aria-labelledby="cat-h">
-    <div class="cat-hero__glow" aria-hidden="true"></div>
-    <div class="cat-hero__inner">
-      <p class="eyebrow"><span class="eyebrow__dot"></span>Platform · Productivity</p>
-      <h1 id="cat-h" class="cat-hero__title">Work <span class="text-aurora">with</span> your rhythm, not against it.</h1>
-      <p class="cat-hero__sub">Most productivity advice is one-size-fits-all noise. This category is narrower and more honest: it starts with the parts of how you work that are actually measurable and evidence-backed — beginning with when, biologically, your mind is sharpest.</p>
-    </div>
-
-    <article class="flagship" aria-label="Chronotype Test">
-      <div>
-        <h2 class="flagship__title">Chronotype Test</h2>
-        <p class="flagship__text">Nine quick questions place you on the morning–evening spectrum and name your chronotype, from Night Owl to Early Bird. You get your peak-focus window and specific guidance on when to schedule your most demanding work — the single most useful thing a productivity tool can tell you. Free, no email, two minutes.</p>
-        <p class="flagship__meta">Circadian science · Peak-hours guidance · On-device</p>
-      </div>
-      <a class="btn btn--primary btn--lg flagship__cta" href="/chronotype-test/">Find my peak hours</a>
-    </article>
-  </section>
-
-  <section class="section" id="more" aria-labelledby="more-h">
-    <div class="section__head">
-      <p class="eyebrow">Also in Productivity</p>
-      <h2 id="more-h" class="section__title">Build the week, and the habits, that fit you</h2>
-      <p class="section__lead">Knowing your peak hours helps most once you can see how the whole week is spent and design habits that actually stick — the three tools work well together.</p>
-    </div>
-    <div class="platform">
-      <a class="platform-card platform-card--live" href="/time-audit/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Time Audit</h3>
-        <p class="platform-card__text">Allocate the 168 hours in your week across ten categories and watch the real shape of your time appear — with honest, non-judgmental observations and one evidence-based note on sleep.</p>
-        <span class="platform-card__cta">Audit my week →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/habit-analyzer/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Habit Analyzer</h3>
-        <p class="platform-card__text">Name a habit you're building and score how well it's designed to stick across five evidence-based factors — cue, friction, repetition, reward, and identity fit — with the highest-leverage fix surfaced.</p>
-        <span class="platform-card__cta">Analyze my habit →</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="why" aria-labelledby="why-h">
-    <div class="section__head">
-      <p class="eyebrow">Why this matters</p>
-      <h2 id="why-h" class="section__title">The one productivity lever with real evidence</h2>
-      <p class="section__lead">Willpower hacks come and go, but the timing of your energy is grounded in circadian biology — and matching hard work to your peak is one of the few changes that reliably helps.</p>
-    </div>
-
-    <ul class="engine">
-      <li class="engine-card">
-        <span class="engine-card__k">Fact</span>
-        <h3 class="engine-card__title">Peaks are real</h3>
-        <p class="engine-card__text">Alertness and cognitive performance rise and fall on a daily cycle, and the timing of that cycle differs between people. Your best hours aren't a matter of discipline — they're partly written into your biology.</p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Fact</span>
-        <h3 class="engine-card__title">Owls aren't lazy</h3>
-        <p class="engine-card__text">Evening types are routinely mislabeled as undisciplined for struggling in early meetings. In reality they're being asked to perform at their biological trough. Naming that reframes a moral failing as a scheduling mismatch.</p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Fact</span>
-        <h3 class="engine-card__title">Timing beats effort</h3>
-        <p class="engine-card__text">The same task done in your peak window feels easier and finishes faster than the same task in your trough. Rearranging when you work is often higher-leverage than trying to work harder.</p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Fact</span>
-        <h3 class="engine-card__title">It drifts with age</h3>
-        <p class="engine-card__text">Teenagers skew late; older adults skew early; most people move earlier over decades. Chronotype is stable enough to plan around but not fixed for life, so it's worth re-checking now and then.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section" id="honest" aria-labelledby="honest-h">
-    <div class="section__head">
-      <p class="eyebrow">The honest part</p>
-      <h2 id="honest-h" class="section__title">What this can and can't do for your productivity</h2>
-    </div>
-    <p class="section__lead">A chronotype test is useful precisely because it's narrow. It won't fix procrastination, organize your inbox, or hand you motivation — and any tool that promises all of that at once is selling something. What it can do is answer one concrete, answerable question well: roughly when in the day is your mind at its best? That single answer quietly reshapes a lot. It tells a night owl to stop scheduling deep work at 8 am and hating themselves for failing at it. It tells an early bird not to save their most important task for an evening that won't deliver. It turns a vague sense of "I'm just not a morning person" into a plan.</p>
-    <p class="section__lead">The limits are just as important to state plainly. This is self-report, so it reflects how you see your own rhythm, which isn't always how your body actually behaves — the gold standard is tracking your real energy and sleep over a couple of weeks. It's a snapshot, and your answers on a stressed, sleep-deprived week will differ from a rested one. And it is emphatically not a medical tool: persistent trouble sleeping, or exhaustion that no schedule fixes, is a conversation for a doctor, not a quiz. Used inside those limits, though, knowing your peak window is one of the most practical pieces of self-knowledge a five-minute test can give you.</p>
-      <p class="section__lead">Acting on it is simpler than most productivity systems. Once you know your peak window, the first move is to put one hard thing there and defend it — a single block for the work that actually needs your best thinking, with notifications off and meetings pushed elsewhere. The second is to stop wasting your peak on shallow tasks that any hour could handle: email, admin, and errands belong in your troughs, not your prime hours. The third is to notice the mismatch between your rhythm and your obligations, and negotiate what you can — a later start, a protected morning, a shifted deadline. None of this requires a new app or a rigid routine; it's mostly the quiet permission to schedule around a fact about yourself instead of pretending everyone should peak at 9 am. That reframing — from "why can't I focus when I'm supposed to" to "when am I actually built to focus" — is the whole point of starting here.</p>
-  </section>
-
-  <section class="section section--alt" id="upcoming" aria-labelledby="upcoming-h">
-    <div class="section__head">
-      <p class="eyebrow">In development</p>
-      <h2 id="upcoming-h" class="section__title">More productivity instruments on the way</h2>
-      <p class="section__lead">Same standard — measurable, evidence-aware, honest about limits, free.</p>
-    </div>
-    <ul class="dev-strip">
-      <li><span class="dev-strip__tag">In development</span><span class="dev-strip__name">Focus Rhythm</span><span class="dev-strip__desc">How long you can hold attention before it fades.</span></li>
-    </ul>
-  </section>
-
-  <section class="section" id="related" aria-labelledby="related-h">
-    <div class="section__head">
-      <p class="eyebrow">Go deeper</p>
-      <h2 id="related-h" class="section__title">Related instruments &amp; reading</h2>
-    </div>
-    <div class="posts">
-      <a class="post-card" href="/focus-test/">
-        <span class="post-card__cat">Cognition</span>
-        <h3 class="post-card__title">Focus Test</h3>
-        <p class="post-card__excerpt">Measure your sustained attention — a natural companion to knowing your peak hours.</p>
-        <span class="post-card__more">Try it</span>
-      </a>
-      <a class="post-card" href="/reaction-time-test/">
-        <span class="post-card__cat">Cognition</span>
-        <h3 class="post-card__title">Reaction Time Test</h3>
-        <p class="post-card__excerpt">Alertness has a time-of-day signature — check yours at different hours.</p>
-        <span class="post-card__more">Try it</span>
-      </a>
-      <a class="post-card" href="/blog/does-brain-training-work/">
-        <span class="post-card__cat">Fundamentals</span>
-        <h3 class="post-card__title">Does brain training work?</h3>
-        <p class="post-card__excerpt">Why we're skeptical of productivity claims without evidence behind them.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="faq" aria-labelledby="faq-h">
-    <div class="section__head">
-      <p class="eyebrow">Questions</p>
-      <h2 id="faq-h" class="section__title">About this category</h2>
-    </div>
-    <div class="faq">
-      <details class="faq__item">
-        <summary>What does the Productivity category measure?</summary>
-        <div class="faq__body"><p>It starts with chronotype — your natural morning-versus-evening preference — which is one of the few genuinely evidence-backed levers for scheduling demanding work. Habit and time-audit instruments are in development. The focus is on working with your rhythm rather than generic hustle advice.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Is chronotype real science?</summary>
-        <div class="faq__body"><p>Yes. Circadian preference is well established and partly heritable — some people really are sharper in the morning and others at night. What our test can't do is diagnose sleep disorders or replace tracking your own energy; it's a self-report snapshot that points you toward your likely peak window.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Can I change my chronotype?</summary>
-        <div class="faq__body"><p>Only somewhat. Chronotype shifts naturally with age and can be nudged by light exposure and consistent sleep timing, but you can't fully override your biology by willpower. The more useful move is usually to schedule your hardest work into your natural peak rather than fight it.</p></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="cta-band" aria-labelledby="cta-h">
-    <div class="cta-band__glow" aria-hidden="true"></div>
-    <div class="cta-band__inner">
-      <h2 id="cta-h" class="cta-band__title">Know your rhythm. Then know your mind.</h2>
-      <p class="cta-band__sub">The full adaptive test maps how you reason across five cognitive domains.</p>
-      <a class="btn btn--primary btn--xl" href="/iq-test/">Take the IQ test</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <a class="nav__brand" href="/" aria-label="AurorIQ home">
-        <svg class="nav__mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="nav__name">AurorIQ</span>
-      </a>
-      <p class="footer__tagline">Instruments for the curious mind — free, honest, science-grounded.</p>
-    </div>
-
-    <nav class="footer__grid" aria-label="Footer">
-      <div class="footer__col">
-        <h3 class="footer__heading">Test</h3>
-        <a href="/iq-test/">Take the test</a>
-        <a href="/iq-scores/">Score ranges</a>
-        <a href="/#archetypes">Archetypes</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Learn</h3>
-        <a href="/blog/">All guides</a>
-        <a href="/blog/what-is-iq/">What is IQ</a>
-        <a href="/blog/iq-test-accuracy/">Test accuracy</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">About</h3>
-        <a href="/about-our-test/">Our methodology</a>
-        <a href="/about-our-test/#research">Research foundations</a>
-        <a href="/contact/">Contact us</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Platform</h3>
-        <a href="/#platform">All instruments</a>
-        <a href="/cognition/">Cognition hub</a>
-        <a href="/learning/">Learning hub</a>
-        <a href="/career/">Career hub</a>
-        <a href="/productivity/">Productivity hub</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Legal</h3>
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/terms-of-service/">Terms</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="#" data-consent-open>Cookie settings</a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="footer__base">
-    <p class="footer__disclaimer">AurorIQ is an educational self-reflection tool, not a clinical instrument. Scores are estimates and cannot be used for clinical, educational, or legal purposes.</p>
-    <p class="footer__copy">&copy; 2026 AurorIQ. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="/js/core/utils.js" defer></script>
-<script src="/js/core/state.js" defer></script>
-<script src="/js/main.js" defer></script>
-
-<div class="consent-banner" id="consentBanner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
-  <div class="consent-banner__actions">
-    <button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
-    <button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
-  </div>
+<header class="nav nav--suite" data-nav="">
+<div class="nav__inner">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="nav__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+<span aria-hidden="true" class="nav__suite-label">Suite</span>
+</a>
+<nav aria-label="Primary" class="nav__links">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+</nav>
+<div class="nav__actions">
+<button aria-label="Switch to light theme" aria-pressed="false" class="theme-toggle" title="Toggle theme" type="button">
+<svg aria-hidden="true" class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+</button>
+<a class="btn btn--primary btn--sm" href="/iq-test/">Start IQ test</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav__toggle" data-nav-toggle="" type="button"><span></span><span></span><span></span></button>
 </div>
-
-<script src="/js/consent.js" defer></script>
-<script src="/js/theme.js" defer></script>
-</body>
+</div>
+<div class="nav__mobile" data-nav-menu="" hidden="" id="mobileMenu">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+<a href="/about-our-test/">Methodology</a>
+<a class="btn btn--primary btn--block" href="/iq-test/">Start IQ test</a>
+</div>
+</header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="crumbs">
+<ol>
+<li><a href="/">Home</a></li>
+<li><span aria-current="page">Productivity</span></li>
+</ol>
+</nav>
+<section aria-labelledby="cat-h" class="cat-hero">
+<div aria-hidden="true" class="cat-hero__glow"></div>
+<div class="cat-hero__inner">
+<p class="eyebrow"><span class="eyebrow__dot"></span>Platform · Productivity</p>
+<h1 class="cat-hero__title" id="cat-h">Work <span class="text-aurora">with</span> your rhythm, not against it.</h1>
+<p class="cat-hero__sub">Most productivity advice is one-size-fits-all noise. This category is narrower and more honest: it starts with the parts of how you work that are actually measurable and evidence-backed — beginning with when, biologically, your mind is sharpest.</p>
+</div>
+<article aria-label="Chronotype Test" class="flagship">
+<div>
+<h2 class="flagship__title">Chronotype Test</h2>
+<p class="flagship__text">Nine quick questions place you on the morning–evening spectrum and name your chronotype, from Night Owl to Early Bird. You get your peak-focus window and specific guidance on when to schedule your most demanding work — the single most useful thing a productivity tool can tell you. Free, no email, two minutes.</p>
+<p class="flagship__meta">Circadian science · Peak-hours guidance · On-device</p>
+</div>
+<a class="btn btn--primary btn--lg flagship__cta" href="/chronotype-test/">Find my peak hours</a>
+</article>
+</section>
+<section aria-labelledby="more-h" class="section" id="more">
+<div class="section__head">
+<p class="eyebrow">Also in Productivity</p>
+<h2 class="section__title" id="more-h">Build the week, and the habits, that fit you</h2>
+<p class="section__lead">Knowing your peak hours helps most once you can see how the whole week is spent and design habits that actually stick — the three tools work well together.</p>
+</div>
+<div class="platform">
+<a class="platform-card platform-card--live" href="/time-audit/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Time Audit</h3>
+<p class="platform-card__text">Allocate the 168 hours in your week across ten categories and watch the real shape of your time appear — with honest, non-judgmental observations and one evidence-based note on sleep.</p>
+<span class="platform-card__cta">Audit my week →</span>
+</a>
+<a class="platform-card platform-card--live" href="/habit-analyzer/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Habit Analyzer</h3>
+<p class="platform-card__text">Name a habit you're building and score how well it's designed to stick across five evidence-based factors — cue, friction, repetition, reward, and identity fit — with the highest-leverage fix surfaced.</p>
+<span class="platform-card__cta">Analyze my habit →</span>
+</a>
+</div>
+</section>
+<section aria-labelledby="why-h" class="section section--alt" id="why">
+<div class="section__head">
+<p class="eyebrow">Why this matters</p>
+<h2 class="section__title" id="why-h">The one productivity lever with real evidence</h2>
+<p class="section__lead">Willpower hacks come and go, but the timing of your energy is grounded in circadian biology — and matching hard work to your peak is one of the few changes that reliably helps.</p>
+</div>
+<ul class="engine">
+<li class="engine-card">
+<span class="engine-card__k">Fact</span>
+<h3 class="engine-card__title">Peaks are real</h3>
+<p class="engine-card__text">Alertness and cognitive performance rise and fall on a daily cycle, and the timing of that cycle differs between people. Your best hours aren't a matter of discipline — they're partly written into your biology.</p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Fact</span>
+<h3 class="engine-card__title">Owls aren't lazy</h3>
+<p class="engine-card__text">Evening types are routinely mislabeled as undisciplined for struggling in early meetings. In reality they're being asked to perform at their biological trough. Naming that reframes a moral failing as a scheduling mismatch.</p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Fact</span>
+<h3 class="engine-card__title">Timing beats effort</h3>
+<p class="engine-card__text">The same task done in your peak window feels easier and finishes faster than the same task in your trough. Rearranging when you work is often higher-leverage than trying to work harder.</p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Fact</span>
+<h3 class="engine-card__title">It drifts with age</h3>
+<p class="engine-card__text">Teenagers skew late; older adults skew early; most people move earlier over decades. Chronotype is stable enough to plan around but not fixed for life, so it's worth re-checking now and then.</p>
+</li>
+</ul>
+</section>
+<section aria-labelledby="honest-h" class="section" id="honest">
+<div class="section__head">
+<p class="eyebrow">The honest part</p>
+<h2 class="section__title" id="honest-h">What this can and can't do for your productivity</h2>
+</div>
+<p class="section__lead">A chronotype test is useful precisely because it's narrow. It won't fix procrastination, organize your inbox, or hand you motivation — and any tool that promises all of that at once is selling something. What it can do is answer one concrete, answerable question well: roughly when in the day is your mind at its best? That single answer quietly reshapes a lot. It tells a night owl to stop scheduling deep work at 8 am and hating themselves for failing at it. It tells an early bird not to save their most important task for an evening that won't deliver. It turns a vague sense of "I'm just not a morning person" into a plan.</p>
+<p class="section__lead">The limits are just as important to state plainly. This is self-report, so it reflects how you see your own rhythm, which isn't always how your body actually behaves — the gold standard is tracking your real energy and sleep over a couple of weeks. It's a snapshot, and your answers on a stressed, sleep-deprived week will differ from a rested one. And it is emphatically not a medical tool: persistent trouble sleeping, or exhaustion that no schedule fixes, is a conversation for a doctor, not a quiz. Used inside those limits, though, knowing your peak window is one of the most practical pieces of self-knowledge a five-minute test can give you.</p>
+<p class="section__lead">Acting on it is simpler than most productivity systems. Once you know your peak window, the first move is to put one hard thing there and defend it — a single block for the work that actually needs your best thinking, with notifications off and meetings pushed elsewhere. The second is to stop wasting your peak on shallow tasks that any hour could handle: email, admin, and errands belong in your troughs, not your prime hours. The third is to notice the mismatch between your rhythm and your obligations, and negotiate what you can — a later start, a protected morning, a shifted deadline. None of this requires a new app or a rigid routine; it's mostly the quiet permission to schedule around a fact about yourself instead of pretending everyone should peak at 9 am. That reframing — from "why can't I focus when I'm supposed to" to "when am I actually built to focus" — is the whole point of starting here.</p>
+</section>
+<section aria-labelledby="upcoming-h" class="section section--alt" id="upcoming">
+<div class="section__head">
+<p class="eyebrow">In development</p>
+<h2 class="section__title" id="upcoming-h">More productivity instruments on the way</h2>
+<p class="section__lead">Same standard — measurable, evidence-aware, honest about limits, free.</p>
+</div>
+<ul class="dev-strip">
+<li><span class="dev-strip__tag">In development</span><span class="dev-strip__name">Focus Rhythm</span><span class="dev-strip__desc">How long you can hold attention before it fades.</span></li>
+</ul>
+</section>
+<section aria-labelledby="related-h" class="section" id="related">
+<div class="section__head">
+<p class="eyebrow">Go deeper</p>
+<h2 class="section__title" id="related-h">Related instruments &amp; reading</h2>
+</div>
+<div class="posts">
+<a class="post-card" href="/focus-test/">
+<span class="post-card__cat">Cognition</span>
+<h3 class="post-card__title">Focus Test</h3>
+<p class="post-card__excerpt">Measure your sustained attention — a natural companion to knowing your peak hours.</p>
+<span class="post-card__more">Try it</span>
+</a>
+<a class="post-card" href="/reaction-time-test/">
+<span class="post-card__cat">Cognition</span>
+<h3 class="post-card__title">Reaction Time Test</h3>
+<p class="post-card__excerpt">Alertness has a time-of-day signature — check yours at different hours.</p>
+<span class="post-card__more">Try it</span>
+</a>
+<a class="post-card" href="/blog/does-brain-training-work/">
+<span class="post-card__cat">Fundamentals</span>
+<h3 class="post-card__title">Does brain training work?</h3>
+<p class="post-card__excerpt">Why we're skeptical of productivity claims without evidence behind them.</p>
+<span class="post-card__more">Read</span>
+</a>
+</div>
+</section>
+<section aria-labelledby="faq-h" class="section section--alt" id="faq">
+<div class="section__head">
+<p class="eyebrow">Questions</p>
+<h2 class="section__title" id="faq-h">About this category</h2>
+</div>
+<div class="faq">
+<details class="faq__item">
+<summary>What does the Productivity category measure?</summary>
+<div class="faq__body"><p>It starts with chronotype — your natural morning-versus-evening preference — which is one of the few genuinely evidence-backed levers for scheduling demanding work. Habit and time-audit instruments are in development. The focus is on working with your rhythm rather than generic hustle advice.</p></div>
+</details>
+<details class="faq__item">
+<summary>Is chronotype real science?</summary>
+<div class="faq__body"><p>Yes. Circadian preference is well established and partly heritable — some people really are sharper in the morning and others at night. What our test can't do is diagnose sleep disorders or replace tracking your own energy; it's a self-report snapshot that points you toward your likely peak window.</p></div>
+</details>
+<details class="faq__item">
+<summary>Can I change my chronotype?</summary>
+<div class="faq__body"><p>Only somewhat. Chronotype shifts naturally with age and can be nudged by light exposure and consistent sleep timing, but you can't fully override your biology by willpower. The more useful move is usually to schedule your hardest work into your natural peak rather than fight it.</p></div>
+</details>
+</div>
+</section>
+<section aria-labelledby="cta-h" class="cta-band">
+<div aria-hidden="true" class="cta-band__glow"></div>
+<div class="cta-band__inner">
+<h2 class="cta-band__title" id="cta-h">Know your rhythm. Then know your mind.</h2>
+<p class="cta-band__sub">The full adaptive test maps how you reason across five cognitive domains.</p>
+<a class="btn btn--primary btn--xl" href="/iq-test/">Take the IQ test</a>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer__inner">
+<div class="footer__brand">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="footer__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+</a>
+<p class="footer__tagline">One intelligence platform, multiple lenses: cognition, career, learning, and productivity.</p>
+<a class="footer__suite-link" href="/tests/">All assessments</a>
+</div>
+<nav aria-label="Footer" class="footer__grid">
+<div class="footer__col">
+<h3 class="footer__heading">Suite</h3>
+<a href="/cognition/">Cognition</a>
+<a href="/career/">Career</a>
+<a href="/learning/">Learning</a>
+<a href="/productivity/">Productivity</a>
+<a href="https://personica.net/?ref=auroriq" rel="noopener" target="_blank">Psychology ↗</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Assessments</h3>
+<a href="/iq-test/">Adaptive IQ Test</a>
+<a href="/career-interest-test/">Career Interest Test</a>
+<a href="/chronotype-test/">Chronotype Test</a>
+<a href="/focus-test/">Focus Test</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Understand</h3>
+<a href="/blog/">Guides</a>
+<a href="/about-our-test/">Methodology</a>
+<a href="/iq-scores/">IQ score ranges</a>
+<a href="/contact/">Contact</a>
+<a href="/editorial-policy/">Editorial standards</a></div>
+<div class="footer__col">
+<h3 class="footer__heading">Legal</h3>
+<a href="/privacy-policy/">Privacy</a>
+<a href="/terms-of-service/">Terms</a>
+<a href="/ad-disclosure/">Ad Disclosure</a>
+<a href="/disclaimer/">Disclaimer</a>
+<a data-consent-open="" href="#">Cookie settings</a>
+</div>
+</nav>
+</div>
+<div class="footer__base">
+<p class="footer__disclaimer">AurorIQ is an educational self-reflection platform, not a clinical instrument. Scores are estimates and are not intended for clinical, educational-placement, hiring, legal, or diagnostic decisions.</p>
+<p class="footer__copy">© 2026 AurorIQ. All rights reserved.</p>
+</div>
+</footer>
+<script defer="" src="/js/site.bundle.js?v=6.29"></script>
+<script defer="" src="/js/core/state.js?v=6.24"></script>
+<div aria-label="Cookie consent" class="consent-banner" id="consentBanner" role="dialog">
+<p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
+<div class="consent-banner__actions">
+<button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
+<button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
+</div>
+</div>
+<script defer="True" src="/js/discover.js?v=6.24"></script></body>
 </html>

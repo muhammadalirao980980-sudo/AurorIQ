@@ -1,7 +1,7 @@
 {
-  "name": "AurorIQ - Adaptive IQ Test",
+  "name": "AurorIQ — Intelligence Platform",
   "short_name": "AurorIQ",
-  "description": "An adaptive cognitive assessment that maps how you think.",
+  "description": "Science-grounded assessments for cognition, career, learning, and productivity.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
