@@ -1,0 +1,31 @@
+/* Ad placement infrastructure — slots are inert until data-ad-state="live".
+   Keep live slots out of navigation, tool controls, timed tasks and result actions. */
+.ad-slot {
+  width: min(100%, 60rem);
+  margin: clamp(2.5rem, 6vw, 5rem) auto;
+  padding-inline: var(--space-5);
+}
+.ad-slot[data-ad-state="empty"] { display: none; }
+.ad-slot[data-ad-state="live"] { display: block; }
+.ad-slot__label {
+  margin-bottom: .5rem;
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-text-disabled);
+}
+.ad-slot__frame {
+  display: grid;
+  place-items: center;
+  min-height: clamp(6.25rem, 22vw, 15.625rem);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  contain: layout paint;
+}
+.ad-slot ins.adsbygoogle { width: 100%; }
+@media (max-width: 47.99em) {
+  .ad-slot { margin-block: 2.75rem; padding-inline: var(--space-4); }
+}

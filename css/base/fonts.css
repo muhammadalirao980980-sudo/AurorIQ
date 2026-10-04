@@ -1,4 +1,4 @@
-/* fonts.css — self-hosted variable fonts (v6 performance).
+/* fonts.css — self-hosted variable fonts (v6.22 performance).
  * Replaces the render-blocking Google Fonts request chain (2 origins,
  * DNS+TLS+CSS+font) with same-origin woff2, latin-subset, immutable-cached.
  * Fallback faces carry metric overrides so the swap causes no layout shift. */

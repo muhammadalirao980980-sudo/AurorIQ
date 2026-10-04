@@ -1,4 +1,14 @@
 :root {
+  /* Brand mark source: assets/images/icons/favicon.svg + PWA icon set. */
+  --brand-aurora-violet: #9269f3;
+  --brand-aurora-cyan: #22d3ee;
+  --brand-aurora-gold: #fde68a;
+  --brand-ink: #060a14;
+  --brand-mark-gradient: linear-gradient(120deg, var(--brand-aurora-violet) 0%, var(--brand-aurora-cyan) 55%, var(--brand-aurora-gold) 100%);
+  --brand-card-radius: 1.5rem;
+  --brand-card-border: var(--color-border);
+  --brand-card-shadow: var(--shadow-card);
+
 
   --color-primary-50:  #eef5ff;
   --color-primary-100: #dcebfe;
@@ -81,7 +91,7 @@
   --domain-spatial: #5aa2f7;
   --domain-memory:  #fbbf24;
 
-  --gradient-aurora:    linear-gradient(120deg, var(--color-purple-400) 0%, var(--color-accent-400) 55%, var(--color-gold-300) 100%);
+  --gradient-aurora:    var(--brand-mark-gradient);
   --gradient-primary:   linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-accent-500) 100%);
   --gradient-text:      linear-gradient(90deg, var(--color-primary-400) 0%, var(--color-accent-400) 100%);
   --gradient-text-gold: linear-gradient(90deg, var(--color-gold-300) 0%, var(--color-gold-500) 100%);

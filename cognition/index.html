@@ -1,494 +1,405 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <script>(function(){try{var p=localStorage.getItem('auroriq_theme');var t=(p==='light'||p==='dark')?p:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta charset="UTF-8">
-<meta name="google-adsense-account" content="ca-pub-2335913078491957">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)">
-<meta name="color-scheme" content="dark light">
-<meta name="format-detection" content="telephone=no">
-
-<title>Cognition — Adaptive IQ Test & Reasoning Instruments | AurorIQ</title>
-<meta name="description" content="The Cognition hub: a free adaptive IQ test across five reasoning domains, plus plain-language guides to intelligence, scoring, and interpretation.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<link rel="canonical" href="https://auroriq.com/cognition/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="AurorIQ">
-<meta property="og:url" content="https://auroriq.com/cognition/">
-<meta property="og:title" content="Cognition — Measure the Shape of Your Mind | AurorIQ">
-<meta property="og:description" content="A free adaptive IQ test across five reasoning domains, plus guides to intelligence, scoring, and interpretation.">
-<meta property="og:image" content="https://auroriq.com/assets/images/og/og-test.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cognition — Measure the Shape of Your Mind | AurorIQ">
-<meta name="twitter:description" content="A free adaptive IQ test across five reasoning domains, plus guides to intelligence, scoring, and interpretation.">
-<meta name="twitter:image" content="https://auroriq.com/assets/images/og/og-test.png">
-
-<link rel="preload" href="/assets/fonts/syne-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
-
-<link rel="stylesheet" href="/css/bundle.css?v=6.18">
-
-<link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
-<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="prefetch" href="/iq-test/">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "CollectionPage",
-      "@id": "https://auroriq.com/cognition/#page",
-      "name": "Cognition — AurorIQ",
-      "url": "https://auroriq.com/cognition/",
-      "description": "The Cognition hub on AurorIQ: a free adaptive IQ test across five reasoning domains, guides to intelligence and scoring, and upcoming cognitive instruments.",
-      "isPartOf": { "@id": "https://auroriq.com/#website" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://auroriq.com/cognition/#breadcrumbs",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Cognition", "item": "https://auroriq.com/cognition/" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://auroriq.com/cognition/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does the Cognition category cover?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Instruments that measure reasoning ability: the flagship adaptive IQ test, plus memory-span, reaction-time, mental-rotation, verbal-reasoning, logical-reasoning, and creativity tests. Each reports honest, percentile-based estimates — and where a score can't be measured honestly, we say so."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does the IQ test measure five separate domains?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Because intelligence isn't one skill. Pattern, numeric, verbal, spatial, and memory reasoning draw on different cognitive machinery, and the balance between them — not just the composite score — is what defines your cognitive archetype."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a high score in one domain and a low score in another normal?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Completely. Uneven profiles are the norm, not the exception. A strong spatial score with weaker verbal reasoning, or the reverse, simply describes the shape of your mind — it's the reason two people with identical composite scores can be entirely different thinkers."
-          }
-        }
-      ]
-    }
-  ]
-}
+<meta charset="utf-8"/>
+<meta content="ca-pub-2335913078491957" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#060a14" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="#f7f7fb" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<title>Cognition — Adaptive IQ Test &amp; Reasoning Instruments | AurorIQ</title>
+<meta content="The Cognition hub: a free adaptive IQ test across five reasoning domains, plus plain-language guides to intelligence, scoring, and interpretation." name="description"/>
+<meta content="AurorIQ" name="application-name"/>
+<meta content="AurorIQ — Find a test for your curious mind." name="twitter:image:alt"/>
+<meta content="AurorIQ — Find a test for your curious mind." property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link href="https://auroriq.com/cognition/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="AurorIQ" property="og:site_name"/>
+<meta content="https://auroriq.com/cognition/" property="og:url"/>
+<meta content="Cognition — Adaptive IQ Test &amp; Reasoning Instruments | AurorIQ" property="og:title"/>
+<meta content="The Cognition hub: a free adaptive IQ test across five reasoning domains, plus plain-language guides to intelligence, scoring, and interpretation." property="og:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-discover-v623.png" property="og:image"/>
+<meta content="1730" property="og:image:width"/>
+<meta content="909" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Cognition — Adaptive IQ Test &amp; Reasoning Instruments | AurorIQ" name="twitter:title"/>
+<meta content="The Cognition hub: a free adaptive IQ test across five reasoning domains, plus plain-language guides to intelligence, scoring, and interpretation." name="twitter:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-discover-v623.png" name="twitter:image"/>
+<link as="font" crossorigin="" href="/assets/fonts/syne-var.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dmsans-var.woff2" rel="preload" type="font/woff2"/>
+<link href="/css/bundle.css?v=6.24" rel="stylesheet"/>
+<link href="/assets/images/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/images/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/assets/images/icons/favicon.ico" rel="shortcut icon"/>
+<link href="/assets/images/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link href="/iq-test/" rel="prefetch"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://auroriq.com/cognition/#page", "name": "Cognition — AurorIQ", "url": "https://auroriq.com/cognition/", "description": "The Cognition hub on AurorIQ: a free adaptive IQ test across five reasoning domains, guides to intelligence and scoring, and upcoming cognitive instruments.", "isPartOf": {"@id": "https://auroriq.com/#website"}, "inLanguage": "en"}, {"@type": "BreadcrumbList", "@id": "https://auroriq.com/cognition/#breadcrumbs", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/"}, {"@type": "ListItem", "position": 2, "name": "Cognition", "item": "https://auroriq.com/cognition/"}]}, {"@type": "FAQPage", "@id": "https://auroriq.com/cognition/#faq", "mainEntity": [{"@type": "Question", "name": "What does the Cognition category cover?", "acceptedAnswer": {"@type": "Answer", "text": "Instruments that measure reasoning ability: the flagship adaptive IQ test, plus memory-span, reaction-time, mental-rotation, verbal-reasoning, logical-reasoning, and creativity tests. Each reports honest, percentile-based estimates — and where a score can't be measured honestly, we say so."}}, {"@type": "Question", "name": "Why does the IQ test measure five separate domains?", "acceptedAnswer": {"@type": "Answer", "text": "Because intelligence isn't one skill. Pattern, numeric, verbal, spatial, and memory reasoning draw on different cognitive machinery, and the balance between them — not just the composite score — is what defines your cognitive archetype."}}, {"@type": "Question", "name": "Is a high score in one domain and a low score in another normal?", "acceptedAnswer": {"@type": "Answer", "text": "Completely. Uneven profiles are the norm, not the exception. A strong spatial score with weaker verbal reasoning, or the reverse, simply describes the shape of your mind — it's the reason two people with identical composite scores can be entirely different thinkers."}}]}]}</script>
+<link href="/css/discover.css?v=6.24" rel="stylesheet"/><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+window.adsbygoogle = window.adsbygoogle || [];
+window.adsbygoogle.pauseAdRequests = 1;
+window.adsbygoogle.requestNonPersonalizedAds = 1;
 </script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2335913078491957" crossorigin="anonymous"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
-<header class="nav" data-nav>
-  <div class="nav__inner">
-    <a class="nav__brand" href="/" aria-label="AurorIQ home">
-      <svg class="nav__mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="auroraMark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#9269f3"/>
-            <stop offset="0.55" stop-color="#22d3ee"/>
-            <stop offset="1" stop-color="#fde68a"/>
-          </linearGradient>
-        </defs>
-        <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 25 C 12 14, 20 14, 24 25" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
-        <circle cx="16" cy="27" r="1.6" fill="#22d3ee"/>
-      </svg>
-      <span class="nav__name">AurorIQ</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="/#platform">Platform</a>
-      <a href="/#how">How it works</a>
-      <a href="/#archetypes">Archetypes</a>
-      <a href="/blog/">Learn</a>
-      <a href="/about-our-test/">About</a>
-      <a class="nav__personica" href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener"><span class="nav__personica-dot" aria-hidden="true"></span>Personality</a>
-    </nav>
-    <div class="nav__actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Toggle theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </button>
-      <a class="btn btn--primary btn--sm" href="/iq-test/">Take the test</a>
-      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nav__mobile" id="mobileMenu" data-nav-menu hidden>
-    <a href="/#platform">Platform</a>
-    <a href="/#how">How it works</a>
-    <a href="/#archetypes">Archetypes</a>
-    <a href="/blog/">Learn</a>
-    <a href="/about-our-test/">About</a>
-    <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Personality →</a>
-    <a class="btn btn--primary btn--block" href="/iq-test/">Take the test</a>
-  </div>
-</header>
-
-<main id="main">
-
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="/">Home</a></li>
-      <li><span aria-current="page">Cognition</span></li>
-    </ol>
-  </nav>
-
-  <section class="cat-hero" aria-labelledby="cat-h">
-    <div class="cat-hero__glow" aria-hidden="true"></div>
-    <div class="cat-hero__inner">
-      <p class="eyebrow"><span class="eyebrow__dot"></span>Platform · Cognition</p>
-      <h1 id="cat-h" class="cat-hero__title">Measure the <span class="text-aurora">shape of your mind</span>.</h1>
-      <p class="cat-hero__sub">Cognition is where AurorIQ began: instruments that measure reasoning ability itself. Not trivia, not speed-tapping games — adaptive assessments built on item response theory, reported as real percentiles with honest confidence intervals.</p>
-    </div>
-
-    <article class="flagship" aria-label="Adaptive IQ Test">
-      <div>
-        <h2 class="flagship__title">Adaptive IQ Test</h2>
-        <p class="flagship__text">Twenty-five questions chosen live from your ability estimate, spanning five reasoning domains. You get a composite estimate, a percentile, a 95% confidence interval, and a cognitive archetype drawn from the shape of your profile. Free, no email, ~15 minutes.</p>
-        <p class="flagship__meta">3PL IRT · Age-normed · On-device scoring</p>
-      </div>
-      <a class="btn btn--primary btn--lg flagship__cta" href="/iq-test/">Start the assessment</a>
-    </article>
-  </section>
-
-  <section class="section" id="instruments" aria-labelledby="instruments-h">
-    <div class="section__head">
-      <p class="eyebrow">Also live</p>
-      <h2 id="instruments-h" class="section__title">More live instruments</h2>
-    </div>
-    <div class="platform">
-      <a class="platform-card platform-card--live" href="/memory-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Memory Test</h3>
-        <p class="platform-card__text">The classic digit-span task, forward and backward — your working-memory span against approximate adult norms, in about five minutes.</p>
-        <span class="platform-card__cta">Test your span →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/reaction-time-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Reaction Time Test</h3>
-        <p class="platform-card__text">Simple visual reaction time — how fast you respond to a single cue. Five scored trials, median result, honest device-latency caveats, in about two minutes.</p>
-        <span class="platform-card__cta">Test your speed →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/processing-speed-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Processing Speed Test</h3>
-        <p class="platform-card__text">Cognitive throughput, not just reaction time — thirty timed same/different comparisons scored as correct judgments per minute, so both speed and errors count.</p>
-        <span class="platform-card__cta">Compare fast →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/spatial-reasoning-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Spatial Reasoning Test</h3>
-        <p class="platform-card__text">A mental-rotation task — same shape rotated, or a mirror image? Twelve items scored on accuracy and speed, with exact ground truth.</p>
-        <span class="platform-card__cta">Rotate some shapes →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/verbal-reasoning-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Verbal Reasoning Test</h3>
-        <p class="platform-card__text">Analogies, synonyms, and antonyms across three difficulty tiers — a difficulty-weighted measure of crystallized verbal ability, in about five minutes.</p>
-        <span class="platform-card__cta">Reason with words →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/logical-reasoning-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Logical Reasoning Test</h3>
-        <p class="platform-card__text">Number series, syllogisms, deduction, and odd-one-out across three tiers — a culture-fair, difficulty-weighted measure of fluid reasoning, in about five minutes.</p>
-        <span class="platform-card__cta">Follow the logic →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/numerical-reasoning-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Numerical Reasoning Test</h3>
-        <p class="platform-card__text">Number series, word problems, ratios, and data across three tiers — the quantitative half of reasoning, difficulty-weighted, with an honestly approximate percentile.</p>
-        <span class="platform-card__cta">Test your numbers →</span>
-      </a>
-      <a class="platform-card platform-card--live" href="/creativity-test/">
-        <span class="platform-card__status platform-card__status--live">Available now</span>
-        <h3 class="platform-card__title">Creativity Test</h3>
-        <p class="platform-card__text">The Alternate Uses Task — two minutes to list as many uses for an object as you can. Honest divergent-thinking fluency, with originality openly not faked.</p>
-        <span class="platform-card__cta">Unlock some ideas →</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="domains" aria-labelledby="domains-h">
-    <div class="section__head">
-      <p class="eyebrow">What gets measured</p>
-      <h2 id="domains-h" class="section__title">Five reasoning domains, one profile</h2>
-      <p class="section__lead">Your composite score is built from distinct kinds of thinking. The balance between them — not the single number — is what defines your cognitive archetype.</p>
-    </div>
-
-    <ul class="engine">
-      <li class="engine-card">
-        <span class="engine-card__k">Pattern</span>
-        <h3 class="engine-card__title">Fluid reasoning</h3>
-        <p class="engine-card__text">Spotting the rule behind a sequence and predicting what comes next — the closest thing to raw fluid intelligence, and the least dependent on anything you were taught. <a href="/logical-reasoning-test/">Test your logical reasoning →</a> · <a href="/blog/pattern-recognition-fluid-reasoning/">The science →</a></p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Numeric</span>
-        <h3 class="engine-card__title">Quantitative reasoning</h3>
-        <p class="engine-card__text">Relationships between quantities: proportions, progressions, and structure in numbers. This is reasoning <em>with</em> numbers, not arithmetic recall — a calculator won't help.</p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Verbal</span>
-        <h3 class="engine-card__title">Language & inference</h3>
-        <p class="engine-card__text">Analogies, meaning, and what follows from what. Verbal reasoning leans on crystallized knowledge more than the other domains, which is exactly why it's measured separately. <a href="/verbal-reasoning-test/">Test your verbal reasoning →</a></p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Spatial</span>
-        <h3 class="engine-card__title">Mental rotation & form</h3>
-        <p class="engine-card__text">Holding a shape in mind and transforming it — folding, rotating, recombining. Strong spatial profiles cluster in engineering, design, and the trades. <a href="/spatial-reasoning-test/">Test your rotation →</a> · <a href="/blog/spatial-reasoning-explained/">The science →</a></p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Memory</span>
-        <h3 class="engine-card__title">Working-memory span</h3>
-        <p class="engine-card__text">How much you can hold and manipulate at once — the mental workbench every other domain borrows. It's the domain most sensitive to sleep and stress. <a href="/memory-test/">Test your span →</a> · <a href="/blog/working-memory-explained/">The science →</a></p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section" id="interpret" aria-labelledby="interpret-h">
-    <div class="section__head">
-      <p class="eyebrow">After the test</p>
-      <h2 id="interpret-h" class="section__title">Reading your result honestly</h2>
-      <p class="section__lead">A score without context is flattery. These are the two pages that turn your number into understanding.</p>
-    </div>
-
-    <p class="section__lead">One practical note before you begin: cognitive performance is state-dependent. Sleep debt, acute stress, and even time of day measurably move working-memory and processing scores, so a result from a rough night understates you. Test rested, test once, and treat the confidence interval — not the single number — as your actual result.</p>
-
-    <div class="posts">
-      <a class="post-card" href="/iq-scores/">
-        <span class="post-card__cat">Reference</span>
-        <h3 class="post-card__title">IQ score ranges &amp; what they mean</h3>
-        <p class="post-card__excerpt">Every range from 70 to 145+, the population share at each level, and what the labels do and don't imply.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/reading-your-percentile/">
-        <span class="post-card__cat">Interpretation</span>
-        <h3 class="post-card__title">Reading your percentile</h3>
-        <p class="post-card__excerpt">Why "rarer than 88% of people" says more than any single score — and how confidence intervals keep it honest.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/gifted-range-scores/">
-        <span class="post-card__cat">Interpretation</span>
-        <h3 class="post-card__title">Gifted-range scores</h3>
-        <p class="post-card__excerpt">What scores above 130 actually indicate, and the honest limits of any online estimate at the extremes.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="guides" aria-labelledby="guides-h">
-    <div class="section__head">
-      <p class="eyebrow">The science</p>
-      <h2 id="guides-h" class="section__title">Understand intelligence itself</h2>
-      <p class="section__lead">Plain-language guides — no jargon, no hype, no brain-training sales pitch.</p>
-    </div>
-
-    <h3 class="group-head">Fundamentals</h3>
-    <div class="posts">
-      <a class="post-card" href="/blog/what-is-iq/">
-        <span class="post-card__cat">Fundamentals</span>
-        <h3 class="post-card__title">What is IQ, really?</h3>
-        <p class="post-card__excerpt">What a score represents, where it comes from, and the limits of a single number.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/iq-test-accuracy/">
-        <span class="post-card__cat">Fundamentals</span>
-        <h3 class="post-card__title">How accurate are IQ tests?</h3>
-        <p class="post-card__excerpt">Reliability, validity, and what separates a real instrument from a flattering quiz.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/does-brain-training-work/">
-        <span class="post-card__cat">Fundamentals</span>
-        <h3 class="post-card__title">Does brain training work?</h3>
-        <p class="post-card__excerpt">What the research actually shows about training games and transfer to real ability.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-    </div>
-
-    <h3 class="group-head">Theory &amp; domains</h3>
-    <div class="posts">
-      <a class="post-card" href="/blog/fluid-vs-crystallized/">
-        <span class="post-card__cat">Theory</span>
-        <h3 class="post-card__title">Fluid vs crystallized intelligence</h3>
-        <p class="post-card__excerpt">The two engines of cognition — one you're born tuning, one you build over a lifetime.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/pattern-recognition-fluid-reasoning/">
-        <span class="post-card__cat">Domains</span>
-        <h3 class="post-card__title">Pattern recognition &amp; fluid reasoning</h3>
-        <p class="post-card__excerpt">Why matrix puzzles are the purest window into raw reasoning ability.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/spatial-reasoning-explained/">
-        <span class="post-card__cat">Domains</span>
-        <h3 class="post-card__title">Spatial reasoning explained</h3>
-        <p class="post-card__excerpt">Mental rotation, form perception, and where spatial minds excel.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/working-memory-explained/">
-        <span class="post-card__cat">Domains</span>
-        <h3 class="post-card__title">Working memory explained</h3>
-        <p class="post-card__excerpt">The mental workbench behind every other domain — span, load, and limits.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-    </div>
-
-    <h3 class="group-head">Scores &amp; performance</h3>
-    <div class="posts">
-      <a class="post-card" href="/blog/average-iq-by-age/">
-        <span class="post-card__cat">Data</span>
-        <h3 class="post-card__title">How IQ changes with age</h3>
-        <p class="post-card__excerpt">Why scores are age-adjusted, and how raw ability shifts across a life.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/sleep-stress-test-performance/">
-        <span class="post-card__cat">Performance</span>
-        <h3 class="post-card__title">Sleep, stress &amp; test performance</h3>
-        <p class="post-card__excerpt">The state factors that move your score — and how to test on a fair day.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/">
-        <span class="post-card__cat">All guides</span>
-        <h3 class="post-card__title">Browse the full library</h3>
-        <p class="post-card__excerpt">Every guide on intelligence, scoring, and cognition in one place.</p>
-        <span class="post-card__more">Browse</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section" id="upcoming" aria-labelledby="upcoming-h">
-    <div class="section__head">
-      <p class="eyebrow">In development</p>
-      <h2 id="upcoming-h" class="section__title">More cognition instruments on the way</h2>
-      <p class="section__lead">Each domain deserves its own dedicated instrument. These are being built to the same standard as the flagship — adaptive where it matters, honest everywhere.</p>
-    </div>
-
-    <ul class="dev-strip">
-      <li><span class="dev-strip__tag">In development</span><span class="dev-strip__name">Logical Reasoning</span><span class="dev-strip__desc">Deduction and rule-finding, isolated.</span></li>
-      <li><span class="dev-strip__tag">In development</span><span class="dev-strip__name">Creativity Assessment</span><span class="dev-strip__desc">Divergent thinking beyond one right answer.</span></li>
-    </ul>
-  </section>
-
-  <section class="section section--alt" id="faq" aria-labelledby="faq-h">
-    <div class="section__head">
-      <p class="eyebrow">Questions</p>
-      <h2 id="faq-h" class="section__title">About this category</h2>
-    </div>
-
-    <div class="faq">
-      <details class="faq__item">
-        <summary>What does the Cognition category cover?</summary>
-        <div class="faq__body"><p>Instruments that measure reasoning ability: the flagship adaptive IQ test, plus memory-span, reaction-time, mental-rotation, verbal-reasoning, logical-reasoning, and creativity tests. Each reports honest, percentile-based estimates — and where a score can't be measured honestly, we say so.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Why does the IQ test measure five separate domains?</summary>
-        <div class="faq__body"><p>Because intelligence isn't one skill. Pattern, numeric, verbal, spatial, and memory reasoning draw on different cognitive machinery, and the balance between them — not just the composite score — is what defines your cognitive archetype.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Is a high score in one domain and a low score in another normal?</summary>
-        <div class="faq__body"><p>Completely. Uneven profiles are the norm, not the exception. A strong spatial score with weaker verbal reasoning, or the reverse, simply describes the shape of your mind — it's the reason two people with identical composite scores can be entirely different thinkers.</p></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="cta-band" aria-labelledby="cta-h">
-    <div class="cta-band__glow" aria-hidden="true"></div>
-    <div class="cta-band__inner">
-      <h2 id="cta-h" class="cta-band__title">Ready to see how you think?</h2>
-      <p class="cta-band__sub">Fifteen minutes from now, you'll know your archetype.</p>
-      <a class="btn btn--primary btn--xl" href="/iq-test/">Start the assessment</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <a class="nav__brand" href="/" aria-label="AurorIQ home">
-        <svg class="nav__mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="nav__name">AurorIQ</span>
-      </a>
-      <p class="footer__tagline">Instruments for the curious mind — free, honest, science-grounded.</p>
-    </div>
-
-    <nav class="footer__grid" aria-label="Footer">
-      <div class="footer__col">
-        <h3 class="footer__heading">Test</h3>
-        <a href="/iq-test/">Take the test</a>
-        <a href="/iq-scores/">Score ranges</a>
-        <a href="/#archetypes">Archetypes</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Learn</h3>
-        <a href="/blog/">All guides</a>
-        <a href="/blog/what-is-iq/">What is IQ</a>
-        <a href="/blog/iq-test-accuracy/">Test accuracy</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">About</h3>
-        <a href="/about-our-test/">Our methodology</a>
-        <a href="/about-our-test/#research">Research foundations</a>
-        <a href="/contact/">Contact us</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Platform</h3>
-        <a href="/#platform">All instruments</a>
-        <a href="/cognition/">Cognition hub</a>
-        <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Psychology &mdash; Personica</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Legal</h3>
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/terms-of-service/">Terms</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="#" data-consent-open>Cookie settings</a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="footer__base">
-    <p class="footer__disclaimer">AurorIQ is an educational self-reflection tool, not a clinical instrument. Scores are estimates and cannot be used for clinical, educational, or legal purposes.</p>
-    <p class="footer__copy">&copy; 2026 AurorIQ. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="/js/core/utils.js" defer></script>
-<script src="/js/core/state.js" defer></script>
-<script src="/js/main.js" defer></script>
-
-<div class="consent-banner" id="consentBanner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
-  <div class="consent-banner__actions">
-    <button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
-    <button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
-  </div>
+<header class="nav nav--suite" data-nav="">
+<div class="nav__inner">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="nav__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+<span aria-hidden="true" class="nav__suite-label">Suite</span>
+</a>
+<nav aria-label="Primary" class="nav__links">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+</nav>
+<div class="nav__actions">
+<button aria-label="Switch to light theme" aria-pressed="false" class="theme-toggle" title="Toggle theme" type="button">
+<svg aria-hidden="true" class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+</button>
+<a class="btn btn--primary btn--sm" href="/iq-test/">Start IQ test</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav__toggle" data-nav-toggle="" type="button"><span></span><span></span><span></span></button>
 </div>
-
-<script src="/js/consent.js" defer></script>
-<script src="/js/theme.js" defer></script>
-</body>
+</div>
+<div class="nav__mobile" data-nav-menu="" hidden="" id="mobileMenu">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+<a href="/about-our-test/">Methodology</a>
+<a class="btn btn--primary btn--block" href="/iq-test/">Start IQ test</a>
+</div>
+</header>
+<main id="main">
+<nav aria-label="Breadcrumb" class="crumbs">
+<ol>
+<li><a href="/">Home</a></li>
+<li><span aria-current="page">Cognition</span></li>
+</ol>
+</nav>
+<section aria-labelledby="cat-h" class="cat-hero">
+<div aria-hidden="true" class="cat-hero__glow"></div>
+<div class="cat-hero__inner">
+<p class="eyebrow"><span class="eyebrow__dot"></span>Platform · Cognition</p>
+<h1 class="cat-hero__title" id="cat-h">Measure the <span class="text-aurora">shape of your mind</span>.</h1>
+<p class="cat-hero__sub">Cognition is where AurorIQ began: instruments that measure reasoning ability itself. Not trivia, not speed-tapping games — adaptive assessments built on item response theory, reported as model-based estimates with honest confidence intervals.</p>
+</div>
+<article aria-label="Adaptive IQ Test" class="flagship">
+<div>
+<h2 class="flagship__title">Adaptive IQ Test</h2>
+<p class="flagship__text">Twenty-five questions chosen live from your ability estimate, spanning five reasoning domains. You get a composite estimate, a percentile, a 95% confidence interval, and a cognitive archetype drawn from the shape of your profile. Free, no email, ~15 minutes.</p>
+<p class="flagship__meta">3PL IRT · Age-normed · On-device scoring</p>
+</div>
+<a class="btn btn--primary btn--lg flagship__cta" href="/iq-test/">Start the assessment</a>
+</article>
+</section>
+<section aria-labelledby="instruments-h" class="section" id="instruments">
+<div class="section__head">
+<p class="eyebrow">Also live</p>
+<h2 class="section__title" id="instruments-h">More live instruments</h2>
+</div>
+<div class="platform">
+<a class="platform-card platform-card--live" href="/memory-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Memory Test</h3>
+<p class="platform-card__text">The classic digit-span task, forward and backward — your working-memory span against internal illustrative references, in about five minutes.</p>
+<span class="platform-card__cta">Test your span →</span>
+</a>
+<a class="platform-card platform-card--live" href="/reaction-time-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Reaction Time Test</h3>
+<p class="platform-card__text">Simple visual reaction time — how fast you respond to a single cue. Five scored trials, median result, honest device-latency caveats, in about two minutes.</p>
+<span class="platform-card__cta">Test your speed →</span>
+</a>
+<a class="platform-card platform-card--live" href="/processing-speed-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Processing Speed Test</h3>
+<p class="platform-card__text">Cognitive throughput, not just reaction time — thirty timed same/different comparisons scored as correct judgments per minute, so both speed and errors count.</p>
+<span class="platform-card__cta">Compare fast →</span>
+</a>
+<a class="platform-card platform-card--live" href="/spatial-reasoning-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Spatial Reasoning Test</h3>
+<p class="platform-card__text">A mental-rotation task — same shape rotated, or a mirror image? Twelve items scored on accuracy and speed, with exact ground truth.</p>
+<span class="platform-card__cta">Rotate some shapes →</span>
+</a>
+<a class="platform-card platform-card--live" href="/verbal-reasoning-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Verbal Reasoning Test</h3>
+<p class="platform-card__text">Analogies, synonyms, and antonyms across three difficulty tiers — a difficulty-weighted measure of crystallized verbal ability, in about five minutes.</p>
+<span class="platform-card__cta">Reason with words →</span>
+</a>
+<a class="platform-card platform-card--live" href="/logical-reasoning-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Logical Reasoning Test</h3>
+<p class="platform-card__text">Number series, syllogisms, deduction, and odd-one-out across three tiers — a culture-fair, difficulty-weighted measure of fluid reasoning, in about five minutes.</p>
+<span class="platform-card__cta">Follow the logic →</span>
+</a>
+<a class="platform-card platform-card--live" href="/numerical-reasoning-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Numerical Reasoning Test</h3>
+<p class="platform-card__text">Number series, word problems, ratios, and data across three tiers — the quantitative half of reasoning, difficulty-weighted, with an honestly approximate percentile.</p>
+<span class="platform-card__cta">Test your numbers →</span>
+</a>
+<a class="platform-card platform-card--live" href="/creativity-test/">
+<span class="platform-card__status platform-card__status--live">Available now</span>
+<h3 class="platform-card__title">Creativity Test</h3>
+<p class="platform-card__text">The Alternate Uses Task — two minutes to list as many uses for an object as you can. Honest divergent-thinking fluency, with no automated originality rating.</p>
+<span class="platform-card__cta">Unlock some ideas →</span>
+</a>
+</div>
+</section>
+<section aria-labelledby="domains-h" class="section section--alt" id="domains">
+<div class="section__head">
+<p class="eyebrow">What gets measured</p>
+<h2 class="section__title" id="domains-h">Five reasoning domains, one profile</h2>
+<p class="section__lead">Your composite score is built from distinct kinds of thinking. The balance between them — not the single number — is what defines your cognitive archetype.</p>
+</div>
+<ul class="engine">
+<li class="engine-card">
+<span class="engine-card__k">Pattern</span>
+<h3 class="engine-card__title">Fluid reasoning</h3>
+<p class="engine-card__text">Spotting the rule behind a sequence and predicting what comes next — the closest thing to raw fluid intelligence, and the least dependent on anything you were taught. <a href="/logical-reasoning-test/">Test your logical reasoning →</a> · <a href="/blog/pattern-recognition-fluid-reasoning/">The science →</a></p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Numeric</span>
+<h3 class="engine-card__title">Quantitative reasoning</h3>
+<p class="engine-card__text">Relationships between quantities: proportions, progressions, and structure in numbers. This is reasoning <em>with</em> numbers, not arithmetic recall — a calculator won't help.</p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Verbal</span>
+<h3 class="engine-card__title">Language &amp; inference</h3>
+<p class="engine-card__text">Analogies, meaning, and what follows from what. Verbal reasoning leans on crystallized knowledge more than the other domains, which is exactly why it's measured separately. <a href="/verbal-reasoning-test/">Test your verbal reasoning →</a></p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Spatial</span>
+<h3 class="engine-card__title">Mental rotation &amp; form</h3>
+<p class="engine-card__text">Holding a shape in mind and transforming it — folding, rotating, recombining. Strong spatial profiles cluster in engineering, design, and the trades. <a href="/spatial-reasoning-test/">Test your rotation →</a> · <a href="/blog/spatial-reasoning-explained/">The science →</a></p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Memory</span>
+<h3 class="engine-card__title">Working-memory span</h3>
+<p class="engine-card__text">How much you can hold and manipulate at once — the mental workbench every other domain borrows. It's the domain most sensitive to sleep and stress. <a href="/memory-test/">Test your span →</a> · <a href="/blog/working-memory-explained/">The science →</a></p>
+</li>
+</ul>
+</section>
+<section aria-labelledby="interpret-h" class="section" id="interpret">
+<div class="section__head">
+<p class="eyebrow">After the test</p>
+<h2 class="section__title" id="interpret-h">Reading your result honestly</h2>
+<p class="section__lead">A score without context is flattery. These are the two pages that turn your number into understanding.</p>
+</div>
+<p class="section__lead">One practical note before you begin: cognitive performance is state-dependent. Sleep debt, acute stress, and even time of day measurably move working-memory and processing scores, so a result from a rough night understates you. Test rested, test once, and treat the confidence interval — not the single number — as your actual result.</p>
+<div class="posts">
+<a class="post-card" href="/iq-scores/">
+<span class="post-card__cat">Reference</span>
+<h3 class="post-card__title">IQ score ranges &amp; what they mean</h3>
+<p class="post-card__excerpt">Every range from 70 to 145+, the population share at each level, and what the labels do and don't imply.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/reading-your-percentile/">
+<span class="post-card__cat">Interpretation</span>
+<h3 class="post-card__title">Reading your percentile</h3>
+<p class="post-card__excerpt">Why "rarer than 88% of people" says more than any single score — and how confidence intervals keep it honest.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/gifted-range-scores/">
+<span class="post-card__cat">Interpretation</span>
+<h3 class="post-card__title">Gifted-range scores</h3>
+<p class="post-card__excerpt">What scores above 130 actually indicate, and the honest limits of any online estimate at the extremes.</p>
+<span class="post-card__more">Read</span>
+</a>
+</div>
+</section>
+<section aria-labelledby="guides-h" class="section section--alt" id="guides">
+<div class="section__head">
+<p class="eyebrow">The science</p>
+<h2 class="section__title" id="guides-h">Understand intelligence itself</h2>
+<p class="section__lead">Plain-language guides — no jargon, no hype, no brain-training sales pitch.</p>
+</div>
+<h3 class="group-head">Fundamentals</h3>
+<div class="posts">
+<a class="post-card" href="/blog/what-is-iq/">
+<span class="post-card__cat">Fundamentals</span>
+<h3 class="post-card__title">What is IQ, really?</h3>
+<p class="post-card__excerpt">What a score represents, where it comes from, and the limits of a single number.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/iq-test-accuracy/">
+<span class="post-card__cat">Fundamentals</span>
+<h3 class="post-card__title">How accurate are IQ tests?</h3>
+<p class="post-card__excerpt">Reliability, validity, and what separates a real instrument from a flattering quiz.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/does-brain-training-work/">
+<span class="post-card__cat">Fundamentals</span>
+<h3 class="post-card__title">Does brain training work?</h3>
+<p class="post-card__excerpt">What the research actually shows about training games and transfer to real ability.</p>
+<span class="post-card__more">Read</span>
+</a>
+</div>
+<h3 class="group-head">Theory &amp; domains</h3>
+<div class="posts">
+<a class="post-card" href="/blog/fluid-vs-crystallized/">
+<span class="post-card__cat">Theory</span>
+<h3 class="post-card__title">Fluid vs crystallized intelligence</h3>
+<p class="post-card__excerpt">The two engines of cognition — one you're born tuning, one you build over a lifetime.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/pattern-recognition-fluid-reasoning/">
+<span class="post-card__cat">Domains</span>
+<h3 class="post-card__title">Pattern recognition &amp; fluid reasoning</h3>
+<p class="post-card__excerpt">Why matrix puzzles are the purest window into raw reasoning ability.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/spatial-reasoning-explained/">
+<span class="post-card__cat">Domains</span>
+<h3 class="post-card__title">Spatial reasoning explained</h3>
+<p class="post-card__excerpt">Mental rotation, form perception, and where spatial minds excel.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/working-memory-explained/">
+<span class="post-card__cat">Domains</span>
+<h3 class="post-card__title">Working memory explained</h3>
+<p class="post-card__excerpt">The mental workbench behind every other domain — span, load, and limits.</p>
+<span class="post-card__more">Read</span>
+</a>
+</div>
+<h3 class="group-head">Scores &amp; performance</h3>
+<div class="posts">
+<a class="post-card" href="/blog/average-iq-by-age/">
+<span class="post-card__cat">Data</span>
+<h3 class="post-card__title">How IQ changes with age</h3>
+<p class="post-card__excerpt">Why scores are age-adjusted, and how raw ability shifts across a life.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/sleep-stress-test-performance/">
+<span class="post-card__cat">Performance</span>
+<h3 class="post-card__title">Sleep, stress &amp; test performance</h3>
+<p class="post-card__excerpt">The state factors that move your score — and how to test on a fair day.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/">
+<span class="post-card__cat">All guides</span>
+<h3 class="post-card__title">Browse the full library</h3>
+<p class="post-card__excerpt">Every guide on intelligence, scoring, and cognition in one place.</p>
+<span class="post-card__more">Browse</span>
+</a>
+</div>
+</section>
+<section aria-labelledby="upcoming-h" class="section" id="upcoming">
+<div class="section__head">
+<p class="eyebrow">In development</p>
+<h2 class="section__title" id="upcoming-h">More cognition instruments on the way</h2>
+<p class="section__lead">Each domain deserves its own dedicated instrument. These are being built to the same standard as the flagship — adaptive where it matters, honest everywhere.</p>
+</div>
+<ul class="dev-strip">
+<li><span class="dev-strip__tag">In development</span><span class="dev-strip__name">Logical Reasoning</span><span class="dev-strip__desc">Deduction and rule-finding, isolated.</span></li>
+<li><span class="dev-strip__tag">In development</span><span class="dev-strip__name">Creativity Assessment</span><span class="dev-strip__desc">Divergent thinking beyond one right answer.</span></li>
+</ul>
+</section>
+<section aria-labelledby="faq-h" class="section section--alt" id="faq">
+<div class="section__head">
+<p class="eyebrow">Questions</p>
+<h2 class="section__title" id="faq-h">About this category</h2>
+</div>
+<div class="faq">
+<details class="faq__item">
+<summary>What does the Cognition category cover?</summary>
+<div class="faq__body"><p>Instruments that measure reasoning ability: the flagship adaptive IQ test, plus memory-span, reaction-time, mental-rotation, verbal-reasoning, logical-reasoning, and creativity tests. Each reports honest, percentile-based estimates — and where a score can't be measured honestly, we say so.</p></div>
+</details>
+<details class="faq__item">
+<summary>Why does the IQ test measure five separate domains?</summary>
+<div class="faq__body"><p>Because intelligence isn't one skill. Pattern, numeric, verbal, spatial, and memory reasoning draw on different cognitive machinery, and the balance between them — not just the composite score — is what defines your cognitive archetype.</p></div>
+</details>
+<details class="faq__item">
+<summary>Is a high score in one domain and a low score in another normal?</summary>
+<div class="faq__body"><p>Completely. Uneven profiles are the norm, not the exception. A strong spatial score with weaker verbal reasoning, or the reverse, simply describes the shape of your mind — it's the reason two people with identical composite scores can be entirely different thinkers.</p></div>
+</details>
+</div>
+</section>
+<section aria-labelledby="cta-h" class="cta-band">
+<div aria-hidden="true" class="cta-band__glow"></div>
+<div class="cta-band__inner">
+<h2 class="cta-band__title" id="cta-h">Ready to see how you think?</h2>
+<p class="cta-band__sub">Fifteen minutes from now, you'll know your archetype.</p>
+<a class="btn btn--primary btn--xl" href="/iq-test/">Start the assessment</a>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer__inner">
+<div class="footer__brand">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="footer__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+</a>
+<p class="footer__tagline">One intelligence platform, multiple lenses: cognition, career, learning, and productivity.</p>
+<a class="footer__suite-link" href="/tests/">All assessments</a>
+</div>
+<nav aria-label="Footer" class="footer__grid">
+<div class="footer__col">
+<h3 class="footer__heading">Suite</h3>
+<a href="/cognition/">Cognition</a>
+<a href="/career/">Career</a>
+<a href="/learning/">Learning</a>
+<a href="/productivity/">Productivity</a>
+<a href="https://personica.net/?ref=auroriq" rel="noopener" target="_blank">Psychology ↗</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Assessments</h3>
+<a href="/iq-test/">Adaptive IQ Test</a>
+<a href="/career-interest-test/">Career Interest Test</a>
+<a href="/chronotype-test/">Chronotype Test</a>
+<a href="/focus-test/">Focus Test</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Understand</h3>
+<a href="/blog/">Guides</a>
+<a href="/about-our-test/">Methodology</a>
+<a href="/iq-scores/">IQ score ranges</a>
+<a href="/contact/">Contact</a>
+<a href="/editorial-policy/">Editorial standards</a></div>
+<div class="footer__col">
+<h3 class="footer__heading">Legal</h3>
+<a href="/privacy-policy/">Privacy</a>
+<a href="/terms-of-service/">Terms</a>
+<a href="/ad-disclosure/">Ad Disclosure</a>
+<a href="/disclaimer/">Disclaimer</a>
+<a data-consent-open="" href="#">Cookie settings</a>
+</div>
+</nav>
+</div>
+<div class="footer__base">
+<p class="footer__disclaimer">AurorIQ is an educational self-reflection platform, not a clinical instrument. Scores are estimates and are not intended for clinical, educational-placement, hiring, legal, or diagnostic decisions.</p>
+<p class="footer__copy">© 2026 AurorIQ. All rights reserved.</p>
+</div>
+</footer>
+<script defer="" src="/js/site.bundle.js?v=6.29"></script>
+<script defer="" src="/js/core/state.js?v=6.24"></script>
+<div aria-label="Cookie consent" class="consent-banner" id="consentBanner" role="dialog">
+<p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
+<div class="consent-banner__actions">
+<button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
+<button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
+</div>
+</div>
+<script defer="True" src="/js/discover.js?v=6.24"></script></body>
 </html>

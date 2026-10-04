@@ -1,396 +1,253 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <script>(function(){try{var p=localStorage.getItem('auroriq_theme');var t=(p==='light'||p==='dark')?p:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta charset="UTF-8">
-<meta name="google-adsense-account" content="ca-pub-2335913078491957">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)">
-<meta name="color-scheme" content="dark light">
-<meta name="format-detection" content="telephone=no">
-
+<meta charset="utf-8"/>
+<meta content="ca-pub-2335913078491957" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#060a14" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="#f7f7fb" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
 <title>What Is IQ, Really? A Plain-Language Guide | AurorIQ</title>
-<meta name="description" content="What an IQ score actually represents, where the concept came from, and what intelligence testing can and can't tell you about a mind.">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://auroriq.com/blog/what-is-iq/">
-
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="AurorIQ">
-<meta property="og:url" content="https://auroriq.com/blog/what-is-iq/">
-<meta property="og:title" content="What Is IQ, Really?">
-<meta property="og:description" content="What an IQ score actually represents, where the concept came from, and what intelligence testing can and can't tell you.">
-<meta property="og:image" content="https://auroriq.com/assets/images/og/og-what-is-iq.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What Is IQ, Really?">
-<meta name="twitter:description" content="What an IQ score actually represents, and what it can't tell you.">
-<meta name="twitter:image" content="https://auroriq.com/assets/images/og/og-what-is-iq.png">
-
-<link rel="preload" href="/assets/fonts/syne-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
-
-<link rel="stylesheet" href="/css/bundle.css?v=6.18">
-
-<link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
-<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://auroriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://auroriq.com/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "What Is IQ, Really?",
-          "item": "https://auroriq.com/blog/what-is-iq/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "headline": "What Is IQ, Really?",
-      "description": "What an IQ score actually represents, where the concept came from, and what intelligence testing can and can't tell you.",
-      "url": "https://auroriq.com/blog/what-is-iq/",
-      "datePublished": "2026-06-15",
-      "dateModified": "2026-07-07",
-      "author": {
-        "@type": "Person",
-        "name": "Muhammad",
-        "url": "https://auroriq.com/about-our-test/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AurorIQ",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://auroriq.com/assets/images/icons/icon-512.png"
-        }
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is IQ a fixed number you're born with?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Scores can shift across a lifetime, especially in childhood, and short-term factors like sleep, stress, and familiarity with a test's format can move a score by several points. What's relatively stable is your standing relative to others, not a fixed underlying number."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does a high IQ mean someone is successful?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "IQ correlates with academic performance and some job outcomes, but the correlation is moderate, not absolute. Motivation, opportunity, social skill, and domain-specific knowledge all play substantial roles IQ alone doesn't capture."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is intelligence genetic or environmental?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Both. Research indicates individual differences in adult IQ reflect a substantial genetic component and a substantial environmental one, interacting throughout life. Heritability estimates describe variation within a population, not the fixedness of any one person's score, and environment clearly matters — nutrition, education, and early stimulation all influence cognitive development."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a normal or average IQ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "By design, 100 is the average, and roughly two-thirds of people score between 85 and 115 — one standard deviation either side of the mean. IQ scales are periodically re-normed so the population average stays fixed at 100 across generations."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What's the difference between IQ and intelligence?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "IQ is a standardized score from a specific set of reasoning tasks. Intelligence is the broader, less precisely defined capacity that researchers like Robert Sternberg argue also includes practical and creative ability that conventional IQ tests don't directly measure."
-          }
-        }
-      ]
-    }
-  ]
-}
+<meta content="What an IQ score actually represents, where the concept came from, and what intelligence testing can and can't tell you about a mind." name="description"/>
+<meta content="AurorIQ" name="application-name"/>
+<meta content="What Is IQ, Really? A Plain-Language Guide | AurorIQ — AurorIQ preview" name="twitter:image:alt"/>
+<meta content="What Is IQ, Really? A Plain-Language Guide | AurorIQ — AurorIQ preview" property="og:image:alt"/>
+<meta content="630" property="og:image:height"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="en_US" property="og:locale"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link href="https://auroriq.com/blog/what-is-iq/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="AurorIQ" property="og:site_name"/>
+<meta content="https://auroriq.com/blog/what-is-iq/" property="og:url"/>
+<meta content="What Is IQ, Really? A Plain-Language Guide | AurorIQ" property="og:title"/>
+<meta content="What an IQ score actually represents, where the concept came from, and what intelligence testing can and can" property="og:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-what-is-iq.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="What Is IQ, Really? A Plain-Language Guide | AurorIQ" name="twitter:title"/>
+<meta content="What an IQ score actually represents, where the concept came from, and what intelligence testing can and can" name="twitter:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-what-is-iq.png" name="twitter:image"/>
+<link as="font" crossorigin="" href="/assets/fonts/syne-var.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dmsans-var.woff2" rel="preload" type="font/woff2"/>
+<link href="/css/bundle.css?v=6.24" rel="stylesheet"/>
+<link href="/assets/images/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/images/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/assets/images/icons/favicon.ico" rel="shortcut icon"/>
+<link href="/assets/images/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://auroriq.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "What Is IQ, Really?", "item": "https://auroriq.com/blog/what-is-iq/"}]}, {"@type": "Article", "headline": "What Is IQ, Really?", "description": "What an IQ score actually represents, where the concept came from, and what intelligence testing can and can't tell you.", "url": "https://auroriq.com/blog/what-is-iq/", "datePublished": "2026-06-15", "dateModified": "2026-07-07", "author": {"@type": "Organization", "name": "AurorIQ", "url": "https://auroriq.com/editorial-policy/"}, "publisher": {"@type": "Organization", "@id": "https://auroriq.com/#org", "name": "AurorIQ", "url": "https://auroriq.com/", "logo": {"@type": "ImageObject", "url": "https://auroriq.com/assets/images/icons/icon-512.png", "width": 512, "height": 512}}, "mainEntityOfPage": "https://auroriq.com/blog/what-is-iq/", "inLanguage": "en", "image": "https://auroriq.com/assets/images/og/og-what-is-iq.png"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is IQ a fixed number you're born with?", "acceptedAnswer": {"@type": "Answer", "text": "No. Scores can shift across a lifetime, especially in childhood, and short-term factors like sleep, stress, and familiarity with a test's format can move a score by several points. What's relatively stable is your standing relative to others, not a fixed underlying number."}}, {"@type": "Question", "name": "Does a high IQ mean someone is successful?", "acceptedAnswer": {"@type": "Answer", "text": "IQ correlates with academic performance and some job outcomes, but the correlation is moderate, not absolute. Motivation, opportunity, social skill, and domain-specific knowledge all play substantial roles IQ alone doesn't capture."}}, {"@type": "Question", "name": "Is intelligence genetic or environmental?", "acceptedAnswer": {"@type": "Answer", "text": "Both. Research indicates individual differences in adult IQ reflect a substantial genetic component and a substantial environmental one, interacting throughout life. Heritability estimates describe variation within a population, not the fixedness of any one person's score, and environment clearly matters — nutrition, education, and early stimulation all influence cognitive development."}}, {"@type": "Question", "name": "What is a normal or average IQ?", "acceptedAnswer": {"@type": "Answer", "text": "By design, 100 is the average, and roughly two-thirds of people score between 85 and 115 — one standard deviation either side of the mean. IQ scales are periodically re-normed so the population average stays fixed at 100 across generations."}}, {"@type": "Question", "name": "What's the difference between IQ and intelligence?", "acceptedAnswer": {"@type": "Answer", "text": "IQ is a standardized score from a specific set of reasoning tasks. Intelligence is the broader, less precisely defined capacity that researchers like Robert Sternberg argue also includes practical and creative ability that conventional IQ tests don't directly measure."}}]}]}</script>
+<link href="/css/discover.css?v=6.24" rel="stylesheet"/><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+window.adsbygoogle = window.adsbygoogle || [];
+window.adsbygoogle.pauseAdRequests = 1;
+window.adsbygoogle.requestNonPersonalizedAds = 1;
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2335913078491957" crossorigin="anonymous"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
-<header class="nav" data-nav>
-  <div class="nav__inner">
-    <a class="nav__brand" href="/" aria-label="AurorIQ home">
-      <svg class="nav__mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="auroraMark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#9269f3"/>
-            <stop offset="0.55" stop-color="#22d3ee"/>
-            <stop offset="1" stop-color="#fde68a"/>
-          </linearGradient>
-        </defs>
-        <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 25 C 12 14, 20 14, 24 25" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
-        <circle cx="16" cy="27" r="1.6" fill="#22d3ee"/>
-      </svg>
-      <span class="nav__name">AurorIQ</span>
-    </a>
-
-    <nav class="nav__links" aria-label="Primary">
-      <a href="/#how">How it works</a>
-      <a href="/#domains">Domains</a>
-      <a href="/#archetypes">Archetypes</a>
-      <a href="/blog/" aria-current="page">Learn</a>
-      <a href="/about-our-test/">About</a>
-      <a class="nav__personica" href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener"><span class="nav__personica-dot" aria-hidden="true"></span>Personality</a>
-    </nav>
-
-    <div class="nav__actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Toggle theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </button>
-      <a class="btn btn--primary btn--sm" href="/iq-test/">Take the test</a>
-      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nav__mobile" id="mobileMenu" data-nav-menu hidden>
-    <a href="/#how">How it works</a>
-    <a href="/#domains">Domains</a>
-    <a href="/#archetypes">Archetypes</a>
-    <a href="/blog/">Learn</a>
-    <a href="/about-our-test/">About</a>
-    <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Personality →</a>
-    <a class="btn btn--primary btn--block" href="/iq-test/">Take the test</a>
-  </div>
+<header class="nav nav--suite" data-nav="">
+<div class="nav__inner">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="nav__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+<span aria-hidden="true" class="nav__suite-label">Suite</span>
+</a>
+<nav aria-label="Primary" class="nav__links">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+</nav>
+<div class="nav__actions">
+<button aria-label="Switch to light theme" aria-pressed="false" class="theme-toggle" title="Toggle theme" type="button">
+<svg aria-hidden="true" class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+</button>
+<a class="btn btn--primary btn--sm" href="/iq-test/">Start IQ test</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav__toggle" data-nav-toggle="" type="button"><span></span><span></span><span></span></button>
+</div>
+</div>
+<div class="nav__mobile" data-nav-menu="" hidden="" id="mobileMenu">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+<a href="/about-our-test/">Methodology</a>
+<a class="btn btn--primary btn--block" href="/iq-test/">Start IQ test</a>
+</div>
 </header>
-
 <main id="main">
 <article class="article">
-
-  <nav class="article__breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a><span>/</span>
-    <a href="/blog/">Blog</a><span>/</span>
-    <span>What Is IQ, Really?</span>
-  </nav>
-
-  <header>
-    <p class="article__category">Understanding IQ &middot; Pillar guide</p>
-    <h1 class="article__title">What Is IQ, Really?</h1>
-    <p class="article__dek">A score on a test isn't the same thing as a mind. Here's what IQ actually measures, where the idea came from, and where its limits are.</p>
-    <div class="article__meta">
-      <span>AurorIQ Editorial Team</span>
-      <span class="article__meta-sep">&middot;</span>
-      <span>Updated June 15, 2026</span>
-      <span class="article__meta-sep">&middot;</span>
-      <span>7 min read</span>
-    </div>
-  </header>
-
-  <div class="article__body">
-
-    <p>IQ stands for "intelligence quotient." In practice, it's a standardized score that places your performance on a set of reasoning tasks relative to a population, scaled so the average comes out to 100. It is not a direct measurement of "how smart" someone is in any absolute sense, in the way a thermometer measures temperature. It's a relative position on a curve.</p>
-
-    <p>That distinction matters more than it sounds. A score of 130 doesn't mean you possess some fixed quantity of "intelligence stuff." It means that on the tasks sampled by a particular test, you performed better than roughly 98% of the comparison population the test was built against.</p>
-
-    <h2>Where the idea came from</h2>
-
-    <p>The practical roots of IQ testing trace back to early-20th-century France, where psychologist Alfred Binet was asked to help identify schoolchildren who needed extra academic support. Binet's original tool was diagnostic and practical, not a ranking of human worth, a distinction that gets lost in a lot of popular discussion of IQ today.</p>
-
-    <p>The "quotient" framing came shortly after, when researchers began expressing a child's test performance as a ratio of "mental age" to chronological age. Later in the century, psychologist David Wechsler moved the field toward the deviation-based scoring still used today: instead of a ratio, your score reflects how far you sit from the average of a same-age comparison group, expressed in standard deviation units. That's the same basic statistical approach AurorIQ's adaptive engine uses.</p>
-
-    <div class="article__callout">
-      <p><strong>The core idea:</strong> modern IQ scores are built to follow a normal distribution with a mean of 100 and a standard deviation of 15. A score of 115 means "one standard deviation above average," not "15% smarter."</p>
-    </div>
-
-    <h2>What a modern score actually represents</h2>
-
-    <p>Picture the classic bell curve. Most people cluster near the middle; fewer people sit at the extremes in either direction. A modern IQ score is simply a label for where you land on that curve, derived from your performance across a set of reasoning tasks designed to have known statistical properties.</p>
-
-    <p>This is also why a single point of difference, say 112 versus 114, is close to meaningless. Test-retest variation alone can move a score by several points. What's more informative is the band you fall into: average, high average, superior, and so on, along with the percentile that band corresponds to.</p>
-
-    <h2>Is there really one general "intelligence"?</h2>
-
-    <p>This is one of the oldest debates in psychometrics. In the early 1900s, Charles Spearman observed that people who performed well on one type of reasoning task tended to perform well on others too, and proposed a single underlying general factor, often labeled <em>g</em>. Later researchers, including John Carroll, built more detailed models showing that cognitive ability also breaks down into distinguishable broad abilities (verbal comprehension, spatial visualization, processing speed, and more) sitting beneath that general factor. This broader framework is often called CHC theory, after Cattell, Horn, and Carroll.</p>
-
-    <p>Both ideas are broadly accepted in the field today, not as competing truths but as different resolutions of the same picture: there does appear to be a meaningful general factor, but it expresses itself through several measurably distinct domains. AurorIQ's five-domain structure (pattern, numeric, verbal, spatial, and memory) is a simplified, practical reflection of that broader-abilities tradition.</p>
-
-    <h2>Fluid versus crystallized intelligence</h2>
-
-    <p>One particularly useful split within that broader-abilities tradition, proposed by Raymond Cattell, separates <strong>fluid intelligence</strong> (reasoning with novel problems, independent of prior knowledge) from <strong>crystallized intelligence</strong> (the accumulated knowledge and vocabulary you've built over a lifetime). The two tend to age differently, which is part of why age-adjusted norms exist at all. We go deeper on this distinction in <a href="/blog/fluid-vs-crystallized/">our guide to fluid versus crystallized intelligence</a>.</p>
-
-    <h2>What IQ predicts, and what it doesn't</h2>
-
-    <p>IQ scores correlate, on average, with academic performance and with outcomes in some occupations, particularly ones with high reasoning demands. That's a real, replicated research finding, not a marketing claim.</p>
-
-    <p>But the correlation is moderate, not deterministic, and it leaves enormous room for everything IQ doesn't measure: motivation, conscientiousness, social skill, creativity, domain-specific expertise, and plain opportunity. Psychologist Robert Sternberg has argued for decades that conventional IQ tests capture only a slice of what most people mean by "intelligence" in everyday life, proposing a triarchic model that also accounts for practical and creative ability. We don't take a side in that debate here; it's worth knowing it exists before treating any single score as a verdict on a person.</p>
-
-    <h2>Nature, nurture, and why the debate is heated</h2>
-    <p>No discussion of IQ is complete without the question that makes it contentious: where do the differences come from? The research consensus is that individual differences in adult intelligence reflect <em>both</em> genetic and environmental influences, interacting in ways that resist clean separation. Twin and adoption studies suggest heritability of IQ is substantial and, counterintuitively, tends to <em>rise</em> with age as people increasingly shape their own environments — but heritability is a population statistic about variation within a group, and it says nothing about why groups differ or whether any individual's score is "fixed." Environment demonstrably matters: nutrition, education, early-childhood stimulation, and the Flynn-effect rise in scores across the 20th century all show cognitive performance responding to conditions.</p>
-    <p>The topic became genuinely fraught because IQ testing has a real history of misuse — to justify discriminatory immigration policy, forced sterilization, and pseudo-scientific claims about group hierarchies. That history is a reason for care and humility with the numbers, not a reason to pretend the measurements are meaningless. The defensible middle ground, and the one most working researchers occupy, is that IQ measures something real and predictive while remaining a partial, culturally embedded snapshot that has been, and can still be, badly abused when treated as a verdict on human worth.</p>
-
-    <h2>Why AurorIQ measures the way it does</h2>
-
-    <p>AurorIQ uses an adaptive testing engine: each question is selected based on your live performance, using the same item-response-theory approach behind many modern standardized tests, so the difficulty stays calibrated to you rather than wasting items that are far too easy or far too hard. The result is reported as a score, a percentile, and a confidence range, not just a bare number, because the honest answer is always a range, not a point.</p>
-
-    <p>It's also worth saying plainly: AurorIQ is a self-reflection tool, not a clinical instrument. If you're curious about the traits that shape how you apply your intelligence, <a class="inline-backlink" href="https://personica.net/?ref=auroriq-blog" target="_blank" rel="noopener">Personica</a> maps your personality alongside. A real clinical or educational assessment requires a proctored session with a licensed psychologist using a validated instrument such as the WAIS-IV. You can read more about exactly what AurorIQ does and doesn't measure on <a href="/about-our-test/">our methodology page</a>.</p>
-
-    <h2>Where to go from here</h2>
-    <p>If you've read this far, you now have a more nuanced understanding of what IQ scores actually represent than most people who casually cite them. IQ is a real, well-validated construct that predicts meaningful outcomes — but it's also a specific, limited measurement that captures some cognitive abilities while missing others entirely. The number itself is less important than understanding what it measures, how it was measured, and what its limitations are.</p>
-    <p>If you're curious about your own cognitive profile, you can <a href="/iq-test/">take the AurorIQ adaptive test</a> — it's free, takes about fifteen minutes, and reports your result with a confidence interval that reflects the honest uncertainty inherent in any 25-question assessment. You'll receive a composite score, a percentile rank, and a cognitive archetype that reflects the shape of your profile across five reasoning domains.</p>
-    <p>For further reading, explore our guides on specific aspects of cognitive measurement: <a href="/blog/fluid-vs-crystallized/">fluid versus crystallized intelligence</a> explains why IQ scores change differently across the lifespan; <a href="/blog/iq-test-accuracy/">test accuracy</a> examines what adaptive testing can and can't tell you; and <a href="/blog/reading-your-percentile/">reading your percentile</a> helps you interpret what your rank actually means in practical terms.</p>
-
-    <div class="article__faq">
-      <h2>Common questions</h2>
-
-      <div class="faq">
-        <details class="faq__item">
-          <summary>Is IQ a fixed number you're born with?</summary>
-          <div class="faq__body"><p>No. Scores can shift across a lifetime, especially in childhood, and short-term factors like sleep, stress, and familiarity with a test's format can move a score by several points. What's relatively stable is your standing relative to others, not a fixed underlying number.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>Does a high IQ mean someone is successful?</summary>
-          <div class="faq__body"><p>IQ correlates with academic performance and some job outcomes, but the correlation is moderate, not absolute. Motivation, opportunity, social skill, and domain-specific knowledge all play substantial roles IQ alone doesn't capture.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>Is intelligence genetic or environmental?</summary>
-          <div class="faq__body"><p>Both. Research indicates individual differences in adult IQ reflect a substantial genetic component and a substantial environmental one, interacting throughout life. Heritability estimates describe variation within a population, not the fixedness of any one person's score, and environment clearly matters — nutrition, education, and early stimulation all influence cognitive development.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>What is a normal or average IQ?</summary>
-          <div class="faq__body"><p>By design, 100 is the average, and roughly two-thirds of people score between 85 and 115 — one standard deviation either side of the mean. IQ scales are periodically re-normed so the population average stays fixed at 100 across generations.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>What's the difference between IQ and intelligence?</summary>
-          <div class="faq__body"><p>IQ is a standardized score from a specific set of reasoning tasks. Intelligence is the broader, less precisely defined capacity that researchers like Robert Sternberg argue also includes practical and creative ability that conventional IQ tests don't directly measure.</p></div>
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="article__author">
-    <div class="article__author-avatar" aria-hidden="true"></div>
-    <div>
-      <p class="article__author-name">Muhammad · AurorIQ</p>
-      <p class="article__author-role">Content reviewed against the published research cited throughout this guide.</p>
-    </div>
-  </div>
-
-  <div class="article__related">
-    <h2 class="article__related-title">Related guides</h2>
-    <div class="posts">
-      <a class="post-card" href="/blog/fluid-vs-crystallized/">
-        <span class="post-card__cat">Theory</span>
-        <h3 class="post-card__title">Fluid vs crystallized intelligence</h3>
-        <p class="post-card__excerpt">The two engines of cognition, and why they age differently.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/iq-test-accuracy/">
-        <span class="post-card__cat">Methodology</span>
-        <h3 class="post-card__title">How accurate is an online IQ test?</h3>
-        <p class="post-card__excerpt">What adaptive testing can and can't tell you.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/cognition/">
-        <span class="post-card__cat">Platform</span>
-        <h3 class="post-card__title">The Cognition hub</h3>
-        <p class="post-card__excerpt">Every reasoning instrument and guide on the platform, in one place.</p>
-        <span class="post-card__more">Explore</span>
-      </a>
-    </div>
-  </div>
-
+<nav aria-label="Breadcrumb" class="article__breadcrumbs">
+<a href="/">Home</a><span>/</span>
+<a href="/blog/">Blog</a><span>/</span>
+<span>What Is IQ, Really?</span>
+</nav>
+<header>
+<p class="article__category">Understanding IQ · Pillar guide</p>
+<h1 class="article__title">What Is IQ, Really?</h1>
+<p class="article__dek">A score on a test isn't the same thing as a mind. Here's what IQ actually measures, where the idea came from, and where its limits are.</p>
+<div class="article__meta">
+<span>AurorIQ</span>
+<span class="article__meta-sep">·</span>
+<span>Updated June 15, 2026</span>
+<span class="article__meta-sep">·</span>
+<span>7 min read</span>
+</div>
+</header>
+<div class="article__body">
+<p>IQ stands for "intelligence quotient." In practice, it's a standardized score that places your performance on a set of reasoning tasks relative to a population, scaled so the average comes out to 100. It is not a direct measurement of "how smart" someone is in any absolute sense, in the way a thermometer measures temperature. It's a relative position on a curve.</p>
+<p>That distinction matters more than it sounds. A score of 130 doesn't mean you possess some fixed quantity of "intelligence stuff." It means that on the tasks sampled by a particular test, you performed better than roughly 98% of the comparison population the test was built against.</p>
+<h2>Where the idea came from</h2>
+<p>The practical roots of IQ testing trace back to early-20th-century France, where psychologist Alfred Binet was asked to help identify schoolchildren who needed extra academic support. Binet's original tool was diagnostic and practical, not a ranking of human worth, a distinction that gets lost in a lot of popular discussion of IQ today.</p>
+<p>The "quotient" framing came shortly after, when researchers began expressing a child's test performance as a ratio of "mental age" to chronological age. Later in the century, psychologist David Wechsler moved the field toward the deviation-based scoring still used today: instead of a ratio, your score reflects how far you sit from the average of a same-age comparison group, expressed in standard deviation units. That's the same basic statistical approach AurorIQ's adaptive engine uses.</p>
+<div class="article__callout">
+<p><strong>The core idea:</strong> modern IQ scores are built to follow a normal distribution with a mean of 100 and a standard deviation of 15. A score of 115 means "one standard deviation above average," not "15% smarter."</p>
+</div>
+<h2>What a modern score actually represents</h2>
+<p>Picture the classic bell curve. Most people cluster near the middle; fewer people sit at the extremes in either direction. A modern IQ score is simply a label for where you land on that curve, derived from your performance across a set of reasoning tasks designed to have known statistical properties.</p>
+<p>This is also why a single point of difference, say 112 versus 114, is close to meaningless. Test-retest variation alone can move a score by several points. What's more informative is the band you fall into: average, high average, superior, and so on, along with the percentile that band corresponds to.</p>
+<h2>Is there really one general "intelligence"?</h2>
+<p>This is one of the oldest debates in psychometrics. In the early 1900s, Charles Spearman observed that people who performed well on one type of reasoning task tended to perform well on others too, and proposed a single underlying general factor, often labeled <em>g</em>. Later researchers, including John Carroll, built more detailed models showing that cognitive ability also breaks down into distinguishable broad abilities (verbal comprehension, spatial visualization, processing speed, and more) sitting beneath that general factor. This broader framework is often called CHC theory, after Cattell, Horn, and Carroll.</p>
+<p>Both ideas are broadly accepted in the field today, not as competing truths but as different resolutions of the same picture: there does appear to be a meaningful general factor, but it expresses itself through several measurably distinct domains. AurorIQ's five-domain structure (pattern, numeric, verbal, spatial, and memory) is a simplified, practical reflection of that broader-abilities tradition.</p>
+<h2>Fluid versus crystallized intelligence</h2>
+<p>One particularly useful split within that broader-abilities tradition, proposed by Raymond Cattell, separates <strong>fluid intelligence</strong> (reasoning with novel problems, independent of prior knowledge) from <strong>crystallized intelligence</strong> (the accumulated knowledge and vocabulary you've built over a lifetime). The two tend to age differently, which is part of why age-adjusted norms exist at all. We go deeper on this distinction in <a href="/blog/fluid-vs-crystallized/">our guide to fluid versus crystallized intelligence</a>.</p>
+<h2>What IQ predicts, and what it doesn't</h2>
+<p>IQ scores correlate, on average, with academic performance and with outcomes in some occupations, particularly ones with high reasoning demands. That's a real, replicated research finding, not a marketing claim.</p>
+<p>But the correlation is moderate, not deterministic, and it leaves enormous room for everything IQ doesn't measure: motivation, conscientiousness, social skill, creativity, domain-specific expertise, and plain opportunity. Psychologist Robert Sternberg has argued for decades that conventional IQ tests capture only a slice of what most people mean by "intelligence" in everyday life, proposing a triarchic model that also accounts for practical and creative ability. We don't take a side in that debate here; it's worth knowing it exists before treating any single score as a verdict on a person.</p>
+<h2>Nature, nurture, and why the debate is heated</h2>
+<p>No discussion of IQ is complete without the question that makes it contentious: where do the differences come from? The research consensus is that individual differences in adult intelligence reflect <em>both</em> genetic and environmental influences, interacting in ways that resist clean separation. Twin and adoption studies suggest heritability of IQ is substantial and, counterintuitively, tends to <em>rise</em> with age as people increasingly shape their own environments — but heritability is a population statistic about variation within a group, and it says nothing about why groups differ or whether any individual's score is "fixed." Environment demonstrably matters: nutrition, education, early-childhood stimulation, and the Flynn-effect rise in scores across the 20th century all show cognitive performance responding to conditions.</p>
+<p>The topic became genuinely fraught because IQ testing has a real history of misuse — to justify discriminatory immigration policy, forced sterilization, and pseudo-scientific claims about group hierarchies. That history is a reason for care and humility with the numbers, not a reason to pretend the measurements are meaningless. The defensible middle ground, and the one most working researchers occupy, is that IQ measures something real and predictive while remaining a partial, culturally embedded snapshot that has been, and can still be, badly abused when treated as a verdict on human worth.</p>
+<h2>Why AurorIQ measures the way it does</h2>
+<p>AurorIQ uses an adaptive testing engine: each question is selected based on your live performance, using the same item-response-theory approach behind many modern standardized tests, so the difficulty stays calibrated to you rather than wasting items that are far too easy or far too hard. The result is reported as a score, a percentile, and a confidence range, not just a bare number, because the honest answer is always a range, not a point.</p>
+<p>It's also worth saying plainly: AurorIQ is a self-reflection tool, not a clinical instrument. If you're curious about the traits that shape how you apply your intelligence, <a class="inline-backlink" href="https://personica.net/?ref=auroriq-blog" rel="noopener" target="_blank">Personica</a> maps your personality alongside. A real clinical or educational assessment requires a proctored session with a licensed psychologist using a validated instrument such as the WAIS-IV. You can read more about exactly what AurorIQ does and doesn't measure on <a href="/about-our-test/">our methodology page</a>.</p>
+<h2>Where to go from here</h2>
+<p>If you've read this far, you now have a more nuanced understanding of what IQ scores actually represent than most people who casually cite them. IQ is a real, well-validated construct that predicts meaningful outcomes — but it's also a specific, limited measurement that captures some cognitive abilities while missing others entirely. The number itself is less important than understanding what it measures, how it was measured, and what its limitations are.</p>
+<p>If you're curious about your own cognitive profile, you can <a href="/iq-test/">take the AurorIQ adaptive test</a> — it's free, takes about fifteen minutes, and reports your result with a confidence interval that reflects the honest uncertainty inherent in any 25-question assessment. You'll receive a composite score, a percentile rank, and a cognitive archetype that reflects the shape of your profile across five reasoning domains.</p>
+<p>For further reading, explore our guides on specific aspects of cognitive measurement: <a href="/blog/fluid-vs-crystallized/">fluid versus crystallized intelligence</a> explains why IQ scores change differently across the lifespan; <a href="/blog/iq-test-accuracy/">test accuracy</a> examines what adaptive testing can and can't tell you; and <a href="/blog/reading-your-percentile/">reading your percentile</a> helps you interpret what your rank actually means in practical terms.</p>
+<div class="article__faq">
+<h2>Common questions</h2>
+<div class="faq">
+<details class="faq__item">
+<summary>Is IQ a fixed number you're born with?</summary>
+<div class="faq__body"><p>No. Scores can shift across a lifetime, especially in childhood, and short-term factors like sleep, stress, and familiarity with a test's format can move a score by several points. What's relatively stable is your standing relative to others, not a fixed underlying number.</p></div>
+</details>
+<details class="faq__item">
+<summary>Does a high IQ mean someone is successful?</summary>
+<div class="faq__body"><p>IQ correlates with academic performance and some job outcomes, but the correlation is moderate, not absolute. Motivation, opportunity, social skill, and domain-specific knowledge all play substantial roles IQ alone doesn't capture.</p></div>
+</details>
+<details class="faq__item">
+<summary>Is intelligence genetic or environmental?</summary>
+<div class="faq__body"><p>Both. Research indicates individual differences in adult IQ reflect a substantial genetic component and a substantial environmental one, interacting throughout life. Heritability estimates describe variation within a population, not the fixedness of any one person's score, and environment clearly matters — nutrition, education, and early stimulation all influence cognitive development.</p></div>
+</details>
+<details class="faq__item">
+<summary>What is a normal or average IQ?</summary>
+<div class="faq__body"><p>By design, 100 is the average, and roughly two-thirds of people score between 85 and 115 — one standard deviation either side of the mean. IQ scales are periodically re-normed so the population average stays fixed at 100 across generations.</p></div>
+</details>
+<details class="faq__item">
+<summary>What's the difference between IQ and intelligence?</summary>
+<div class="faq__body"><p>IQ is a standardized score from a specific set of reasoning tasks. Intelligence is the broader, less precisely defined capacity that researchers like Robert Sternberg argue also includes practical and creative ability that conventional IQ tests don't directly measure.</p></div>
+</details>
+</div>
+</div>
+</div>
+<div class="article__author">
+<div aria-hidden="true" class="article__author-avatar"></div>
+<div>
+<p class="article__author-name">AurorIQ</p>
+<p class="article__author-role">Educational guidance · <a href="/editorial-policy/">Editorial standards</a></p>
+</div>
+</div>
+<div class="article__related">
+<h2 class="article__related-title">Related guides</h2>
+<div class="posts">
+<a class="post-card" href="/blog/fluid-vs-crystallized/">
+<span class="post-card__cat">Theory</span>
+<h3 class="post-card__title">Fluid vs crystallized intelligence</h3>
+<p class="post-card__excerpt">The two engines of cognition, and why they age differently.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/iq-test-accuracy/">
+<span class="post-card__cat">Methodology</span>
+<h3 class="post-card__title">How accurate is an online IQ test?</h3>
+<p class="post-card__excerpt">What adaptive testing can and can't tell you.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/cognition/">
+<span class="post-card__cat">Platform</span>
+<h3 class="post-card__title">The Cognition hub</h3>
+<p class="post-card__excerpt">Every reasoning instrument and guide on the platform, in one place.</p>
+<span class="post-card__more">Explore</span>
+</a>
+</div>
+</div>
 </article>
 </main>
-
 <footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <a class="nav__brand" href="/" aria-label="AurorIQ home">
-        <svg class="nav__mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="nav__name">AurorIQ</span>
-      </a>
-      <p class="footer__tagline">A precise instrument for understanding how you think.</p>
-    </div>
-
-    <nav class="footer__grid" aria-label="Footer">
-      <div class="footer__col">
-        <h3 class="footer__heading">Test</h3>
-        <a href="/iq-test/">Take the test</a>
-        <a href="/iq-scores/">Score ranges</a>
-        <a href="/#archetypes">Archetypes</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Learn</h3>
-        <a href="/blog/">All guides</a>
-        <a href="/blog/what-is-iq/">What is IQ</a>
-        <a href="/blog/iq-test-accuracy/">Test accuracy</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">About</h3>
-        <a href="/about-our-test/">Our methodology</a>
-        <a href="/about-our-test/#research">Research foundations</a>
-        <a href="/contact/">Contact us</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Platform</h3>
-        <a href="/#platform">All instruments</a>
-        <a href="/cognition/">Cognition hub</a>
-        <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Psychology &mdash; Personica</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Legal</h3>
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/terms-of-service/">Terms</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="#" data-consent-open>Cookie settings</a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="footer__base">
-    <p class="footer__disclaimer">AurorIQ is an educational self-reflection tool, not a clinical instrument. Scores are estimates and cannot be used for clinical, educational, or legal purposes.</p>
-    <p class="footer__copy">&copy; 2026 AurorIQ. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="/js/core/utils.js" defer></script>
-<script src="/js/main.js" defer></script>
-
-<div class="consent-banner" id="consentBanner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
-  <div class="consent-banner__actions">
-    <button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
-    <button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
-  </div>
+<div class="footer__inner">
+<div class="footer__brand">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="footer__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+</a>
+<p class="footer__tagline">One intelligence platform, multiple lenses: cognition, career, learning, and productivity.</p>
+<a class="footer__suite-link" href="/tests/">All assessments</a>
 </div>
-
-<script src="/js/consent.js" defer></script>
-<script src="/js/theme.js" defer></script>
-</body>
+<nav aria-label="Footer" class="footer__grid">
+<div class="footer__col">
+<h3 class="footer__heading">Suite</h3>
+<a href="/cognition/">Cognition</a>
+<a href="/career/">Career</a>
+<a href="/learning/">Learning</a>
+<a href="/productivity/">Productivity</a>
+<a href="https://personica.net/?ref=auroriq" rel="noopener" target="_blank">Psychology ↗</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Assessments</h3>
+<a href="/iq-test/">Adaptive IQ Test</a>
+<a href="/career-interest-test/">Career Interest Test</a>
+<a href="/chronotype-test/">Chronotype Test</a>
+<a href="/focus-test/">Focus Test</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Understand</h3>
+<a href="/blog/">Guides</a>
+<a href="/about-our-test/">Methodology</a>
+<a href="/iq-scores/">IQ score ranges</a>
+<a href="/contact/">Contact</a>
+<a href="/editorial-policy/">Editorial standards</a></div>
+<div class="footer__col">
+<h3 class="footer__heading">Legal</h3>
+<a href="/privacy-policy/">Privacy</a>
+<a href="/terms-of-service/">Terms</a>
+<a href="/ad-disclosure/">Ad Disclosure</a>
+<a href="/disclaimer/">Disclaimer</a>
+<a data-consent-open="" href="#">Cookie settings</a>
+</div>
+</nav>
+</div>
+<div class="footer__base">
+<p class="footer__disclaimer">AurorIQ is an educational self-reflection platform, not a clinical instrument. Scores are estimates and are not intended for clinical, educational-placement, hiring, legal, or diagnostic decisions.</p>
+<p class="footer__copy">© 2026 AurorIQ. All rights reserved.</p>
+</div>
+</footer>
+<div aria-label="Cookie consent" class="consent-banner" id="consentBanner" role="dialog">
+<p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
+<div class="consent-banner__actions">
+<button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
+<button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
+</div>
+</div>
+<script defer="" src="/js/site.bundle.js?v=6.29"></script>
+<script defer="True" src="/js/discover.js?v=6.24"></script></body>
 </html>

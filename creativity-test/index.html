@@ -1,395 +1,358 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <script>(function(){try{var p=localStorage.getItem('auroriq_theme');var t=(p==='light'||p==='dark')?p:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta charset="UTF-8">
-<meta name="google-adsense-account" content="ca-pub-2335913078491957">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)">
-<meta name="color-scheme" content="dark light">
-<meta name="format-detection" content="telephone=no">
-
+<meta charset="utf-8"/>
+<meta content="ca-pub-2335913078491957" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#060a14" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="#f7f7fb" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
 <title>Creativity Test — Free Divergent Thinking Test | AurorIQ</title>
-<meta name="description" content="Measure divergent thinking with the Alternate Uses Task — list as many uses for an object as you can in two minutes. Honest fluency scoring. Free.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<link rel="canonical" href="https://auroriq.com/creativity-test/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="AurorIQ">
-<meta property="og:url" content="https://auroriq.com/creativity-test/">
-<meta property="og:title" content="Creativity Test — Divergent Thinking | AurorIQ">
-<meta property="og:description" content="The Alternate Uses Task — measure divergent-thinking fluency in two minutes. Honest scoring, no faked originality. Free, on-device.">
-<meta property="og:image" content="https://auroriq.com/assets/images/og/og-creativity-test.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Creativity Test — Divergent Thinking | AurorIQ">
-<meta name="twitter:description" content="The Alternate Uses Task — measure divergent-thinking fluency in two minutes. Honest scoring, no faked originality. Free, on-device.">
-<meta name="twitter:image" content="https://auroriq.com/assets/images/og/og-creativity-test.png">
-
-<link rel="preload" href="/assets/fonts/syne-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
-
-<link rel="stylesheet" href="/css/bundle.css?v=6.18">
-
-<link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
-<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebApplication",
-      "@id": "https://auroriq.com/creativity-test/#app",
-      "name": "AurorIQ Creativity Test",
-      "url": "https://auroriq.com/creativity-test/",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Web",
-      "browserRequirements": "Requires JavaScript",
-      "isPartOf": { "@id": "https://auroriq.com/#website" },
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://auroriq.com/creativity-test/#breadcrumbs",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Cognition", "item": "https://auroriq.com/cognition/" },
-        { "@type": "ListItem", "position": 3, "name": "Creativity Test", "item": "https://auroriq.com/creativity-test/" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://auroriq.com/creativity-test/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does this creativity test measure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Divergent thinking — your ability to generate many different ideas from one starting point — using the Alternate Uses Task. You list as many uses as you can for a common object within two minutes. It measures idea fluency and variety, which is one facet of creativity, not the whole of it."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why don't you score originality?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Because we can't do it honestly. Real originality scoring compares each idea against how rare it is among thousands of other people's answers, which needs a large database or human judgement. This test runs entirely in your browser, so instead of faking an originality number, we measure what we genuinely can — fluency and variety — and say so plainly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What counts as a good fluency score?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For a common object in two minutes, adults typically produce around eight to twelve distinct uses. We place your count against roughly that range. But fluency rewards quantity, not quality — ten obvious ideas score higher than three brilliant ones, which is exactly the limitation of measuring divergent thinking by counting."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a low score a sign I'm not creative?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Not at all. Divergent-thinking fluency is a narrow slice of creativity and correlates only modestly with real-world creative achievement, which also depends on deep knowledge, persistence, and craft. Treat this as a fun warm-up for idea generation, not a verdict on your creative worth."
-          }
-        }
-      ]
-    }
-  ]
-}
+<meta content="Measure divergent thinking with the Alternate Uses Task — list as many uses for an object as you can in two minutes. Honest fluency scoring. Free." name="description"/>
+<meta content="AurorIQ" name="application-name"/>
+<meta content="Creativity Test — Free Divergent Thinking Test | AurorIQ — AurorIQ preview" name="twitter:image:alt"/>
+<meta content="Creativity Test — Free Divergent Thinking Test | AurorIQ — AurorIQ preview" property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link href="https://auroriq.com/creativity-test/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="AurorIQ" property="og:site_name"/>
+<meta content="https://auroriq.com/creativity-test/" property="og:url"/>
+<meta content="Creativity Test — Free Divergent Thinking Test | AurorIQ" property="og:title"/>
+<meta content="Measure divergent thinking with the Alternate Uses Task — list as many uses for an object as you can in two minutes. Honest fluency scoring. Free." property="og:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-creativity-test.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Creativity Test — Free Divergent Thinking Test | AurorIQ" name="twitter:title"/>
+<meta content="Measure divergent thinking with the Alternate Uses Task — list as many uses for an object as you can in two minutes. Honest fluency scoring. Free." name="twitter:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-creativity-test.png" name="twitter:image"/>
+<link as="font" crossorigin="" href="/assets/fonts/syne-var.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dmsans-var.woff2" rel="preload" type="font/woff2"/>
+<link href="/css/bundle.css?v=6.24" rel="stylesheet"/>
+<link href="/assets/images/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/images/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/assets/images/icons/favicon.ico" rel="shortcut icon"/>
+<link href="/assets/images/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://auroriq.com/creativity-test/#app", "name": "AurorIQ Creativity Test", "url": "https://auroriq.com/creativity-test/", "applicationCategory": "EducationalApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "isPartOf": {"@id": "https://auroriq.com/#website"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Measure divergent thinking with the Alternate Uses Task — list as many uses for an object as you can in two minutes. Honest fluency scoring. Free.", "inLanguage": "en", "isAccessibleForFree": true, "publisher": {"@id": "https://auroriq.com/#org"}, "image": "https://auroriq.com/assets/images/og/og-creativity-test.png"}, {"@type": "BreadcrumbList", "@id": "https://auroriq.com/creativity-test/#breadcrumbs", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/"}, {"@type": "ListItem", "position": 2, "name": "Cognition", "item": "https://auroriq.com/cognition/"}, {"@type": "ListItem", "position": 3, "name": "Creativity Test", "item": "https://auroriq.com/creativity-test/"}]}, {"@type": "FAQPage", "@id": "https://auroriq.com/creativity-test/#faq", "mainEntity": [{"@type": "Question", "name": "What does this creativity test measure?", "acceptedAnswer": {"@type": "Answer", "text": "Divergent thinking — your ability to generate many different ideas from one starting point — using the Alternate Uses Task. You list as many uses as you can for a common object within two minutes. It measures idea fluency and variety, which is one facet of creativity, not the whole of it."}}, {"@type": "Question", "name": "Why don't you score originality?", "acceptedAnswer": {"@type": "Answer", "text": "Because we can't do it honestly. Real originality scoring compares each idea against how rare it is among thousands of other people's answers, which needs a large database or human judgement. This test runs entirely in your browser, so instead of faking an originality number, we measure what we genuinely can — fluency and variety — and say so plainly."}}, {"@type": "Question", "name": "What counts as a good fluency score?", "acceptedAnswer": {"@type": "Answer", "text": "For a common object in two minutes, adults typically produce around eight to twelve distinct uses. We place your count against roughly that range. But fluency rewards quantity, not quality — ten obvious ideas score higher than three brilliant ones, which is exactly the limitation of measuring divergent thinking by counting."}}, {"@type": "Question", "name": "Is a low score a sign I'm not creative?", "acceptedAnswer": {"@type": "Answer", "text": "Not at all. Divergent-thinking fluency is a narrow slice of creativity and correlates only modestly with real-world creative achievement, which also depends on deep knowledge, persistence, and craft. Treat this as a fun warm-up for idea generation, not a verdict on your creative worth."}}]}, {"@type": "LearningResource", "@id": "https://auroriq.com/creativity-test/#assessment", "name": "Creativity Test — Free Divergent Thinking Test", "url": "https://auroriq.com/creativity-test/", "description": "Measure divergent thinking with the Alternate Uses Task — list as many uses for an object as you can in two minutes. Honest fluency scoring. Free.", "learningResourceType": "Assessment", "assesses": "divergent idea fluency and variety", "inLanguage": "en", "isAccessibleForFree": true, "publisher": {"@id": "https://auroriq.com/#org"}, "isPartOf": {"@id": "https://auroriq.com/#website"}}]}</script>
+<link href="/css/discover.css?v=6.24" rel="stylesheet"/><link rel="stylesheet" href="/css/reports.css?v=6.27"/><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+window.adsbygoogle = window.adsbygoogle || [];
+window.adsbygoogle.pauseAdRequests = 1;
+window.adsbygoogle.requestNonPersonalizedAds = 1;
 </script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2335913078491957" crossorigin="anonymous"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
-<header class="nav" data-nav>
-  <div class="nav__inner">
-    <a class="nav__brand" href="/" aria-label="AurorIQ home">
-      <svg class="nav__mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="auroraMark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#9269f3"/>
-            <stop offset="0.55" stop-color="#22d3ee"/>
-            <stop offset="1" stop-color="#fde68a"/>
-          </linearGradient>
-        </defs>
-        <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 25 C 12 14, 20 14, 24 25" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
-        <circle cx="16" cy="27" r="1.6" fill="#22d3ee"/>
-      </svg>
-      <span class="nav__name">AurorIQ</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="/#platform">Platform</a>
-      <a href="/#how">How it works</a>
-      <a href="/#archetypes">Archetypes</a>
-      <a href="/blog/">Learn</a>
-      <a href="/about-our-test/">About</a>
-      <a class="nav__personica" href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener"><span class="nav__personica-dot" aria-hidden="true"></span>Personality</a>
-    </nav>
-    <div class="nav__actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Toggle theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </button>
-      <a class="btn btn--primary btn--sm" href="/iq-test/">Take the test</a>
-      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nav__mobile" id="mobileMenu" data-nav-menu hidden>
-    <a href="/#platform">Platform</a>
-    <a href="/#how">How it works</a>
-    <a href="/#archetypes">Archetypes</a>
-    <a href="/blog/">Learn</a>
-    <a href="/about-our-test/">About</a>
-    <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Personality →</a>
-    <a class="btn btn--primary btn--block" href="/iq-test/">Take the test</a>
-  </div>
-</header>
-
-<main id="main">
-
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="/">Home</a></li>
-      <li><a href="/cognition/">Cognition</a></li>
-      <li><span aria-current="page">Creativity Test</span></li>
-    </ol>
-  </nav>
-
-  <section class="cat-hero" aria-labelledby="tool-h">
-    <div class="cat-hero__glow" aria-hidden="true"></div>
-    <div class="cat-hero__inner">
-      <p class="eyebrow"><span class="eyebrow__dot"></span>Cognition · 2 minutes</p>
-      <h1 id="tool-h" class="cat-hero__title">How many ideas can you <span class="text-aurora">unlock</span>?</h1>
-      <p class="cat-hero__sub">The Alternate Uses Task: you'll get one everyday object and two minutes to list as many different uses as you can. It measures divergent thinking — and we're upfront that it scores idea fluency, not the originality we can't measure honestly in your browser.</p>
-    </div>
-
-    <div class="cr-app" data-creativity-app data-time-ms="120000">
-
-      <div data-cr-screen="intro">
-        <p class="cr-meta">Alternate Uses Task · 2:00 · On-device</p>
-        <p class="cr-app__hint">When you begin, you'll see an object and a two-minute timer. Type one use per line — the more different, the better. Don't overthink it; quantity and range are what this measures. Ideas that repeat or just reword each other only count once.</p>
-        <button class="btn btn--primary btn--lg" type="button" data-cr-start>Begin the test</button>
-      </div>
-
-      <div data-cr-screen="play" hidden>
-        <p class="cr-object"><span class="cr-object__lead">Uses for</span> <span data-cr-object>a paperclip</span></p>
-        <p class="cr-hint" data-cr-hint>Think past the obvious.</p>
-        <div class="cr-bar">
-          <span class="cr-timer" data-cr-timer aria-live="off">2:00</span>
-          <span class="cr-count" data-cr-count>0 ideas</span>
-        </div>
-        <label class="sr-only" for="crInput">List uses, one per line</label>
-        <textarea class="cr-input" id="crInput" data-cr-input placeholder="One use per line…&#10;e.g. bookmark&#10;hold papers together&#10;pick a lock" autocomplete="off" spellcheck="true"></textarea>
-        <div class="cr-actions">
-          <button class="btn btn--ghost" type="button" data-cr-done>I'm done early</button>
-        </div>
-      </div>
-
-      <div data-cr-screen="results" hidden>
-        <h2 class="rd-title">Your divergent thinking</h2>
-        <div class="cr-results">
-          <div class="cr-result cr-result--fluency">
-            <span class="cr-result__k">Fluency</span>
-            <span class="cr-result__v" data-res-fluency>–</span>
-          </div>
-          <div class="cr-result">
-            <span class="cr-result__k">Variety</span>
-            <span class="cr-result__v" data-res-variety>–</span>
-          </div>
-          <div class="cr-result">
-            <span class="cr-result__k">Percentile</span>
-            <span class="cr-result__v" data-res-pct>–</span>
-          </div>
-        </div>
-        <div class="cr-ideas">
-          <p class="cr-ideas__k">Your distinct ideas</p>
-          <ul data-res-list></ul>
-        </div>
-        <p class="cr-verdict"><strong>What this does and doesn't tell you.</strong> Fluency is the count of your distinct ideas; variety counts how many different approaches they took. The percentile places your fluency against approximate adult norms. What it deliberately does <em>not</em> include is originality — how unusual your ideas are — because that can't be measured honestly on-device. Ten obvious ideas will outscore three brilliant ones here, which is the built-in limit of measuring creativity by counting.</p>
-        <p class="cr-note">Divergent-thinking fluency is one narrow facet of creativity and correlates only modestly with real creative achievement, which also rests on knowledge, persistence, and craft. Treat this as a fun idea-generation warm-up, not a verdict on your creativity.</p>
-        <div class="cr-actions">
-          <button class="btn btn--ghost" type="button" data-cr-retry>Try another object</button>
-          <a class="btn btn--primary" href="/iq-test/">Take the full IQ test</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section section--alt" id="about-instrument" aria-labelledby="about-h">
-    <div class="section__head">
-      <p class="eyebrow">About this instrument</p>
-      <h2 id="about-h" class="section__title">What this measures — and what it doesn't</h2>
-    </div>
-
-    <ul class="engine">
-      <li class="engine-card">
-        <span class="engine-card__k">Measures</span>
-        <h3 class="engine-card__title">Divergent thinking</h3>
-        <p class="engine-card__text">The ability to branch outward from one starting point and generate many possibilities — the ideation phase of creative work. The Alternate Uses Task is its most established laboratory measure.</p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Method</span>
-        <h3 class="engine-card__title">Alternate Uses, 2 minutes</h3>
-        <p class="engine-card__text">One common object, a two-minute clock, and free text — one idea per line. Repeated or reworded ideas collapse to one, so padding the list doesn't help. Fluency and variety are computed live and on submit.</p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Result</span>
-        <h3 class="engine-card__title">Fluency, variety, percentile</h3>
-        <p class="engine-card__text">A count of distinct ideas, a count of distinct approaches, and an approximate fluency percentile. Originality is discussed but never scored — because faking a number we can't compute would betray the whole point.</p>
-      </li>
-      <li class="engine-card">
-        <span class="engine-card__k">Limits</span>
-        <h3 class="engine-card__title">Honest limits</h3>
-        <p class="engine-card__text">Fluency rewards quantity over quality, and divergent thinking is only one slice of creativity. This is the least-validated measure on the platform, and we'd rather say that than oversell it. It's a warm-up, not an assessment.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section" id="learn" aria-labelledby="learn-h">
-    <div class="section__head">
-      <p class="eyebrow">Go deeper</p>
-      <h2 id="learn-h" class="section__title">The science behind this instrument</h2>
-    </div>
-    <div class="posts">
-      <a class="post-card" href="/blog/fluid-vs-crystallized/">
-        <span class="post-card__cat">Theory</span>
-        <h3 class="post-card__title">Fluid vs crystallized intelligence</h3>
-        <p class="post-card__excerpt">How raw idea-generation relates to the two broad kinds of intelligence.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/does-brain-training-work/">
-        <span class="post-card__cat">Fundamentals</span>
-        <h3 class="post-card__title">Does brain training work?</h3>
-        <p class="post-card__excerpt">What the evidence says about "boosting creativity" — and what it doesn't.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/what-is-iq/">
-        <span class="post-card__cat">Fundamentals</span>
-        <h3 class="post-card__title">What is IQ, really?</h3>
-        <p class="post-card__excerpt">Why creativity and IQ overlap far less than people assume.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="faq" aria-labelledby="faq-h">
-    <div class="section__head">
-      <p class="eyebrow">Questions</p>
-      <h2 id="faq-h" class="section__title">Before you begin</h2>
-    </div>
-    <div class="faq">
-      <details class="faq__item">
-        <summary>What does this creativity test measure?</summary>
-        <div class="faq__body"><p>Divergent thinking — your ability to generate many different ideas from one starting point — using the Alternate Uses Task. You list as many uses as you can for a common object within two minutes. It measures idea fluency and variety, which is one facet of creativity, not the whole of it.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Why don't you score originality?</summary>
-        <div class="faq__body"><p>Because we can't do it honestly. Real originality scoring compares each idea against how rare it is among thousands of other people's answers, which needs a large database or human judgement. This test runs entirely in your browser, so instead of faking an originality number, we measure what we genuinely can — fluency and variety — and say so plainly.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>What counts as a good fluency score?</summary>
-        <div class="faq__body"><p>For a common object in two minutes, adults typically produce around eight to twelve distinct uses. We place your count against roughly that range. But fluency rewards quantity, not quality — ten obvious ideas score higher than three brilliant ones, which is exactly the limitation of measuring divergent thinking by counting.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Is a low score a sign I'm not creative?</summary>
-        <div class="faq__body"><p>Not at all. Divergent-thinking fluency is a narrow slice of creativity and correlates only modestly with real-world creative achievement, which also depends on deep knowledge, persistence, and craft. Treat this as a fun warm-up for idea generation, not a verdict on your creative worth.</p></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="cta-band" aria-labelledby="cta-h">
-    <div class="cta-band__glow" aria-hidden="true"></div>
-    <div class="cta-band__inner">
-      <h2 id="cta-h" class="cta-band__title">Ideas are one thing. Reasoning is another.</h2>
-      <p class="cta-band__sub">The full adaptive test maps reasoning across five cognitive domains.</p>
-      <a class="btn btn--primary btn--xl" href="/iq-test/">Start the assessment</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <a class="nav__brand" href="/" aria-label="AurorIQ home">
-        <svg class="nav__mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="nav__name">AurorIQ</span>
-      </a>
-      <p class="footer__tagline">Instruments for the curious mind — free, honest, science-grounded.</p>
-    </div>
-
-    <nav class="footer__grid" aria-label="Footer">
-      <div class="footer__col">
-        <h3 class="footer__heading">Test</h3>
-        <a href="/iq-test/">Take the test</a>
-        <a href="/iq-scores/">Score ranges</a>
-        <a href="/#archetypes">Archetypes</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Learn</h3>
-        <a href="/blog/">All guides</a>
-        <a href="/blog/what-is-iq/">What is IQ</a>
-        <a href="/blog/iq-test-accuracy/">Test accuracy</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">About</h3>
-        <a href="/about-our-test/">Our methodology</a>
-        <a href="/about-our-test/#research">Research foundations</a>
-        <a href="/contact/">Contact us</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Platform</h3>
-        <a href="/#platform">All instruments</a>
-        <a href="/cognition/">Cognition hub</a>
-        <a href="/learning/">Learning hub</a>
-        <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Psychology &mdash; Personica</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Legal</h3>
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/terms-of-service/">Terms</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="#" data-consent-open>Cookie settings</a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="footer__base">
-    <p class="footer__disclaimer">AurorIQ is an educational self-reflection tool, not a clinical instrument. Scores are estimates and cannot be used for clinical, educational, or legal purposes.</p>
-    <p class="footer__copy">&copy; 2026 AurorIQ. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="/js/core/utils.js" defer></script>
-<script src="/js/core/state.js" defer></script>
-<script src="/js/main.js" defer></script>
-<script src="/js/tools/stats.js" defer></script>
-<script src="/js/tools/creativity.js" defer></script>
-
-<div class="consent-banner" id="consentBanner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
-  <div class="consent-banner__actions">
-    <button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
-    <button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
-  </div>
+<header class="nav nav--suite" data-nav="">
+<div class="nav__inner">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="nav__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+<span aria-hidden="true" class="nav__suite-label">Suite</span>
+</a>
+<nav aria-label="Primary" class="nav__links">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+</nav>
+<div class="nav__actions">
+<button aria-label="Switch to light theme" aria-pressed="false" class="theme-toggle" title="Toggle theme" type="button">
+<svg aria-hidden="true" class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+</button>
+<a class="btn btn--primary btn--sm" href="/iq-test/">Start IQ test</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav__toggle" data-nav-toggle="" type="button"><span></span><span></span><span></span></button>
 </div>
-
-<script src="/js/consent.js" defer></script>
-<script src="/js/theme.js" defer></script>
-</body>
+</div>
+<div class="nav__mobile" data-nav-menu="" hidden="" id="mobileMenu">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+<a href="/about-our-test/">Methodology</a>
+<a class="btn btn--primary btn--block" href="/iq-test/">Start IQ test</a>
+</div>
+</header>
+<main id="main"><noscript><p class="assessment-limits">This assessment needs JavaScript to run and calculate your result. You can still read its method, limits and guidance below.</p></noscript>
+<nav aria-label="Breadcrumb" class="crumbs">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/cognition/">Cognition</a></li>
+<li><span aria-current="page">Creativity Test</span></li>
+</ol>
+</nav>
+<section aria-labelledby="tool-h" class="cat-hero">
+<div aria-hidden="true" class="cat-hero__glow"></div>
+<div class="cat-hero__inner">
+<p class="eyebrow"><span class="eyebrow__dot"></span>Cognition · 2 minutes</p>
+<h1 class="cat-hero__title" id="tool-h">How many ideas can you <span class="text-aurora">unlock</span>?</h1>
+<p class="cat-hero__sub">The Alternate Uses Task: you'll get one everyday object and two minutes to list as many different uses as you can. It measures divergent thinking — and we're upfront that it scores idea fluency, not the originality we can't measure honestly in your browser.</p>
+</div>
+<div class="cr-app" data-creativity-app="" data-time-ms="120000">
+<div data-cr-screen="intro">
+<p class="cr-meta">Alternate Uses Task · 2:00 · On-device</p>
+<p class="cr-app__hint">When you begin, you'll see an object and a two-minute timer. Type one use per line — the more different, the better. Don't overthink it; quantity and range are what this measures. Ideas that repeat or just reword each other only count once.</p>
+<button class="btn btn--primary btn--lg" data-cr-start="" type="button">Begin the test</button>
+</div>
+<div data-cr-screen="play" hidden="">
+<p class="cr-object"><span class="cr-object__lead">Uses for</span> <span data-cr-object="">a paperclip</span></p>
+<p class="cr-hint" data-cr-hint="">Think past the obvious.</p>
+<div class="cr-bar">
+<span aria-live="off" class="cr-timer" data-cr-timer="">2:00</span>
+<span class="cr-count" data-cr-count="">0 ideas</span>
+</div>
+<label class="sr-only" for="crInput">List uses, one per line</label>
+<textarea autocomplete="off" class="cr-input" data-cr-input="" id="crInput" placeholder="One use per line…
+e.g. bookmark
+hold papers together
+pick a lock" spellcheck="true"></textarea>
+<div class="cr-actions">
+<button class="btn btn--ghost" data-cr-done="" type="button">I'm done early</button>
+</div>
+</div>
+<div data-cr-screen="results" hidden="">
+<h2 class="rd-title">Your divergent thinking</h2>
+<div class="cr-results">
+<div class="cr-result cr-result--fluency">
+<span class="cr-result__k">Fluency</span>
+<span class="cr-result__v" data-res-fluency="">–</span>
+</div>
+<div class="cr-result">
+<span class="cr-result__k">Variety</span>
+<span class="cr-result__v" data-res-variety="">–</span>
+</div>
+<div class="cr-result">
+<span class="cr-result__k">Percentile</span>
+<span class="cr-result__v" data-res-pct="">–</span>
+</div>
+</div>
+<div class="cr-ideas">
+<p class="cr-ideas__k">Your distinct ideas</p>
+<ul data-res-list=""></ul>
+</div>
+<p class="cr-verdict"><strong>What this does and doesn't tell you.</strong> Fluency is the count of your distinct ideas; variety counts how many different approaches they took. The percentile places your fluency against internal illustrative references. What it deliberately does <em>not</em> include is originality — how unusual your ideas are — because that can't be measured honestly on-device. Ten obvious ideas will outscore three brilliant ones here, which is the built-in limit of measuring creativity by counting.</p>
+<p class="cr-note">Divergent-thinking fluency is one narrow facet of creativity and correlates only modestly with real creative achievement, which also rests on knowledge, persistence, and craft. Treat this as a fun idea-generation warm-up, not a verdict on your creativity.</p>
+<div class="cr-actions">
+<button class="btn btn--ghost" data-cr-retry="" type="button">Try another object</button>
+<a class="btn btn--primary" href="/iq-test/">Take the full IQ test</a>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="about-h" class="section section--alt" id="about-instrument">
+<div class="section__head">
+<p class="eyebrow">About this instrument</p>
+<h2 class="section__title" id="about-h">What this measures — and what it doesn't</h2>
+</div>
+<ul class="engine">
+<li class="engine-card">
+<span class="engine-card__k">Measures</span>
+<h3 class="engine-card__title">Divergent thinking</h3>
+<p class="engine-card__text">The ability to branch outward from one starting point and generate many possibilities — the ideation phase of creative work. The Alternate Uses Task is its most established laboratory measure.</p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Method</span>
+<h3 class="engine-card__title">Alternate Uses, 2 minutes</h3>
+<p class="engine-card__text">One common object, a two-minute clock, and free text — one idea per line. Repeated or reworded ideas collapse to one, so padding the list doesn't help. Fluency and variety are computed live and on submit.</p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Result</span>
+<h3 class="engine-card__title">Fluency, variety, percentile</h3>
+<p class="engine-card__text">A count of distinct ideas, a count of distinct approaches, and an approximate fluency percentile. Originality is discussed but never scored — because faking a number we can't compute would betray the whole point.</p>
+</li>
+<li class="engine-card">
+<span class="engine-card__k">Limits</span>
+<h3 class="engine-card__title">Honest limits</h3>
+<p class="engine-card__text">Fluency rewards quantity over quality, and divergent thinking is only one slice of creativity. This is the least-validated measure on the platform, and we'd rather say that than oversell it. It's a warm-up, not an assessment.</p>
+</li>
+</ul>
+</section>
+<section aria-labelledby="scoring-evidence-h" class="section" id="scoring-and-evidence">
+<div class="section__head">
+<p class="eyebrow">Scoring &amp; evidence</p>
+<h2 class="section__title" id="scoring-evidence-h">How the creativity result is built</h2>
+</div>
+<div class="methodology-copy">
+<p>The task is a two-minute alternate-uses exercise. The scoring script normalizes and de-duplicates submitted ideas, counts unique responses as <strong>fluency</strong>, and uses distinct leading content words as a simple variety indicator. Fluency is then compared with an approximate built-in reference distribution to produce a percentile-style display.</p>
+<p>That is intentionally a narrow measure. Divergent-thinking fluency is not the same thing as artistic quality, originality judged by experts, creative achievement, persistence, or domain mastery. The current automated scoring does not make sophisticated semantic judgments about whether one idea is genuinely more original than another.</p>
+<p>Use the result as a structured idea-generation exercise. The approximate reference values are not a representative AurorIQ norm, and the tool should not be used to label someone's overall creativity or potential.</p>
+<p class="trust-note"><strong>Interpretation standard:</strong> this result is designed for education and self-reflection. Unless a page explicitly documents representative norms and validation evidence, percentile-style or 1–99 outputs should be read as approximate internal references—not clinical, diagnostic, hiring, admissions, or credentialing scores. Read the full <a href="/about-our-test/">methodology and validation status</a>.</p>
+</div>
+</section>
+<section aria-labelledby="learn-h" class="section" id="learn">
+<div class="section__head">
+<p class="eyebrow">Go deeper</p>
+<h2 class="section__title" id="learn-h">The science behind this instrument</h2>
+</div>
+<div class="posts">
+<a class="post-card" href="/blog/fluid-vs-crystallized/">
+<span class="post-card__cat">Theory</span>
+<h3 class="post-card__title">Fluid vs crystallized intelligence</h3>
+<p class="post-card__excerpt">How raw idea-generation relates to the two broad kinds of intelligence.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/does-brain-training-work/">
+<span class="post-card__cat">Fundamentals</span>
+<h3 class="post-card__title">Does brain training work?</h3>
+<p class="post-card__excerpt">What the evidence says about "boosting creativity" — and what it doesn't.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/what-is-iq/">
+<span class="post-card__cat">Fundamentals</span>
+<h3 class="post-card__title">What is IQ, really?</h3>
+<p class="post-card__excerpt">Why creativity and IQ overlap far less than people assume.</p>
+<span class="post-card__more">Read</span>
+</a>
+</div>
+</section>
+<section aria-labelledby="faq-h" class="section section--alt" id="faq">
+<div class="section__head">
+<p class="eyebrow">Questions</p>
+<h2 class="section__title" id="faq-h">Before you begin</h2>
+</div>
+<div class="faq">
+<details class="faq__item">
+<summary>What does this creativity test measure?</summary>
+<div class="faq__body"><p>Divergent thinking — your ability to generate many different ideas from one starting point — using the Alternate Uses Task. You list as many uses as you can for a common object within two minutes. It measures idea fluency and variety, which is one facet of creativity, not the whole of it.</p></div>
+</details>
+<details class="faq__item">
+<summary>Why don't you score originality?</summary>
+<div class="faq__body"><p>Because we can't do it honestly. Real originality scoring compares each idea against how rare it is among thousands of other people's answers, which needs a large database or human judgement. This test runs entirely in your browser, so instead of faking an originality number, we measure what we genuinely can — fluency and variety — and say so plainly.</p></div>
+</details>
+<details class="faq__item">
+<summary>What counts as a good fluency score?</summary>
+<div class="faq__body"><p>For a common object in two minutes, adults typically produce around eight to twelve distinct uses. We place your count against roughly that range. But fluency rewards quantity, not quality — ten obvious ideas score higher than three brilliant ones, which is exactly the limitation of measuring divergent thinking by counting.</p></div>
+</details>
+<details class="faq__item">
+<summary>Is a low score a sign I'm not creative?</summary>
+<div class="faq__body"><p>Not at all. Divergent-thinking fluency is a narrow slice of creativity and correlates only modestly with real-world creative achievement, which also depends on deep knowledge, persistence, and craft. Treat this as a fun warm-up for idea generation, not a verdict on your creative worth.</p></div>
+</details>
+</div>
+</section>
+<section aria-labelledby="cta-h" class="cta-band">
+<div aria-hidden="true" class="cta-band__glow"></div>
+<div class="cta-band__inner">
+<h2 class="cta-band__title" id="cta-h">Ideas are one thing. Reasoning is another.</h2>
+<p class="cta-band__sub">The full adaptive test maps reasoning across five cognitive domains.</p>
+<a class="btn btn--primary btn--xl" href="/iq-test/">Start the assessment</a>
+</div>
+</section>
+<section aria-labelledby="suite-hub-h" class="suite-hub">
+<div class="suite-hub__inner">
+<div class="suite-hub__head">
+<p class="eyebrow"><span class="eyebrow__dot"></span>AurorIQ Suite Hub</p>
+<h2 class="suite-hub__title" id="suite-hub-h">One result is one angle. Build a fuller profile.</h2>
+</div>
+<div class="suite-hub__grid">
+<a class="suite-card suite-card--recommended" data-suite-accent="career" href="/career-interest-test/">
+<span class="suite-card__icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"></path></svg></span>
+<span class="suite-card__badge">Recommended next</span>
+<h3 class="suite-card__title">Career Interest Test</h3>
+<p class="suite-card__text">Pair divergent-thinking output with the work themes that energize you.</p>
+<span class="suite-card__cta">Continue your profile <span aria-hidden="true">→</span></span>
+</a>
+<a class="suite-card" data-suite-accent="cognition" href="/iq-test/">
+<span class="suite-card__icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9.5 4.5a3 3 0 0 0-5 2.2 3.5 3.5 0 0 0 .8 6.7A3.5 3.5 0 0 0 9.5 19V4.5Zm5 0a3 3 0 0 1 5 2.2 3.5 3.5 0 0 1-.8 6.7A3.5 3.5 0 0 1 14.5 19V4.5ZM9.5 9H7m7.5 3H17m-7.5 3H7m7.5-6H17"></path></svg></span>
+<span class="suite-card__meta">Cognition</span>
+<h3 class="suite-card__title">Adaptive IQ Test</h3>
+<p class="suite-card__text">Add convergent reasoning and working-memory measures.</p>
+<span class="suite-card__cta">Continue your profile <span aria-hidden="true">→</span></span>
+</a>
+<a class="suite-card" data-suite-accent="productivity" href="/chronotype-test/">
+<span class="suite-card__icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 1.5M9 3h6"></path></svg></span>
+<span class="suite-card__meta">Productivity</span>
+<h3 class="suite-card__title">Chronotype Test</h3>
+<p class="suite-card__text">Explore when idea generation may fit your daily rhythm.</p>
+<span class="suite-card__cta">Continue your profile <span aria-hidden="true">→</span></span>
+</a>
+<a class="suite-card" data-suite-accent="learning" href="/focus-test/">
+<span class="suite-card__icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Zm16 0A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"></path></svg></span>
+<span class="suite-card__meta">Learning</span>
+<h3 class="suite-card__title">Focus Test</h3>
+<p class="suite-card__text">Compare divergent fluency with sustained-attention control.</p>
+<span class="suite-card__cta">Continue your profile <span aria-hidden="true">→</span></span>
+</a>
+</div>
+<div class="suite-hub__footer">
+<a href="/tests/">All assessments</a>
+<span aria-hidden="true">•</span>
+<a href="/about-our-test/">How AurorIQ interprets results</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="next-use" class="guide-next"><h2 id="next-use">Explore categories, not just quantity</h2><p>After the timed task, group your ideas by purpose or material. Many variations of one idea differ from several distinct approaches. This tool measures idea fluency; it cannot establish originality or overall creativity.</p><a href="/work-style-test/">Try Work Style Profiler</a><a href="/tests/">Compare all assessments</a></section></main>
+<footer class="footer">
+<div class="footer__inner">
+<div class="footer__brand">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="footer__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+</a>
+<p class="footer__tagline">One intelligence platform, multiple lenses: cognition, career, learning, and productivity.</p>
+<a class="footer__suite-link" href="/tests/">All assessments</a>
+</div>
+<nav aria-label="Footer" class="footer__grid">
+<div class="footer__col">
+<h3 class="footer__heading">Suite</h3>
+<a href="/cognition/">Cognition</a>
+<a href="/career/">Career</a>
+<a href="/learning/">Learning</a>
+<a href="/productivity/">Productivity</a>
+<a href="https://personica.net/?ref=auroriq" rel="noopener" target="_blank">Psychology ↗</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Assessments</h3>
+<a href="/iq-test/">Adaptive IQ Test</a>
+<a href="/career-interest-test/">Career Interest Test</a>
+<a href="/chronotype-test/">Chronotype Test</a>
+<a href="/focus-test/">Focus Test</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Understand</h3>
+<a href="/blog/">Guides</a>
+<a href="/about-our-test/">Methodology</a>
+<a href="/iq-scores/">IQ score ranges</a>
+<a href="/contact/">Contact</a>
+<a href="/editorial-policy/">Editorial standards</a></div>
+<div class="footer__col">
+<h3 class="footer__heading">Legal</h3>
+<a href="/privacy-policy/">Privacy</a>
+<a href="/terms-of-service/">Terms</a>
+<a href="/ad-disclosure/">Ad Disclosure</a>
+<a href="/disclaimer/">Disclaimer</a>
+<a data-consent-open="" href="#">Cookie settings</a>
+</div>
+</nav>
+</div>
+<div class="footer__base">
+<p class="footer__disclaimer">AurorIQ is an educational self-reflection platform, not a clinical instrument. Scores are estimates and are not intended for clinical, educational-placement, hiring, legal, or diagnostic decisions.</p>
+<p class="footer__copy">© 2026 AurorIQ. All rights reserved.</p>
+</div>
+</footer>
+<script defer="" src="/js/site.bundle.js?v=6.29"></script>
+<script defer="" src="/js/core/state.js?v=6.24"></script>
+<script defer src="/js/reports/insights.js?v=6.27"></script>
+<script defer="" src="/js/tools/stats.js?v=6.24"></script>
+<script defer="" src="/js/tools/creativity.js?v=6.26"></script>
+<div aria-label="Cookie consent" class="consent-banner" id="consentBanner" role="dialog">
+<p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
+<div class="consent-banner__actions">
+<button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
+<button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
+</div>
+</div>
+<script defer="True" src="/js/discover.js?v=6.24"></script></body>
 </html>

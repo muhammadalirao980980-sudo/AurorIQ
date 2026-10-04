@@ -1,410 +1,279 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <script>(function(){try{var p=localStorage.getItem('auroriq_theme');var t=(p==='light'||p==='dark')?p:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta charset="UTF-8">
-<meta name="google-adsense-account" content="ca-pub-2335913078491957">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#060a14" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f7f7fb" media="(prefers-color-scheme: light)">
-<meta name="color-scheme" content="dark light">
-<meta name="format-detection" content="telephone=no">
-
-<title>Reading Your Percentile: What "Top 5%" Actually Means | AurorIQ</title>
-<meta name="description" content="What a percentile actually represents, why small score differences matter less than people assume, and how to read a result without overreacting to it.">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://auroriq.com/blog/reading-your-percentile/">
-
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="AurorIQ">
-<meta property="og:url" content="https://auroriq.com/blog/reading-your-percentile/">
-<meta property="og:title" content="Reading Your Percentile">
-<meta property="og:description" content="What 'top 5%' actually means, and why small score differences matter less than people assume.">
-<meta property="og:image" content="https://auroriq.com/assets/images/og/og-default.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Reading Your Percentile">
-<meta name="twitter:description" content="What a percentile actually represents.">
-<meta name="twitter:image" content="https://auroriq.com/assets/images/og/og-default.png">
-
-<link rel="preload" href="/assets/fonts/syne-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin>
-
-<link rel="stylesheet" href="/css/bundle.css?v=6.18">
-
-<link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
-<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
-<link rel="manifest" href="/site.webmanifest">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://auroriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://auroriq.com/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Reading Your Percentile",
-          "item": "https://auroriq.com/blog/reading-your-percentile/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "headline": "Reading Your Percentile: What \"Top 5%\" Actually Means",
-      "description": "What a percentile actually represents, and why small score differences matter less than people assume.",
-      "url": "https://auroriq.com/blog/reading-your-percentile/",
-      "datePublished": "2026-06-20",
-      "dateModified": "2026-07-07",
-      "author": {
-        "@type": "Person",
-        "name": "Muhammad",
-        "url": "https://auroriq.com/about-our-test/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AurorIQ",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://auroriq.com/assets/images/icons/icon-512.png"
-        }
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does it mean to be in the top 5%?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Being in the top 5% means your score is higher than approximately 95% of the comparison population the test was normed against. It corresponds to roughly an IQ of 125 on a standard scale with a mean of 100 and standard deviation of 15."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the 84th percentile a good score?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It corresponds to an IQ of about 115 — one standard deviation above the mean, higher than roughly five out of six people. That's solidly and unambiguously above average, at the doorway of the High Average band."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What IQ is the 99th percentile?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "About 135 on a standard scale (mean 100, standard deviation 15). One person in a hundred scores at or above that level."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can my percentile change if I retake the test?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, within limits. Ordinary measurement error, day-to-day state, and practice effects can move a score several points between sittings, and near the middle of the distribution a few points translates into a noticeable percentile shift. Your broad band is much more stable than your exact percentile."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does the same score difference matter more near the extremes?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Because the normal distribution thins out toward its tails, the same raw point difference represents a larger percentile jump far from the mean than it does near the middle, where most of the population is clustered tightly together."
-          }
-        }
-      ]
-    }
-  ]
-}
+<meta charset="utf-8"/>
+<meta content="ca-pub-2335913078491957" name="google-adsense-account"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#060a14" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="#f7f7fb" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="dark light" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<title>Reading Your IQ Percentile: What It Means | AurorIQ</title>
+<meta content="What a percentile actually represents, why small score differences matter less than people assume, and how to read a result without overreacting to it." name="description"/>
+<meta content="AurorIQ" name="application-name"/>
+<meta content="Reading Your IQ Percentile: What It Means | AurorIQ — AurorIQ preview" name="twitter:image:alt"/>
+<meta content="Reading Your IQ Percentile: What It Means | AurorIQ — AurorIQ preview" property="og:image:alt"/>
+<meta content="630" property="og:image:height"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="en_US" property="og:locale"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link href="https://auroriq.com/blog/reading-your-percentile/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="AurorIQ" property="og:site_name"/>
+<meta content="https://auroriq.com/blog/reading-your-percentile/" property="og:url"/>
+<meta content="Reading Your IQ Percentile: What It Means | AurorIQ" property="og:title"/>
+<meta content="What a percentile actually represents, why small score differences matter less than people assume, and how to read a result without overreacting to it." property="og:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-blog.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Reading Your IQ Percentile: What It Means | AurorIQ" name="twitter:title"/>
+<meta content="What a percentile actually represents, why small score differences matter less than people assume, and how to read a result without overreacting to it." name="twitter:description"/>
+<meta content="https://auroriq.com/assets/images/og/og-blog.png" name="twitter:image"/>
+<link as="font" crossorigin="" href="/assets/fonts/syne-var.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dmsans-var.woff2" rel="preload" type="font/woff2"/>
+<link href="/css/bundle.css?v=6.24" rel="stylesheet"/>
+<link href="/assets/images/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/images/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/assets/images/icons/favicon.ico" rel="shortcut icon"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://auroriq.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://auroriq.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Reading Your Percentile", "item": "https://auroriq.com/blog/reading-your-percentile/"}]}, {"@type": "Article", "headline": "Reading Your Percentile: What \"Top 5%\" Actually Means", "description": "What a percentile actually represents, and why small score differences matter less than people assume.", "url": "https://auroriq.com/blog/reading-your-percentile/", "datePublished": "2026-06-20", "dateModified": "2026-07-07", "author": {"@type": "Organization", "name": "AurorIQ", "url": "https://auroriq.com/editorial-policy/"}, "publisher": {"@type": "Organization", "@id": "https://auroriq.com/#org", "name": "AurorIQ", "url": "https://auroriq.com/", "logo": {"@type": "ImageObject", "url": "https://auroriq.com/assets/images/icons/icon-512.png", "width": 512, "height": 512}}, "mainEntityOfPage": "https://auroriq.com/blog/reading-your-percentile/", "inLanguage": "en", "image": "https://auroriq.com/assets/images/og/og-blog.png"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it mean to be in the top 5%?", "acceptedAnswer": {"@type": "Answer", "text": "Being in the top 5% means your score is higher than approximately 95% of the comparison population the test was normed against. It corresponds to roughly an IQ of 125 on a standard scale with a mean of 100 and standard deviation of 15."}}, {"@type": "Question", "name": "Is the 84th percentile a good score?", "acceptedAnswer": {"@type": "Answer", "text": "It corresponds to an IQ of about 115 — one standard deviation above the mean, higher than roughly five out of six people. That's solidly and unambiguously above average, at the doorway of the High Average band."}}, {"@type": "Question", "name": "What IQ is the 99th percentile?", "acceptedAnswer": {"@type": "Answer", "text": "About 135 on a standard scale (mean 100, standard deviation 15). One person in a hundred scores at or above that level."}}, {"@type": "Question", "name": "Can my percentile change if I retake the test?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, within limits. Ordinary measurement error, day-to-day state, and practice effects can move a score several points between sittings, and near the middle of the distribution a few points translates into a noticeable percentile shift. Your broad band is much more stable than your exact percentile."}}, {"@type": "Question", "name": "Why does the same score difference matter more near the extremes?", "acceptedAnswer": {"@type": "Answer", "text": "Because the normal distribution thins out toward its tails, the same raw point difference represents a larger percentile jump far from the mean than it does near the middle, where most of the population is clustered tightly together."}}]}]}</script>
+<link href="/css/discover.css?v=6.24" rel="stylesheet"/><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+window.adsbygoogle = window.adsbygoogle || [];
+window.adsbygoogle.pauseAdRequests = 1;
+window.adsbygoogle.requestNonPersonalizedAds = 1;
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2335913078491957" crossorigin="anonymous"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
-<header class="nav" data-nav>
-  <div class="nav__inner">
-    <a class="nav__brand" href="/" aria-label="AurorIQ home">
-      <svg class="nav__mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="auroraMark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#9269f3"/>
-            <stop offset="0.55" stop-color="#22d3ee"/>
-            <stop offset="1" stop-color="#fde68a"/>
-          </linearGradient>
-        </defs>
-        <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 25 C 12 14, 20 14, 24 25" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
-        <circle cx="16" cy="27" r="1.6" fill="#22d3ee"/>
-      </svg>
-      <span class="nav__name">AurorIQ</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="/#how">How it works</a>
-      <a href="/#domains">Domains</a>
-      <a href="/#archetypes">Archetypes</a>
-      <a href="/blog/" aria-current="page">Learn</a>
-      <a href="/about-our-test/">About</a>
-      <a class="nav__personica" href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener"><span class="nav__personica-dot" aria-hidden="true"></span>Personality</a>
-    </nav>
-    <div class="nav__actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Toggle theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </button>
-      <a class="btn btn--primary btn--sm" href="/iq-test/">Take the test</a>
-      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div class="nav__mobile" id="mobileMenu" data-nav-menu hidden>
-    <a href="/#how">How it works</a>
-    <a href="/#domains">Domains</a>
-    <a href="/#archetypes">Archetypes</a>
-    <a href="/blog/">Learn</a>
-    <a href="/about-our-test/">About</a>
-    <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Personality →</a>
-    <a class="btn btn--primary btn--block" href="/iq-test/">Take the test</a>
-  </div>
+<header class="nav nav--suite" data-nav="">
+<div class="nav__inner">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="nav__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+<span aria-hidden="true" class="nav__suite-label">Suite</span>
+</a>
+<nav aria-label="Primary" class="nav__links">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+</nav>
+<div class="nav__actions">
+<button aria-label="Switch to light theme" aria-pressed="false" class="theme-toggle" title="Toggle theme" type="button">
+<svg aria-hidden="true" class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg aria-hidden="true" class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+</button>
+<a class="btn btn--primary btn--sm" href="/iq-test/">Start IQ test</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="nav__toggle" data-nav-toggle="" type="button"><span></span><span></span><span></span></button>
+</div>
+</div>
+<div class="nav__mobile" data-nav-menu="" hidden="" id="mobileMenu">
+<a data-nav-section="suite" href="/tests/">All assessments</a>
+<a data-nav-section="cognition" href="/cognition/">Cognition</a>
+<a data-nav-section="career" href="/career/">Career</a>
+<a data-nav-section="learning" href="/learning/">Learning</a>
+<a data-nav-section="productivity" href="/productivity/">Productivity</a>
+<a data-nav-section="learn" href="/blog/">Learn</a>
+<a href="/about-our-test/">Methodology</a>
+<a class="btn btn--primary btn--block" href="/iq-test/">Start IQ test</a>
+</div>
 </header>
-
 <main id="main">
 <article class="article">
-
-  <nav class="article__breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a><span>/</span>
-    <a href="/blog/">Blog</a><span>/</span>
-    <span>Reading Your Percentile</span>
-  </nav>
-
-  <header>
-    <p class="article__category">IQ Scores &amp; Meaning &middot; Reference</p>
-    <h1 class="article__title">Reading your percentile.</h1>
-    <p class="article__dek">What "top 5%" actually tells you, and why two scores three points apart are usually saying the same thing.</p>
-    <div class="article__meta">
-      <span>AurorIQ Editorial Team</span>
-      <span class="article__meta-sep">&middot;</span>
-      <span>Updated June 20, 2026</span>
-      <span class="article__meta-sep">&middot;</span>
-      <span>5 min read</span>
-    </div>
-  </header>
-
-  <div class="article__body">
-
-    <p>A percentile tells you what share of a comparison population scored at or below your result. Landing in the 91st percentile means your score is higher than roughly 91 out of every 100 people in the group the test was normed against. It says nothing about an absolute amount of anything, only your relative position.</p>
-
-    <h2>How a score becomes a percentile</h2>
-    <p>The conversion is pure arithmetic on the normal curve. Take the score, subtract the mean (100), divide by the standard deviation (15) — that gives a z-score, your distance from the average in standard-deviation units. An IQ of 115 is z&nbsp;=&nbsp;+1.0; an IQ of 130 is z&nbsp;=&nbsp;+2.0. The z-score then maps to a cumulative percentage of the normal distribution: +1.0 sits above 84% of it, +2.0 above 97.7% of it. Every percentile you'll ever see attached to an IQ score is this calculation.</p>
-    <p>One quiet assumption hides inside it: <em>which population?</em> A percentile is always relative to the norming group the test was standardized on — typically age-matched, which is why a 15-year-old and a 50-year-old are each compared against their own peers rather than each other (our guide to <a href="/blog/average-iq-by-age/">how IQ relates to age</a> unpacks this). Change the comparison group and the same raw performance produces a different percentile.</p>
-
-    <div class="score-table" role="table" aria-label="IQ scores and their percentiles">
-      <div class="score-row score-row--head" role="row">
-        <span role="columnheader">IQ score</span>
-        <span role="columnheader">Approx. percentile</span>
-        <span role="columnheader">In a room of people&hellip;</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">85</span><span role="cell">16th</span><span role="cell">~5 in 6 score higher</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">100</span><span role="cell">50th</span><span role="cell">The exact middle</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">110</span><span role="cell">75th</span><span role="cell">~1 in 4 score higher</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">115</span><span role="cell">84th</span><span role="cell">~1 in 6 score higher</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">120</span><span role="cell">91st</span><span role="cell">~1 in 11 score higher</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">125</span><span role="cell">95th</span><span role="cell">~1 in 21 score higher</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">130</span><span role="cell">97.7th</span><span role="cell">~1 in 44 score higher</span>
-      </div>
-      <div class="score-row" role="row">
-        <span class="score-row__range" role="cell">140</span><span role="cell">99.6th</span><span role="cell">~1 in 261 score higher</span>
-      </div>
-    </div>
-    <p class="score-table__note">Figures derived from the standard normal distribution with mean 100 and standard deviation 15.</p>
-
-    <h2>Why the tails feel so dramatic</h2>
-
-    <p>Because IQ scores follow a normal distribution, most people cluster tightly near the middle, and the population thins out fast as you move toward either extreme. That has a direct, slightly counterintuitive consequence: the same raw point difference represents a much bigger percentile jump out at the tails than it does near the center.</p>
-
-    <div class="article__callout">
-      <p><strong>A concrete example:</strong> moving from an IQ of 100 to 103 shifts you from the 50th to roughly the 58th percentile, an 8-point jump. Moving from 130 to 133 shifts you from roughly the 97.7th to the 98.6th percentile, less than a 1-point jump, even though the raw score difference is identical. The same number of points means something very different depending on where you start.</p>
-    </div>
-
-    <h2>Why two close scores aren't really "different"</h2>
-
-    <p>This cuts the other way too. A 2 or 3 point gap between two scores, especially anywhere near the middle of the distribution, usually reflects normal measurement noise more than any meaningful underlying difference. If you focus on the percentile band rather than the literal number, you'll have a more accurate read on what the result is actually telling you. See our <a href="/iq-scores/">full score range reference</a> for the bands themselves.</p>
-
-    <h2>Percentile is not "percent correct"</h2>
-    <p>The single most common confusion deserves its own heading: landing at the 84th percentile does <em>not</em> mean you answered 84% of the questions correctly. The two numbers have nothing to do with each other. Percent-correct describes your performance against the test's items; percentile describes your performance against other people.</p>
-    <p>On an adaptive test the disconnect is total — and deliberate. Because <a href="/iq-test/">AurorIQ's engine</a> continuously steers questions toward the edge of your ability, nearly everyone answers somewhere around 50–70% of items correctly <em>regardless of their level</em>. A test-taker at the 30th percentile and one at the 98th can have nearly identical percent-correct figures while answering wildly different questions. If you walked away feeling like you missed half the test, that feeling carries no information about your result.</p>
-
-    <h2>Thinking in frequencies</h2>
-    <p>Percentiles become far more intuitive translated into people. The 91st percentile means that in a random group of eleven people, you'd expect to be the strongest at these specific tasks — and equally, that roughly one person in every eleven you pass on the street would outscore you. The 99.6th percentile sounds astronomical until it's rephrased: about one person in every packed movie theater. Both translations are worth holding at once; the frequency framing keeps a good score impressive and honest at the same time.</p>
-
-    <h2>Percentile versus rank</h2>
-
-    <p>It's worth being precise about one thing: a percentile is not the same as being "smarter than X% of people" in some grand, holistic sense. It reflects performance on a specific set of reasoning tasks, sampled at one point in time, under one set of conditions. Treat it as a useful, honest data point, not a verdict.</p>
-
-    <h2>Reading a percentile through its confidence interval</h2>
-    <p>The most honest way to read your result is to convert the <em>whole confidence interval</em> into percentiles, not just the point estimate. Take a score of 112 with a 95% interval of 105–119. The point estimate says 79th percentile. But the interval says: the low end (105) sits at the 63rd percentile and the high end (119) at the 90th. So the statistically honest sentence is "this sitting places me somewhere between the 63rd and 90th percentile, most likely near the 79th" — a claim with genuinely different texture than "I'm 79th percentile." One version invites obsessing over a point; the other keeps the estimate's true resolution in view. It's exactly why AurorIQ prints the interval next to every score instead of burying it.</p>
-
-    <h2>Common misinterpretations to avoid</h2>
-    <p>The most frequent misreading of a percentile is treating it as a permanent, fixed characteristic rather than a statistical estimate from a single testing session. Your percentile reflects how you performed on 25 specific questions under specific conditions on a specific day. The 95% confidence interval attached to your AurorIQ result is there to make this uncertainty explicit — if your score is 112 with a confidence interval of 105–119, the test is saying your true ability likely falls somewhere in that range, and the corresponding percentile could shift by 10–15 points accordingly.</p>
-    <p>Another common error is comparing percentiles across different tests as if they measure identical constructs. A 90th percentile on AurorIQ does not mean exactly the same thing as a 90th percentile on the WAIS-IV or Raven's Progressive Matrices, because each test samples different cognitive tasks and norms against different populations. Your relative standing within a single test is meaningful, but cross-test comparisons require caution. For more on what different IQ tests actually measure and how they relate, see our pillar guide on <a href="/blog/what-is-iq/">what IQ really is</a>.</p>
-    <p>Finally, remember that percentiles compress dramatically at the extremes. Moving from the 50th to the 60th percentile (IQ 100 to 103) requires a smaller actual ability difference than moving from the 95th to the 99th percentile (IQ 125 to 135). The normal distribution curve explains this compression, and understanding it helps you interpret both your own score and the <a href="/blog/gifted-range-scores/">gifted-range thresholds</a> more accurately.</p>
-
-    <div class="article__faq">
-      <h2>Common questions</h2>
-      <div class="faq">
-        <details class="faq__item">
-          <summary>What does it mean to be in the top 5%?</summary>
-          <div class="faq__body"><p>Being in the top 5% means your score is higher than approximately 95% of the comparison population the test was normed against. It corresponds to roughly an IQ of 125 on a standard scale with a mean of 100 and standard deviation of 15.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>Is the 84th percentile a good score?</summary>
-          <div class="faq__body"><p>It corresponds to an IQ of about 115 — one standard deviation above the mean, higher than roughly five out of six people. That's solidly and unambiguously above average, at the doorway of the High Average band.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>What IQ is the 99th percentile?</summary>
-          <div class="faq__body"><p>About 135 on a standard scale (mean 100, standard deviation 15). One person in a hundred scores at or above that level.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>Can my percentile change if I retake the test?</summary>
-          <div class="faq__body"><p>Yes, within limits. Ordinary measurement error, day-to-day state, and practice effects can move a score several points between sittings, and near the middle of the distribution a few points translates into a noticeable percentile shift. Your broad band is much more stable than your exact percentile.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>Why does the same score difference matter more near the extremes?</summary>
-          <div class="faq__body"><p>Because the normal distribution thins out toward its tails, the same raw point difference represents a larger percentile jump far from the mean than it does near the middle, where most of the population is clustered tightly together.</p></div>
-        </details>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="article__author">
-    <div class="article__author-avatar" aria-hidden="true"></div>
-    <div>
-      <p class="article__author-name">Muhammad · AurorIQ</p>
-      <p class="article__author-role">Content reviewed against the published research cited throughout this guide.</p>
-    </div>
-  </div>
-
-  <div class="article__related">
-    <h2 class="article__related-title">Related guides</h2>
-    <div class="posts">
-      <a class="post-card" href="/iq-scores/">
-        <span class="post-card__cat">Reference</span>
-        <h3 class="post-card__title">IQ score ranges explained</h3>
-        <p class="post-card__excerpt">Every band, and the percentile it represents.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/blog/average-iq-by-age/">
-        <span class="post-card__cat">Data</span>
-        <h3 class="post-card__title">How IQ changes with age</h3>
-        <p class="post-card__excerpt">Why scores are age-adjusted in the first place.</p>
-        <span class="post-card__more">Read</span>
-      </a>
-      <a class="post-card" href="/cognition/">
-        <span class="post-card__cat">Platform</span>
-        <h3 class="post-card__title">The Cognition hub</h3>
-        <p class="post-card__excerpt">Every reasoning instrument and guide on the platform, in one place.</p>
-        <span class="post-card__more">Explore</span>
-      </a>
-    </div>
-  </div>
-
+<nav aria-label="Breadcrumb" class="article__breadcrumbs">
+<a href="/">Home</a><span>/</span>
+<a href="/blog/">Blog</a><span>/</span>
+<span>Reading Your Percentile</span>
+</nav>
+<header>
+<p class="article__category">IQ Scores &amp; Meaning · Reference</p>
+<h1 class="article__title">Reading your percentile.</h1>
+<p class="article__dek">What "top 5%" actually tells you, and why two scores three points apart are usually saying the same thing.</p>
+<div class="article__meta">
+<span>AurorIQ</span>
+<span class="article__meta-sep">·</span>
+<span>Updated June 20, 2026</span>
+<span class="article__meta-sep">·</span>
+<span>5 min read</span>
+</div>
+</header>
+<div class="article__body">
+<p>A percentile tells you what share of a comparison population scored at or below your result. Landing in the 91st percentile means your score is higher than roughly 91 out of every 100 people in the group the test was normed against. It says nothing about an absolute amount of anything, only your relative position.</p>
+<h2>How a score becomes a percentile</h2>
+<p>The conversion is pure arithmetic on the normal curve. Take the score, subtract the mean (100), divide by the standard deviation (15) — that gives a z-score, your distance from the average in standard-deviation units. An IQ of 115 is z = +1.0; an IQ of 130 is z = +2.0. The z-score then maps to a cumulative percentage of the normal distribution: +1.0 sits above 84% of it, +2.0 above 97.7% of it. Every percentile you'll ever see attached to an IQ score is this calculation.</p>
+<p>One quiet assumption hides inside it: <em>which population?</em> A percentile is always relative to the norming group the test was standardized on — typically age-matched, which is why a 15-year-old and a 50-year-old are each compared against their own peers rather than each other (our guide to <a href="/blog/average-iq-by-age/">how IQ relates to age</a> unpacks this). Change the comparison group and the same raw performance produces a different percentile.</p>
+<div aria-label="IQ scores and their percentiles" class="score-table" role="table">
+<div class="score-row score-row--head" role="row">
+<span role="columnheader">IQ score</span>
+<span role="columnheader">Approx. percentile</span>
+<span role="columnheader">In a room of people…</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">85</span><span role="cell">16th</span><span role="cell">~5 in 6 score higher</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">100</span><span role="cell">50th</span><span role="cell">The exact middle</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">110</span><span role="cell">75th</span><span role="cell">~1 in 4 score higher</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">115</span><span role="cell">84th</span><span role="cell">~1 in 6 score higher</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">120</span><span role="cell">91st</span><span role="cell">~1 in 11 score higher</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">125</span><span role="cell">95th</span><span role="cell">~1 in 21 score higher</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">130</span><span role="cell">97.7th</span><span role="cell">~1 in 44 score higher</span>
+</div>
+<div class="score-row" role="row">
+<span class="score-row__range" role="cell">140</span><span role="cell">99.6th</span><span role="cell">~1 in 261 score higher</span>
+</div>
+</div>
+<p class="score-table__note">Figures derived from the standard normal distribution with mean 100 and standard deviation 15.</p>
+<h2>Why the tails feel so dramatic</h2>
+<p>Because IQ scores follow a normal distribution, most people cluster tightly near the middle, and the population thins out fast as you move toward either extreme. That has a direct, slightly counterintuitive consequence: the same raw point difference represents a much bigger percentile jump out at the tails than it does near the center.</p>
+<div class="article__callout">
+<p><strong>A concrete example:</strong> moving from an IQ of 100 to 103 shifts you from the 50th to roughly the 58th percentile, an 8-point jump. Moving from 130 to 133 shifts you from roughly the 97.7th to the 98.6th percentile, less than a 1-point jump, even though the raw score difference is identical. The same number of points means something very different depending on where you start.</p>
+</div>
+<h2>Why two close scores aren't really "different"</h2>
+<p>This cuts the other way too. A 2 or 3 point gap between two scores, especially anywhere near the middle of the distribution, usually reflects normal measurement noise more than any meaningful underlying difference. If you focus on the percentile band rather than the literal number, you'll have a more accurate read on what the result is actually telling you. See our <a href="/iq-scores/">full score range reference</a> for the bands themselves.</p>
+<h2>Percentile is not "percent correct"</h2>
+<p>The single most common confusion deserves its own heading: landing at the 84th percentile does <em>not</em> mean you answered 84% of the questions correctly. The two numbers have nothing to do with each other. Percent-correct describes your performance against the test's items; percentile describes your performance against other people.</p>
+<p>On an adaptive test the disconnect is total — and deliberate. Because <a href="/iq-test/">AurorIQ's engine</a> continuously steers questions toward the edge of your ability, nearly everyone answers somewhere around 50–70% of items correctly <em>regardless of their level</em>. A test-taker at the 30th percentile and one at the 98th can have nearly identical percent-correct figures while answering wildly different questions. If you walked away feeling like you missed half the test, that feeling carries no information about your result.</p>
+<h2>Thinking in frequencies</h2>
+<p>Percentiles become far more intuitive translated into people. The 91st percentile means that in a random group of eleven people, you'd expect to be the strongest at these specific tasks — and equally, that roughly one person in every eleven you pass on the street would outscore you. The 99.6th percentile sounds astronomical until it's rephrased: about one person in every packed movie theater. Both translations are worth holding at once; the frequency framing keeps a good score impressive and honest at the same time.</p>
+<h2>Percentile versus rank</h2>
+<p>It's worth being precise about one thing: a percentile is not the same as being "smarter than X% of people" in some grand, holistic sense. It reflects performance on a specific set of reasoning tasks, sampled at one point in time, under one set of conditions. Treat it as a useful, honest data point, not a verdict.</p>
+<h2>Reading a percentile through its confidence interval</h2>
+<p>The most honest way to read your result is to convert the <em>whole confidence interval</em> into percentiles, not just the point estimate. Take a score of 112 with a 95% interval of 105–119. The point estimate says 79th percentile. But the interval says: the low end (105) sits at the 63rd percentile and the high end (119) at the 90th. So the statistically honest sentence is "this sitting places me somewhere between the 63rd and 90th percentile, most likely near the 79th" — a claim with genuinely different texture than "I'm 79th percentile." One version invites obsessing over a point; the other keeps the estimate's true resolution in view. It's exactly why AurorIQ prints the interval next to every score instead of burying it.</p>
+<h2>Common misinterpretations to avoid</h2>
+<p>The most frequent misreading of a percentile is treating it as a permanent, fixed characteristic rather than a statistical estimate from a single testing session. Your percentile reflects how you performed on 25 specific questions under specific conditions on a specific day. The 95% confidence interval attached to your AurorIQ result is there to make this uncertainty explicit — if your score is 112 with a confidence interval of 105–119, the test is saying your true ability likely falls somewhere in that range, and the corresponding percentile could shift by 10–15 points accordingly.</p>
+<p>Another common error is comparing percentiles across different tests as if they measure identical constructs. A 90th percentile on AurorIQ does not mean exactly the same thing as a 90th percentile on the WAIS-IV or Raven's Progressive Matrices, because each test samples different cognitive tasks and norms against different populations. Your relative standing within a single test is meaningful, but cross-test comparisons require caution. For more on what different IQ tests actually measure and how they relate, see our pillar guide on <a href="/blog/what-is-iq/">what IQ really is</a>.</p>
+<p>Finally, remember that percentiles compress dramatically at the extremes. Moving from the 50th to the 60th percentile (IQ 100 to 103) requires a smaller actual ability difference than moving from the 95th to the 99th percentile (IQ 125 to 135). The normal distribution curve explains this compression, and understanding it helps you interpret both your own score and the <a href="/blog/gifted-range-scores/">gifted-range thresholds</a> more accurately.</p>
+<div class="article__faq">
+<h2>Common questions</h2>
+<div class="faq">
+<details class="faq__item">
+<summary>What does it mean to be in the top 5%?</summary>
+<div class="faq__body"><p>Being in the top 5% means your score is higher than approximately 95% of the comparison population the test was normed against. It corresponds to roughly an IQ of 125 on a standard scale with a mean of 100 and standard deviation of 15.</p></div>
+</details>
+<details class="faq__item">
+<summary>Is the 84th percentile a good score?</summary>
+<div class="faq__body"><p>It corresponds to an IQ of about 115 — one standard deviation above the mean, higher than roughly five out of six people. That's solidly and unambiguously above average, at the doorway of the High Average band.</p></div>
+</details>
+<details class="faq__item">
+<summary>What IQ is the 99th percentile?</summary>
+<div class="faq__body"><p>About 135 on a standard scale (mean 100, standard deviation 15). One person in a hundred scores at or above that level.</p></div>
+</details>
+<details class="faq__item">
+<summary>Can my percentile change if I retake the test?</summary>
+<div class="faq__body"><p>Yes, within limits. Ordinary measurement error, day-to-day state, and practice effects can move a score several points between sittings, and near the middle of the distribution a few points translates into a noticeable percentile shift. Your broad band is much more stable than your exact percentile.</p></div>
+</details>
+<details class="faq__item">
+<summary>Why does the same score difference matter more near the extremes?</summary>
+<div class="faq__body"><p>Because the normal distribution thins out toward its tails, the same raw point difference represents a larger percentile jump far from the mean than it does near the middle, where most of the population is clustered tightly together.</p></div>
+</details>
+</div>
+</div>
+</div>
+<div class="article__author">
+<div aria-hidden="true" class="article__author-avatar"></div>
+<div>
+<p class="article__author-name">AurorIQ</p>
+<p class="article__author-role">Educational guidance · <a href="/editorial-policy/">Editorial standards</a></p>
+</div>
+</div>
+<div class="article__related">
+<h2 class="article__related-title">Related guides</h2>
+<div class="posts">
+<a class="post-card" href="/iq-scores/">
+<span class="post-card__cat">Reference</span>
+<h3 class="post-card__title">IQ score ranges explained</h3>
+<p class="post-card__excerpt">Every band, and the percentile it represents.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/blog/average-iq-by-age/">
+<span class="post-card__cat">Data</span>
+<h3 class="post-card__title">How IQ changes with age</h3>
+<p class="post-card__excerpt">Why scores are age-adjusted in the first place.</p>
+<span class="post-card__more">Read</span>
+</a>
+<a class="post-card" href="/cognition/">
+<span class="post-card__cat">Platform</span>
+<h3 class="post-card__title">The Cognition hub</h3>
+<p class="post-card__excerpt">Every reasoning instrument and guide on the platform, in one place.</p>
+<span class="post-card__more">Explore</span>
+</a>
+</div>
+</div>
 </article>
 </main>
-
 <footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <a class="nav__brand" href="/" aria-label="AurorIQ home">
-        <svg class="nav__mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <path d="M4 22 C 9 6, 23 6, 28 22" fill="none" stroke="url(#auroraMark)" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="nav__name">AurorIQ</span>
-      </a>
-      <p class="footer__tagline">A precise instrument for understanding how you think.</p>
-    </div>
-
-    <nav class="footer__grid" aria-label="Footer">
-      <div class="footer__col">
-        <h3 class="footer__heading">Test</h3>
-        <a href="/iq-test/">Take the test</a>
-        <a href="/iq-scores/">Score ranges</a>
-        <a href="/#archetypes">Archetypes</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Learn</h3>
-        <a href="/blog/">All guides</a>
-        <a href="/blog/what-is-iq/">What is IQ</a>
-        <a href="/blog/iq-test-accuracy/">Test accuracy</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">About</h3>
-        <a href="/about-our-test/">Our methodology</a>
-        <a href="/about-our-test/#research">Research foundations</a>
-        <a href="/contact/">Contact us</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Platform</h3>
-        <a href="/#platform">All instruments</a>
-        <a href="/cognition/">Cognition hub</a>
-        <a href="https://personica.net/?ref=auroriq" target="_blank" rel="noopener">Psychology &mdash; Personica</a>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__heading">Legal</h3>
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/terms-of-service/">Terms</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="#" data-consent-open>Cookie settings</a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="footer__base">
-    <p class="footer__disclaimer">AurorIQ is an educational self-reflection tool, not a clinical instrument. Scores are estimates and cannot be used for clinical, educational, or legal purposes.</p>
-    <p class="footer__copy">&copy; 2026 AurorIQ. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="/js/core/utils.js" defer></script>
-<script src="/js/main.js" defer></script>
-
-<div class="consent-banner" id="consentBanner" role="dialog" aria-label="Cookie consent">
-  <p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
-  <div class="consent-banner__actions">
-    <button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
-    <button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
-  </div>
+<div class="footer__inner">
+<div class="footer__brand">
+<a aria-label="AurorIQ home" class="nav__brand" href="/">
+<img alt="" aria-hidden="true" class="footer__mark" height="28" src="/assets/images/icons/favicon.svg" width="28"/>
+<span class="nav__name">AurorIQ</span>
+</a>
+<p class="footer__tagline">One intelligence platform, multiple lenses: cognition, career, learning, and productivity.</p>
+<a class="footer__suite-link" href="/tests/">All assessments</a>
 </div>
-
-<script src="/js/consent.js" defer></script>
-<script src="/js/theme.js" defer></script>
-</body>
+<nav aria-label="Footer" class="footer__grid">
+<div class="footer__col">
+<h3 class="footer__heading">Suite</h3>
+<a href="/cognition/">Cognition</a>
+<a href="/career/">Career</a>
+<a href="/learning/">Learning</a>
+<a href="/productivity/">Productivity</a>
+<a href="https://personica.net/?ref=auroriq" rel="noopener" target="_blank">Psychology ↗</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Assessments</h3>
+<a href="/iq-test/">Adaptive IQ Test</a>
+<a href="/career-interest-test/">Career Interest Test</a>
+<a href="/chronotype-test/">Chronotype Test</a>
+<a href="/focus-test/">Focus Test</a>
+</div>
+<div class="footer__col">
+<h3 class="footer__heading">Understand</h3>
+<a href="/blog/">Guides</a>
+<a href="/about-our-test/">Methodology</a>
+<a href="/iq-scores/">IQ score ranges</a>
+<a href="/contact/">Contact</a>
+<a href="/editorial-policy/">Editorial standards</a></div>
+<div class="footer__col">
+<h3 class="footer__heading">Legal</h3>
+<a href="/privacy-policy/">Privacy</a>
+<a href="/terms-of-service/">Terms</a>
+<a href="/ad-disclosure/">Ad Disclosure</a>
+<a href="/disclaimer/">Disclaimer</a>
+<a data-consent-open="" href="#">Cookie settings</a>
+</div>
+</nav>
+</div>
+<div class="footer__base">
+<p class="footer__disclaimer">AurorIQ is an educational self-reflection platform, not a clinical instrument. Scores are estimates and are not intended for clinical, educational-placement, hiring, legal, or diagnostic decisions.</p>
+<p class="footer__copy">© 2026 AurorIQ. All rights reserved.</p>
+</div>
+</footer>
+<div aria-label="Cookie consent" class="consent-banner" id="consentBanner" role="dialog">
+<p>We use cookies for analytics and advertising to keep AurorIQ free. You can accept or decline non-essential cookies. <a href="/privacy-policy/">Learn more</a></p>
+<div class="consent-banner__actions">
+<button class="consent-banner__btn consent-banner__btn--reject" id="consentReject" type="button">Decline</button>
+<button class="consent-banner__btn consent-banner__btn--accept" id="consentAccept" type="button">Accept</button>
+</div>
+</div>
+<script defer="" src="/js/site.bundle.js?v=6.29"></script>
+<script defer="True" src="/js/discover.js?v=6.24"></script></body>
 </html>
