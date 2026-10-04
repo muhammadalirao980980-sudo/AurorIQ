@@ -22,6 +22,7 @@
   }
 
   function normalCdf(x, mean, sd) {
+    if (![x, mean, sd].every(Number.isFinite) || sd <= 0) return null;
     return 0.5 * (1 + erf((x - mean) / (sd * Math.SQRT2)));
   }
 
@@ -30,13 +31,17 @@
    * Pass lowerIsBetter=true for measures like reaction time, where the
    * better tail is the low one. */
   function percentile(value, mean, sd, lowerIsBetter) {
-    let p = Math.round(normalCdf(value, mean, sd) * 100);
+    const cdf = normalCdf(value, mean, sd);
+    if (cdf === null) return null;
+    let p = Math.round(cdf * 100);
     if (lowerIsBetter) p = 100 - p;
     return Math.min(99, Math.max(1, p));
   }
 
   function median(values) {
-    const a = values.slice().sort(function (x, y) { return x - y; });
+    if (!Array.isArray(values)) return null;
+    const a = values.filter(Number.isFinite).slice().sort(function (x, y) { return x - y; });
+    if (!a.length) return null;
     const m = a.length >> 1;
     return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
   }
@@ -49,13 +54,19 @@
 
   /* z-score of a value under N(mean, sd). */
   function zScore(value, mean, sd) {
+    if (![value, mean, sd].every(Number.isFinite) || sd <= 0) return null;
     return (value - mean) / sd;
   }
 
   /* Percentile of an average of z-scores (for composites across sub-tasks). */
   function compositePercentile(zScores) {
-    const mean = zScores.reduce(function (a, b) { return a + b; }, 0) / zScores.length;
-    const p = Math.round(normalCdf(mean, 0, 1) * 100);
+    if (!Array.isArray(zScores)) return null;
+    const valid = zScores.filter(Number.isFinite);
+    if (!valid.length) return null;
+    const mean = valid.reduce(function (a, b) { return a + b; }, 0) / valid.length;
+    const cdf = normalCdf(mean, 0, 1);
+    if (cdf === null) return null;
+    const p = Math.round(cdf * 100);
     return Math.min(99, Math.max(1, p));
   }
 

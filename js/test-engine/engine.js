@@ -59,7 +59,7 @@
 
     function submitAnswer(optionIndex, responseTimeMs) {
       const item = getCurrentItem();
-      if (!item) return null;
+      if (!item || state.get('session.phase') !== 'active' || !Number.isInteger(optionIndex) || optionIndex < 0 || optionIndex >= item.options.length) return null;
 
       const correct = optionIndex === item.answer;
       const responses = state.get('session.responses', []).slice();
@@ -152,6 +152,8 @@
     }
 
     function finish() {
+      if (!isComplete()) return null;
+      if (state.get('session.phase') === 'complete') return state.get('profile.lastResult', null);
       const responses = state.get('session.responses', []);
       const result = scoring.computeResult(responses, domains.order);
       if (!result) return null;

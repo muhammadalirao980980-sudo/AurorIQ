@@ -1,5 +1,11 @@
-/* consent.js — GDPR/CCPA cookie consent with Google Consent Mode v2
- * Basic consent mode: Google tags load only after explicit consent.
+/* consent.js — site-level consent UI with Google Consent Mode v2
+ * IMPORTANT: this custom banner is NOT a Google-certified TCF CMP. Configure
+ * Google Privacy & Messaging or another Google-certified CMP for personalized
+ * AdSense traffic in the EEA, UK, and Switzerland.
+ *
+ * Legacy note: GDPR/CCPA cookie consent with Google Consent Mode v2
+ * Analytics loads after consent. Public releases include a static AdSense tag
+ * with ad requests paused until consent.
  * Consent defaults are pushed to the dataLayer before any tag loads,
  * so gtag.js picks them up whenever it is injected. */
 (function () {
@@ -11,6 +17,9 @@
   /* ---- Consent Mode v2 plumbing ---- */
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  var PUBLIC_HOSTS = ['auroriq.com', 'www.auroriq.com'];
+  function isPublicHost() { return PUBLIC_HOSTS.indexOf(window.location.hostname) !== -1; }
 
   // v2 defaults: everything denied until the visitor decides.
   gtag('consent', 'default', {
@@ -35,8 +44,10 @@
   function grantSignals() {
     gtag('consent', 'update', {
       ad_storage: 'granted',
-      ad_user_data: 'granted',
-      ad_personalization: 'granted',
+      // Personalization remains denied in this custom UI. A Google-certified
+      // TCF CMP should control these signals where personalized ads are used.
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
       analytics_storage: 'granted',
       functionality_storage: 'granted'
     });
@@ -54,6 +65,8 @@
 
   /* ---- Conditional script loading ---- */
   function loadGA() {
+    if (!isPublicHost()) return;
+    window['ga-disable-' + GA_ID] = false;
     if (document.querySelector('script[src*="googletagmanager"]')) return;
     var s = document.createElement('script');
     s.async = true;
@@ -62,12 +75,29 @@
     gtag('config', GA_ID, { anonymize_ip: true });
   }
 
+  function initManualAds() {
+    var units = document.querySelectorAll('.ad-slot[data-ad-state="live"] ins.adsbygoogle');
+    for (var i = 0; i < units.length; i++) {
+      if (units[i].getAttribute('data-ad-initialized') === 'true') continue;
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        units[i].setAttribute('data-ad-initialized', 'true');
+      } catch (e) { /* AdSense may not be ready yet; script load will retry on next page view. */ }
+    }
+  }
+
   function loadAdSense() {
-    if (document.querySelector('script[src*="adsbygoogle"]')) return;
+    if (!isPublicHost()) return;
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.requestNonPersonalizedAds = 1;
+    window.adsbygoogle.pauseAdRequests = 0;
+    // Load the site-wide publisher script after consent, even without manual slots.
+    if (document.querySelector('script[src*="adsbygoogle"]')) { initManualAds(); return; }
     var s = document.createElement('script');
     s.async = true;
     s.crossOrigin = 'anonymous';
     s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_PUB;
+    s.onload = initManualAds;
     document.head.appendChild(s);
   }
 
@@ -81,9 +111,25 @@
   }
 
   function reject() {
+    var wasLoaded = !!document.querySelector('script[src*="googletagmanager"]') || !!document.querySelector('script[src*="adsbygoogle"]');
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.pauseAdRequests = 1;
     setConsent('denied');
+    window['ga-disable-' + GA_ID] = true;
     denySignals();
+    document.cookie.split(';').forEach(function (entry) {
+      var name = entry.split('=')[0].trim();
+      if (!/^(_ga(?:_|$)|_gid$|_gat)/.test(name)) return;
+      var parts = window.location.hostname.split('.');
+      document.cookie = name + '=; Max-Age=0; path=/';
+      while (parts.length > 1) {
+        var domain = parts.join('.');
+        document.cookie = name + '=; Max-Age=0; path=/; domain=' + domain;
+        parts.shift();
+      }
+    });
     hideBanner();
+    if (wasLoaded) window.location.reload();
   }
 
   function hideBanner() {

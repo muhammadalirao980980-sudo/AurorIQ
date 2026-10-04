@@ -137,32 +137,32 @@
   }
 
   function scoreTest(items, ratings) {
+    items = Array.isArray(items) ? items : [];
+    ratings = Array.isArray(ratings) ? ratings : [];
     const sums = {}, counts = {};
     DIMS.forEach(function (d) { sums[d.key] = 0; counts[d.key] = 0; });
+    let answered = 0;
     items.forEach(function (item, i) {
+      if (!item || !Object.prototype.hasOwnProperty.call(counts, item.dim)) return;
       let v = ratings[i];
-      if (typeof v !== 'number' || v < SCALE_MIN || v > SCALE_MAX) v = (SCALE_MIN + SCALE_MAX) / 2;
+      if (typeof v === 'number' && Number.isFinite(v) && v >= SCALE_MIN && v <= SCALE_MAX) {
+        answered += 1;
+      } else {
+        v = (SCALE_MIN + SCALE_MAX) / 2;
+      }
       sums[item.dim] += bward(v, item.toward);
       counts[item.dim] += 1;
     });
     const results = DIMS.map(function (d) {
-      const n = counts[d.key] || d.items.length;
-      const avg = sums[d.key] / n;                     /* 1..5, higher = B */
+      const n = counts[d.key];
+      const avg = n ? sums[d.key] / n : (SCALE_MIN + SCALE_MAX) / 2;
       const pct = Math.round(((avg - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100);
       const lean = leanOf(pct);
       const descriptor = lean === 'a' ? d.a.name : lean === 'b' ? d.b.name : 'Balanced';
       const helps = lean === 'a' ? d.a.helps : lean === 'b' ? d.b.helps : d.mid;
-      return {
-        key: d.key,
-        poleA: d.a.name,
-        poleB: d.b.name,
-        pct: pct,               /* 0 = fully A, 100 = fully B */
-        lean: lean,
-        descriptor: descriptor,
-        helps: helps
-      };
+      return { key: d.key, poleA: d.a.name, poleB: d.b.name, pct: pct, lean: lean, descriptor: descriptor, helps: helps };
     });
-    return { dimensions: results };
+    return { valid: items.length > 0 && answered === items.length, answered: answered, total: items.length, dimensions: results };
   }
 
   AurorIQ.workStyleEngine = {
@@ -258,6 +258,7 @@
   }
 
   function renderResults(r) {
+    if (AurorIQ.reports) AurorIQ.reports.render('workstyle', r, els.screens.results);
     els.spectrums.innerHTML = '';
     r.dimensions.forEach(function (d) {
       const row = document.createElement('div');

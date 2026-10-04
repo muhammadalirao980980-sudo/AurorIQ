@@ -123,13 +123,17 @@
   }
 
   function maxScore(items) {
+    items = Array.isArray(items) ? items : [];
     return items.reduce(function (sum, it) {
-      return sum + Math.max.apply(null, it.options.map(function (o) { return o.m; }));
+      if (!it || !Array.isArray(it.options) || !it.options.length) return sum;
+      return sum + Math.max.apply(null, it.options.map(function (o) { return Number.isFinite(o.m) ? o.m : 0; }));
     }, 0);
   }
   function minScore(items) {
+    items = Array.isArray(items) ? items : [];
     return items.reduce(function (sum, it) {
-      return sum + Math.min.apply(null, it.options.map(function (o) { return o.m; }));
+      if (!it || !Array.isArray(it.options) || !it.options.length) return sum;
+      return sum + Math.min.apply(null, it.options.map(function (o) { return Number.isFinite(o.m) ? o.m : 0; }));
     }, 0);
   }
 
@@ -142,27 +146,25 @@
 
   /* choices: array of chosen option index per item */
   function scoreTest(items, choices) {
+    items = Array.isArray(items) ? items : [];
+    choices = Array.isArray(choices) ? choices : [];
     let total = 0, answered = 0;
     items.forEach(function (it, i) {
+      if (!it || !Array.isArray(it.options)) return;
       const idx = choices[i];
-      if (typeof idx === 'number' && it.options[idx]) {
+      if (Number.isInteger(idx) && it.options[idx] && Number.isFinite(it.options[idx].m)) {
         total += it.options[idx].m;
         answered += 1;
       }
     });
+    const valid = items.length > 0 && answered === items.length;
+    if (!valid) {
+      return { valid: false, total: total, answered: answered, morningness: null, band: 'Incomplete', nickname: '', key: 'incomplete', peak: '', guidance: 'Complete every item before interpreting your chronotype.' };
+    }
     const min = minScore(items), max = maxScore(items);
     const pct = max > min ? Math.round(((total - min) / (max - min)) * 100) : 50;
     const band = bandFor(pct);
-    return {
-      total: total,
-      answered: answered,
-      morningness: pct,
-      band: band.label,
-      nickname: band.nickname,
-      key: band.key,
-      peak: band.peak,
-      guidance: band.guidance
-    };
+    return { valid: true, total: total, answered: answered, morningness: pct, band: band.label, nickname: band.nickname, key: band.key, peak: band.peak, guidance: band.guidance };
   }
 
   AurorIQ.chronotypeEngine = {
@@ -242,6 +244,7 @@
     if (els.results.marker) els.results.marker.style.left = r.morningness + '%';
     els.results.peak.textContent = r.peak;
     els.results.guidance.textContent = r.guidance;
+    if (AurorIQ.reports) AurorIQ.reports.render('chronotype', r, els.screens.results);
     show('results');
   }
 

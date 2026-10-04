@@ -167,6 +167,7 @@
 
   function render() {
     const r = ENG.analyze(readAlloc());
+    if (AurorIQ.reports) AurorIQ.reports.render('timeaudit', r, els.screens.play);
     els.total.textContent = r.total;
     els.remaining.textContent = (r.remaining >= 0 ? r.remaining + ' left' : Math.abs(r.remaining) + ' over');
     els.remaining.className = 'ta-remaining' + (r.balanced ? ' ta-remaining--ok' : (r.remaining < 0 ? ' ta-remaining--over' : ''));

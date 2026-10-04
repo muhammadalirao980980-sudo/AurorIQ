@@ -83,6 +83,8 @@
   }
 
   function scoreTest(items, answers) {
+    items = Array.isArray(items) ? items : [];
+    answers = Array.isArray(answers) ? answers : [];
     const total = items.length;
     let correct = 0, weighted = 0, maxWeighted = 0;
     const byTier = { 1: { c: 0, n: 0 }, 2: { c: 0, n: 0 }, 3: { c: 0, n: 0 } };
@@ -97,9 +99,10 @@
     const accuracy = total ? Math.round((correct / total) * 100) : 0;
     const weightedPct = maxWeighted ? weighted / maxWeighted : 0;
     const aboveChance = Math.max(0, (weightedPct - 0.25) / 0.75);
-    let composite = Math.round(aboveChance * 98) + 1;
-    composite = Math.min(99, Math.max(1, composite));
+    let composite = total ? Math.round(aboveChance * 98) + 1 : null;
+    if (composite !== null) composite = Math.min(99, Math.max(1, composite));
     return {
+      valid: total > 0,
       correct: correct,
       total: total,
       accuracy: accuracy,
@@ -110,7 +113,7 @@
         medium: byTier[2].c + '/' + byTier[2].n,
         hard: byTier[3].c + '/' + byTier[3].n
       },
-      atChance: accuracy <= 30
+      atChance: total > 0 && accuracy <= 30
     };
   }
 
@@ -189,7 +192,7 @@
 
   function finish() {
     const r = AurorIQ.numericalEngine.scoreTest(items, answers);
-    els.results.composite.textContent = r.atChance ? '\u2014' : '~' + r.composite + ordinal(r.composite);
+    els.results.composite.textContent = r.atChance ? '\u2014' : r.composite + '/100';
     els.results.accuracy.textContent = r.accuracy + '%';
     els.results.correct.textContent = r.correct + ' / ' + r.total;
     els.results.easy.textContent = r.tiers.easy;
@@ -197,7 +200,8 @@
     els.results.hard.textContent = r.tiers.hard;
     els.results.verdict.textContent = r.atChance
       ? 'Your accuracy is near chance for four-choice questions (25%), so the score is withheld as unreliable. Try again when you can give each item your full attention.'
-      : 'The percentile is approximate: a fifteen-item test is a genuine snapshot of numerical reasoning, weighted so harder items count for more. Note that this draws on math schooling, so unlike pattern logic it isn\u2019t education-fair.';
+      : 'The composite is an internal index, not a population percentile: a fifteen-item test is a genuine snapshot of numerical reasoning, weighted so harder items count for more. Note that this draws on math schooling, so unlike pattern logic it isn\u2019t education-fair.';
+    if (AurorIQ.reports) AurorIQ.reports.render('numerical', r, els.screens.results, {items: items, answers: answers});
     show('results');
   }
 

@@ -4,7 +4,7 @@
  * is passed with at least one correct trial; the phase ends after both trials
  * at a length fail. Span = longest passed length.
  *
- * Percentiles use approximate published adult norms and are ALWAYS presented
+ * Percentiles use internal illustrative references, not verified population norms and are ALWAYS presented
  * as approximations (BRAND.md §4-5):
  *   forward  span ≈ N(6.6, 1.1)
  *   backward span ≈ N(4.9, 1.2)
@@ -74,14 +74,16 @@
   }
 
   function scoreResult(forwardSpan, backwardSpan) {
-    const stats = AurorIQ.stats; /* lazy: resilient to script order */
+    const stats = AurorIQ.stats;
+    const forwardValid = Number.isFinite(forwardSpan) && forwardSpan >= 0;
+    const backwardValid = Number.isFinite(backwardSpan) && backwardSpan >= 0;
     const f = NORMS.forward, b = NORMS.backward;
-    const zs = [stats.zScore(forwardSpan, f.mean, f.sd),
-                stats.zScore(backwardSpan, b.mean, b.sd)];
+    const zs = [stats.zScore(forwardSpan, f.mean, f.sd), stats.zScore(backwardSpan, b.mean, b.sd)];
     return {
-      forward: { span: forwardSpan, percentile: stats.percentile(forwardSpan, f.mean, f.sd) },
-      backward: { span: backwardSpan, percentile: stats.percentile(backwardSpan, b.mean, b.sd) },
-      composite: stats.compositePercentile(zs)
+      valid: forwardValid && backwardValid,
+      forward: { span: forwardValid ? forwardSpan : null, percentile: forwardValid ? stats.percentile(forwardSpan, f.mean, f.sd) : null },
+      backward: { span: backwardValid ? backwardSpan : null, percentile: backwardValid ? stats.percentile(backwardSpan, b.mean, b.sd) : null },
+      composite: forwardValid && backwardValid ? stats.compositePercentile(zs) : null
     };
   }
 
@@ -212,6 +214,7 @@
     els.results.bSpan.textContent = String(r.backward.span);
     els.results.bPct.textContent = '~' + r.backward.percentile + ordinal(r.backward.percentile) + ' percentile';
     els.results.comp.textContent = '~' + r.composite;
+    if (AurorIQ.reports) AurorIQ.reports.render('memory', r, els.screens.results);
     show('results');
   }
 

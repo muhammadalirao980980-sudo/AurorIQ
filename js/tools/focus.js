@@ -86,31 +86,28 @@
 
   function scoreSession(session) {
     const stats = AurorIQ.stats;
-    const res = session.responses;
+    const res = session && Array.isArray(session.responses) ? session.responses : [];
     const total = res.length;
     let commission = 0, omission = 0, correctCount = 0;
     const goRts = [];
     res.forEach(function (r) {
+      if (!r) return;
       if (r.correct) correctCount += 1;
       if (r.nogo && r.responded) commission += 1;
       if (!r.nogo && !r.valid) omission += 1;
-      if (!r.nogo && r.valid) goRts.push(r.rt);
+      if (!r.nogo && r.valid && Number.isFinite(r.rt) && r.rt >= 0) goRts.push(r.rt);
     });
     const accuracy = total ? Math.round((correctCount / total) * 100) : 0;
-    const meanRt = goRts.length
-      ? Math.round(goRts.reduce(function (a, b) { return a + b; }, 0) / goRts.length)
-      : null;
+    const meanRt = goRts.length ? Math.round(goRts.reduce(function (a, b) { return a + b; }, 0) / goRts.length) : null;
     let rtSd = null;
     if (goRts.length > 1) {
       const m = goRts.reduce(function (a, b) { return a + b; }, 0) / goRts.length;
       const v = goRts.reduce(function (a, b) { return a + (b - m) * (b - m); }, 0) / goRts.length;
       rtSd = Math.round(Math.sqrt(v));
     }
-
-    /* Composite focus score (1-99), presented as an approximation.
-     * Accuracy dominates; response-time variability (a wandering-attention
-     * marker) pulls it down. Coefficient of variation ~0.15 is typical/good;
-     * ~0.35+ is high variability. */
+    if (!total) {
+      return { valid: false, total: 0, accuracy: 0, commissionErrors: 0, omissionErrors: 0, meanRt: null, rtSd: null, focusScore: null };
+    }
     let focus = accuracy;
     if (meanRt && rtSd) {
       const cv = rtSd / meanRt;
@@ -118,16 +115,7 @@
       focus = accuracy - penalty;
     }
     focus = Math.min(99, Math.max(1, focus));
-
-    return {
-      total: total,
-      accuracy: accuracy,
-      commissionErrors: commission,
-      omissionErrors: omission,
-      meanRt: meanRt,
-      rtSd: rtSd,
-      focusScore: focus
-    };
+    return { valid: true, total: total, accuracy: accuracy, commissionErrors: commission, omissionErrors: omission, meanRt: meanRt, rtSd: rtSd, focusScore: focus };
   }
 
   AurorIQ.focusEngine = {
@@ -236,12 +224,13 @@
   function finish() {
     clearTimers();
     const r = AurorIQ.focusEngine.scoreSession(session);
-    els.results.focus.textContent = '~' + r.focusScore + ordinal(r.focusScore);
+    els.results.focus.textContent = r.focusScore + '/100';
     els.results.accuracy.textContent = r.accuracy + '%';
     els.results.commission.textContent = String(r.commissionErrors);
     els.results.omission.textContent = String(r.omissionErrors);
     els.results.rt.textContent = r.meanRt !== null ? r.meanRt + ' ms' : '\u2014';
     els.results.consistency.textContent = r.rtSd !== null ? '\u00b1' + r.rtSd + ' ms' : '\u2014';
+    if (AurorIQ.reports) AurorIQ.reports.render('focus', r, els.screens.results);
     show('results');
   }
 

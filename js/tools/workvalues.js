@@ -96,11 +96,17 @@
   }
 
   function scoreTest(items, ratings) {
+    items = Array.isArray(items) ? items : [];
+    ratings = Array.isArray(ratings) ? ratings : [];
     const sums = { ACH: 0, IND: 0, REC: 0, REL: 0, SUP: 0, CON: 0 };
     const counts = { ACH: 0, IND: 0, REC: 0, REL: 0, SUP: 0, CON: 0 };
+    let answered = 0;
     items.forEach(function (item, i) {
+      if (!item || !Object.prototype.hasOwnProperty.call(counts, item.dim)) return;
       let v = ratings[i];
-      if (typeof v !== 'number' || v < SCALE_MIN || v > SCALE_MAX) {
+      if (typeof v === 'number' && Number.isFinite(v) && v >= SCALE_MIN && v <= SCALE_MAX) {
+        answered += 1;
+      } else {
         v = (SCALE_MIN + SCALE_MAX) / 2;
       }
       sums[item.dim] += v;
@@ -108,7 +114,8 @@
     });
     const scores = {};
     DIMS.forEach(function (d) {
-      const n = counts[d] || ITEMS_PER_DIM;
+      const n = counts[d];
+      if (!n) { scores[d] = 50; return; }
       const min = n * SCALE_MIN, max = n * SCALE_MAX;
       scores[d] = Math.round(((sums[d] - min) / (max - min)) * 100);
     });
@@ -116,13 +123,17 @@
       if (scores[b] !== scores[a]) return scores[b] - scores[a];
       return DIMS.indexOf(a) - DIMS.indexOf(b);
     });
+    const valid = items.length > 0 && answered === items.length;
     return {
+      valid: valid,
+      answered: answered,
+      total: items.length,
       scores: scores,
       ranked: ranked,
-      top: ranked.slice(0, 3).map(function (d) {
+      top: valid ? ranked.slice(0, 3).map(function (d) {
         return { dim: d, name: DIM_INFO[d].name, score: scores[d],
                  blurb: DIM_INFO[d].blurb, lookFor: DIM_INFO[d].lookFor };
-      })
+      }) : []
     };
   }
 
@@ -227,6 +238,7 @@
   }
 
   function renderResults(r) {
+    if (AurorIQ.reports) AurorIQ.reports.render('workvalues', r, els.screens.results);
     els.results.bars.innerHTML = '';
     r.ranked.forEach(function (d) {
       const row = document.createElement('div');

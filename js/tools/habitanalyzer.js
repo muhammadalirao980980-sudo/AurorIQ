@@ -101,20 +101,30 @@
     return BANDS[BANDS.length - 1];
   }
   function scoreTest(items, ratings) {
+    items = Array.isArray(items) ? items : [];
+    ratings = Array.isArray(ratings) ? ratings : [];
     const sums = { CUE: 0, EASE: 0, FREQ: 0, REWARD: 0, FIT: 0 };
     const counts = { CUE: 0, EASE: 0, FREQ: 0, REWARD: 0, FIT: 0 };
+    let answered = 0;
     items.forEach(function (item, i) {
+      if (!item || !Object.prototype.hasOwnProperty.call(counts, item.dim)) return;
       let v = ratings[i];
-      if (typeof v !== 'number' || v < SCALE_MIN || v > SCALE_MAX) v = (SCALE_MIN + SCALE_MAX) / 2;
+      if (typeof v === 'number' && Number.isFinite(v) && v >= SCALE_MIN && v <= SCALE_MAX) {
+        answered += 1;
+      } else {
+        v = (SCALE_MIN + SCALE_MAX) / 2;
+      }
       sums[item.dim] += aligned(v, item.reverse);
       counts[item.dim] += 1;
     });
     const scores = {};
     DIMS.forEach(function (d) {
-      const n = counts[d] || ITEMS_PER_DIM;
+      const n = counts[d];
+      if (!n) { scores[d] = 50; return; }
       const min = n * SCALE_MIN, max = n * SCALE_MAX;
       scores[d] = Math.round(((sums[d] - min) / (max - min)) * 100);
     });
+    const valid = items.length > 0 && answered === items.length;
     const overall = Math.round(DIMS.reduce(function (a, d) { return a + scores[d]; }, 0) / DIMS.length);
     const band = bandFor(overall);
     const weakest = DIMS.slice().sort(function (a, b) {
@@ -126,11 +136,16 @@
       return DIMS.indexOf(a) - DIMS.indexOf(b);
     });
     return {
-      scores: scores, overall: overall, band: band.label, key: band.key, summary: band.summary,
+      valid: valid, answered: answered, total: items.length,
+      scores: scores,
+      overall: valid ? overall : null,
+      band: valid ? band.label : 'Incomplete',
+      key: valid ? band.key : 'incomplete',
+      summary: valid ? band.summary : 'Complete every item before interpreting this result.',
       ranked: ranked,
-      fixes: weakest.slice(0, 2).map(function (d) {
+      fixes: valid ? weakest.slice(0, 2).map(function (d) {
         return { dim: d, name: DIM_INFO[d].name, score: scores[d], blurb: DIM_INFO[d].blurb, fix: DIM_INFO[d].fix };
-      })
+      }) : []
     };
   }
 
@@ -215,6 +230,7 @@
   }
 
   function renderResults(r) {
+    if (AurorIQ.reports) AurorIQ.reports.render('habitanalyzer', r, els.screens.results);
     els.results.title.textContent = habitName ? ('\u201c' + habitName + '\u201d') : 'Your habit';
     els.results.band.textContent = r.band;
     els.results.overall.textContent = r.overall + '/100 design strength';

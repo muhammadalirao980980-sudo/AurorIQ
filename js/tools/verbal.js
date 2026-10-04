@@ -98,6 +98,8 @@
   }
 
   function scoreTest(items, answers) {
+    items = Array.isArray(items) ? items : [];
+    answers = Array.isArray(answers) ? answers : [];
     const total = items.length;
     let correct = 0, weighted = 0, maxWeighted = 0;
     const byTier = { 1: { c: 0, n: 0 }, 2: { c: 0, n: 0 }, 3: { c: 0, n: 0 } };
@@ -118,10 +120,11 @@
      * percentile: chance on 4-choice items is 25%, so a weighted score at or
      * below chance floors the composite; strong hard-item performance lifts it. */
     const aboveChance = Math.max(0, (weightedPct - 0.25) / 0.75); /* 0..1 */
-    let composite = Math.round(aboveChance * 98) + 1;
-    composite = Math.min(99, Math.max(1, composite));
+    let composite = total ? Math.round(aboveChance * 98) + 1 : null;
+    if (composite !== null) composite = Math.min(99, Math.max(1, composite));
 
     return {
+      valid: total > 0,
       correct: correct,
       total: total,
       accuracy: accuracy,
@@ -132,7 +135,7 @@
         medium: byTier[2].c + '/' + byTier[2].n,
         hard: byTier[3].c + '/' + byTier[3].n
       },
-      atChance: accuracy <= 30
+      atChance: total > 0 && accuracy <= 30
     };
   }
 
@@ -217,7 +220,7 @@
 
   function finish() {
     const r = AurorIQ.verbalEngine.scoreTest(items, answers);
-    els.results.composite.textContent = r.atChance ? '\u2014' : '~' + r.composite + ordinal(r.composite);
+    els.results.composite.textContent = r.atChance ? '\u2014' : r.composite + '/100';
     els.results.accuracy.textContent = r.accuracy + '%';
     els.results.correct.textContent = r.correct + ' / ' + r.total;
     els.results.easy.textContent = r.tiers.easy;
@@ -225,7 +228,8 @@
     els.results.hard.textContent = r.tiers.hard;
     els.results.verdict.textContent = r.atChance
       ? 'Your accuracy is near chance for four-choice questions (25%), so the score is withheld as unreliable. Verbal tests lean on vocabulary — if English isn\u2019t your first language, that alone can explain a low run.'
-      : 'The percentile is approximate: a fifteen-item test is a genuine snapshot of verbal reasoning, weighted so harder items count for more. Verbal ability tracks reading and vocabulary exposure, which grow throughout life.';
+      : 'The composite is an internal index, not a population percentile: a fifteen-item test is a genuine snapshot of verbal reasoning, weighted so harder items count for more. Verbal ability tracks reading and vocabulary exposure, which grow throughout life.';
+    if (AurorIQ.reports) AurorIQ.reports.render('verbal', r, els.screens.results, {items: items, answers: answers});
     show('results');
   }
 

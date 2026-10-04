@@ -65,13 +65,15 @@
 
   function scoreSession(session) {
     const stats = AurorIQ.stats;
-    const med = stats.median(session.times);
+    const times = session && Array.isArray(session.times) ? session.times.filter(function (x) { return Number.isFinite(x) && x >= MIN_VALID_RT; }) : [];
+    const med = stats.median(times);
     return {
-      times: session.times.slice(),
-      median: Math.round(med),
-      best: Math.min.apply(null, session.times),
-      percentile: stats.percentile(med, NORMS.mean, NORMS.sd, true),
-      falseStarts: session.falseStarts
+      valid: times.length > 0,
+      times: times.slice(),
+      median: med === null ? null : Math.round(med),
+      best: times.length ? Math.min.apply(null, times) : null,
+      percentile: med === null ? null : stats.percentile(med, NORMS.mean, NORMS.sd, true),
+      falseStarts: session && Number.isFinite(session.falseStarts) ? Math.max(0, Math.round(session.falseStarts)) : 0
     };
   }
 
@@ -207,6 +209,7 @@
     els.results.falseStarts.textContent = r.falseStarts === 0
       ? 'No false starts.'
       : r.falseStarts + (r.falseStarts === 1 ? ' false start' : ' false starts') + ' (discarded).';
+    if (AurorIQ.reports) AurorIQ.reports.render('reaction', r, els.screens.results);
     show('results');
   }
 

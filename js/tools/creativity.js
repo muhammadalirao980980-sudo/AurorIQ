@@ -188,6 +188,7 @@
       li.textContent = idea;
       els.results.list.appendChild(li);
     });
+    if (AurorIQ.reports) AurorIQ.reports.render('creativity', r, els.screens.results);
     show('results');
   }
 

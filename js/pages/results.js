@@ -16,6 +16,7 @@
         peers: utils.$('[data-stage="peers"]'),
         breakdown: utils.$('[data-stage="breakdown"]'),
         report: utils.$('[data-stage="report"]'),
+        ecosystem: utils.$('[data-stage="ecosystem"]'),
         personica: utils.$('[data-stage="personica"]'),
         actions: utils.$('[data-stage="actions"]')
       },
@@ -114,7 +115,7 @@
   function prepareScore(els, result, view) {
     els.band.textContent = view.bandLabel;
     var ci = view.confidenceInterval;
-    els.ci.textContent = '95% range: ' + ci.low + '\u2013' + ci.high;
+    els.ci.textContent = 'Model-based 95% range: ' + ci.low + '\u2013' + ci.high;
     els.scoreNum.textContent = '0';
   }
 
@@ -144,12 +145,12 @@
     var rarityModule = AurorIQ.identity.rarity;
     var combined = rarityModule.getCombinedRarityPercent(ctx.tier.id, ctx.archetype.id);
     var label = rarityModule.formatRarityLabel(combined);
-    els.rarity.textContent = label ? label + ' of test-takers' : '';
+    els.rarity.textContent = 'Descriptive archetype · not a validated personality type';
   }
 
   function prepareCurve(els, result, view) {
     var pct = Math.round(view.percentile);
-    els.curveCaption.textContent = 'Brighter than ' + pct + '% of people who take this test.';
+    els.curveCaption.textContent = 'Position on the assumed model curve: ' + pct + 'th percentile. This is not an observed rank among test-takers.';
   }
 
   function triggerCurve(els, result, view) {
@@ -167,47 +168,9 @@
      percentile (vs. same-age peers). Both are figures we already
      compute — this stage just makes the comparison visible. */
   function preparePeers(els, result, view) {
-    if (!els.stages.peers) return false;
-
-    var hasPeers = view.isAgeNormed;
-    var everyonePct = Math.round(result.overall.percentile);
-
-    // Keep the second marker's visibility in sync synchronously (the
-    // component also sets this, but reveal timing shouldn't matter).
-    var peersMarker = els.peersSvg ? els.peersSvg.querySelector('[data-peers-peers]') : null;
-    if (peersMarker) peersMarker.hidden = !hasPeers;
-
-    // "vs everyone" always present
-    if (els.peersEveryoneValue) {
-      els.peersEveryoneValue.textContent = everyonePct + 'th pct · ' + pctLabel(everyonePct);
-    }
-
-    if (hasPeers) {
-      var peersPct = Math.round(view.percentile);
-      if (els.peersPeersLabel) els.peersPeersLabel.textContent = 'vs. your age group (' + view.ageGroup + ')';
-      if (els.peersPeersValue) els.peersPeersValue.textContent = peersPct + 'th pct · ' + pctLabel(peersPct);
-      if (els.peersPeerRow) els.peersPeerRow.hidden = false;
-
-      var delta = peersPct - everyonePct;
-      var caption;
-      if (delta > 1) {
-        caption = 'Compared with people your own age, you rank higher \u2014 fluid reasoning naturally shifts across the lifespan, so your ' +
-          view.ageGroup + ' percentile (' + peersPct + 'th) sits above your all-ages percentile (' + everyonePct + 'th).';
-      } else if (delta < -1) {
-        caption = 'Your age group is, on average, a strong-performing cohort here, so your same-age percentile (' + peersPct +
-          'th) sits a little below your all-ages figure (' + everyonePct + 'th).';
-      } else {
-        caption = 'Your standing is essentially the same whether compared against everyone or against your own age group.';
-      }
-      if (els.peersCaption) els.peersCaption.textContent = caption;
-    } else {
-      if (els.peersPeerRow) els.peersPeerRow.hidden = true;
-      if (els.peersCaption) {
-        els.peersCaption.textContent = 'Add your age when you take the test to also see how you compare against people your own age.';
-      }
-    }
-
-    return true;
+    // Population and age comparisons need representative norms, which are not available.
+    if (els.stages.peers) els.stages.peers.hidden = true;
+    return false;
   }
 
   function triggerPeers(els, result, view) {
@@ -286,142 +249,10 @@
 
   /* ── Detailed Report Builder ── */
 
-  function getPercentileDescription(pct) {
-    if (pct >= 99) return 'Your score places you in the top 1% \u2014 an exceptionally rare result.';
-    if (pct >= 95) return 'You score higher than roughly ' + Math.round(pct) + '% of the general population. This is a notably high result.';
-    if (pct >= 85) return 'You score higher than roughly ' + Math.round(pct) + '% of people. This indicates above-average cognitive ability.';
-    if (pct >= 60) return 'You score higher than roughly ' + Math.round(pct) + '% of people. This is a solid, healthy result within the normal range.';
-    if (pct >= 40) return 'You score near the middle of the distribution \u2014 squarely within the average range.';
-    if (pct >= 15) return 'Your score falls in the lower portion of the normal range. This is one snapshot and may not reflect your full ability.';
-    return 'Your score falls below the typical range. Environmental factors like fatigue or distraction may have played a role.';
-  }
-
-  function getStrengthInsight(domainId) {
-    var map = {
-      pattern: 'You excel at recognising sequences, abstract rules, and predicting what comes next \u2014 a hallmark of fluid reasoning.',
-      numeric: 'Quantitative reasoning is a strong suit. You process numerical relationships efficiently.',
-      verbal: 'Language and meaning come naturally to you. You parse relationships between words and ideas with precision.',
-      spatial: 'You have strong spatial-visual processing \u2014 you manipulate forms and orientations in your mind effectively.',
-      memory: 'Your working memory is a standout. You hold and manipulate more information in mind at once than most.'
-    };
-    return map[domainId] || 'This domain showed relative strength in your profile.';
-  }
-
-  function getGrowthInsight(domainId) {
-    var map = {
-      pattern: 'Pattern recognition can be sharpened with logic puzzles, sequence exercises, and abstract reasoning practice.',
-      numeric: 'Strengthening quantitative reasoning through mental math, estimation drills, and number-pattern exercises can help.',
-      verbal: 'Reading widely and practising vocabulary-in-context exercises can strengthen verbal reasoning over time.',
-      spatial: 'Spatial skills respond well to mental rotation practice, 3D puzzles, and drawing or modelling activities.',
-      memory: 'Working memory improves with dual-task training, chunking strategies, and deliberate recall exercises.'
-    };
-    return map[domainId] || 'Targeted practice in this area could yield improvement.';
-  }
-
-  function getConsistencyLabel(spread) {
-    if (spread <= 6) return { text: 'Highly balanced', level: 'high' };
-    if (spread <= 12) return { text: 'Moderately balanced', level: 'medium' };
-    return { text: 'Specialised', level: 'low' };
-  }
-
   function buildDetailedReport(els, result, view) {
     if (!els.reportGrid) return;
     els.reportGrid.innerHTML = '';
-
-    var domains = AurorIQ.testEngine.domains;
-    var pct = Math.round(view.percentile);
-    var iq = view.displayIQ;
-    var strongest = result.strongestDomain;
-    var weakest = result.weakestDomain;
-
-    // 1. Percentile Interpretation
-    var card1 = makeReportCard(
-      '<path d="M3 12h4l3 8 4-16 3 8h4"/>',
-      'Percentile interpretation',
-      getPercentileDescription(pct),
-      'Percentile: ' + pct + '%',
-      true
-    );
-    els.reportGrid.appendChild(card1);
-
-    // 2. Strongest Domain
-    if (strongest && result.domains[strongest]) {
-      var sConf = domains.get(strongest);
-      var sVal = result.domains[strongest].strengthIndex;
-      var card2 = makeReportCard(
-        '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/>',
-        'Primary strength: ' + (sConf ? sConf.name : strongest),
-        getStrengthInsight(strongest),
-        null,
-        false,
-        sVal
-      );
-      els.reportGrid.appendChild(card2);
-    }
-
-    // 3. Growth Area
-    if (weakest && result.domains[weakest] && weakest !== strongest) {
-      var wConf = domains.get(weakest);
-      var wVal = result.domains[weakest].strengthIndex;
-      var card3 = makeReportCard(
-        '<path d="M22 12h-4l-3 8-4-16-3 8H4"/>',
-        'Growth area: ' + (wConf ? wConf.name : weakest),
-        getGrowthInsight(weakest),
-        null,
-        false,
-        wVal
-      );
-      els.reportGrid.appendChild(card3);
-    }
-
-    // 4. Profile Consistency
-    var values = domains.order.map(function (id) {
-      return result.domains[id] ? result.domains[id].strengthIndex : 50;
-    });
-    var mean = values.reduce(function (a, b) { return a + b; }, 0) / values.length;
-    var variance = values.reduce(function (a, b) { return a + Math.pow(b - mean, 2); }, 0) / values.length;
-    var spread = Math.sqrt(variance);
-    var consistency = getConsistencyLabel(spread);
-
-    var card4 = makeReportCard(
-      '<circle cx="12" cy="12" r="9"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/>',
-      'Profile consistency',
-      consistency.level === 'high'
-        ? 'Your reasoning abilities are remarkably even across all five domains \u2014 no single area dominates or drags. This balanced profile is relatively uncommon.'
-        : consistency.level === 'medium'
-        ? 'Your profile shows moderate variation between domains. You have clear relative strengths, but no extreme gaps.'
-        : 'Your profile is distinctly specialised \u2014 some domains are significantly stronger than others. This creates your unique cognitive shape.',
-      consistency.text
-    );
-    els.reportGrid.appendChild(card4);
-
-    // 5. Confidence & Precision
-    var ci = view.confidenceInterval;
-    var margin = ci.high - ci.low;
-    var precisionLabel = margin <= 12 ? 'High precision' : margin <= 20 ? 'Moderate precision' : 'Broad estimate';
-    var card5 = makeReportCard(
-      '<path d="M12 3l8 4v6c0 5-8 8-8 8s-8-3-8-8V7z"/>',
-      'Measurement precision',
-      'Your 95% confidence interval spans ' + ci.low + '\u2013' + ci.high + ' (' + margin + ' points). ' +
-      (margin <= 12
-        ? 'This is a tight range, suggesting your responses were internally consistent.'
-        : margin <= 20
-        ? 'This is a reasonable range for a 25-item adaptive test.'
-        : 'The wider range suggests some response inconsistency. A retest under calm conditions may sharpen the estimate.'),
-      precisionLabel
-    );
-    els.reportGrid.appendChild(card5);
-
-    // 6. Session Stats
-    var itemCount = result.itemsAnswered || 25;
-    var card6 = makeReportCard(
-      '<rect x="9" y="2" width="6" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M8 13l2 2 4-4"/>',
-      'Session summary',
-      'You answered ' + itemCount + ' adaptive questions across all five reasoning domains. ' +
-      'The engine selected each question live based on your running ability estimate, maintaining maximum information yield throughout.',
-      null
-    );
-    els.reportGrid.appendChild(card6);
+    if (AurorIQ.reports) AurorIQ.reports.render('iq', result, els.reportGrid);
   }
 
   function makeReportCard(iconPath, title, body, highlight, full, meterValue) {
@@ -533,6 +364,11 @@
       triggerReportMeters();
     }, t);
     t += stageDelay;
+
+    global.setTimeout(function () {
+      if (els.stages.ecosystem) els.stages.ecosystem.classList.add('is-visible');
+    }, t);
+    t += reduced ? 80 : 500;
 
     global.setTimeout(function () {
       if (els.stages.personica) els.stages.personica.classList.add('is-visible');

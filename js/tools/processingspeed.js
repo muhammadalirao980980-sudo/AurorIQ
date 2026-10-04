@@ -81,27 +81,20 @@
   }
 
   function scoreSession(session) {
-    const a = session.answers;
+    const a = session && Array.isArray(session.answers) ? session.answers.filter(function (x) { return x && typeof x === 'object'; }) : [];
     const attempted = a.length;
     let correct = 0, totalMs = 0;
     a.forEach(function (x) {
       if (x.correct) correct += 1;
-      totalMs += Math.max(x.ms, MIN_ITEM_MS);   /* floor each item so throughput stays finite/honest */
+      const ms = Number.isFinite(x.ms) && x.ms >= 0 ? x.ms : 0;
+      totalMs += Math.max(ms, MIN_ITEM_MS);
     });
     const accuracy = attempted ? Math.round((correct / attempted) * 100) : 0;
     const minutes = totalMs / 60000;
-    const throughput = minutes > 0 ? correct / minutes : 0;    /* correct responses per minute */
-    let composite = Math.round((throughput - LOW_TPM) / (HIGH_TPM - LOW_TPM) * 98) + 1;
-    composite = Math.min(99, Math.max(1, composite));
-    return {
-      attempted: attempted,
-      correct: correct,
-      accuracy: accuracy,
-      throughput: Math.round(throughput),
-      meanMs: attempted ? Math.round(totalMs / attempted) : 0,
-      composite: composite,
-      atChance: accuracy <= CHANCE_ACC
-    };
+    const throughput = minutes > 0 ? correct / minutes : 0;
+    let composite = attempted ? Math.round((throughput - LOW_TPM) / (HIGH_TPM - LOW_TPM) * 98) + 1 : null;
+    if (composite !== null) composite = Math.min(99, Math.max(1, composite));
+    return { valid: attempted > 0, attempted: attempted, correct: correct, accuracy: accuracy, throughput: Math.round(throughput), meanMs: attempted ? Math.round(totalMs / attempted) : 0, composite: composite, atChance: attempted > 0 && accuracy <= CHANCE_ACC };
   }
 
   AurorIQ.processingSpeedEngine = {
@@ -177,14 +170,15 @@
 
   function finish() {
     const r = AurorIQ.processingSpeedEngine.scoreSession(session);
-    els.results.composite.textContent = r.atChance ? '\u2014' : '~' + r.composite + ordinal(r.composite);
+    els.results.composite.textContent = r.atChance ? '\u2014' : r.composite + '/100';
     els.results.throughput.textContent = r.throughput + ' / min';
     els.results.accuracy.textContent = r.accuracy + '%';
     els.results.correct.textContent = r.correct + ' / ' + r.attempted;
     els.results.mean.textContent = r.meanMs + ' ms';
     els.results.verdict.textContent = r.atChance
       ? 'Your accuracy is near chance for a two-choice task (50%), so the speed score is withheld — fast guessing isn\u2019t fast processing. Try again and prioritise getting each judgment right.'
-      : 'Processing speed is throughput: correct judgments per minute, so both errors and slowness pull it down. The percentile is approximate — a thirty-item block is a genuine snapshot of comparison speed, not a normed clinical measure.';
+      : 'Processing speed is throughput: correct judgments per minute, so both errors and slowness pull it down. The composite is an internal index, not a population percentile — a thirty-item block is a genuine snapshot of comparison speed, not a normed clinical measure.';
+    if (AurorIQ.reports) AurorIQ.reports.render('processingspeed', r, els.screens.results);
     show('results');
   }
 

@@ -243,12 +243,16 @@
       day.sessions.forEach(function (s) {
         const chip = document.createElement('span');
         chip.className = 'sp-chip ' + (TYPE_CLASS[s.type] || '');
-        chip.innerHTML = '<strong>' + s.type + '</strong> ' + s.topic;
+        const type = document.createElement('strong');
+        type.textContent = s.type;
+        chip.appendChild(type);
+        chip.appendChild(document.createTextNode(' ' + s.topic));
         list.appendChild(chip);
       });
       card.appendChild(list);
       els.schedule.appendChild(card);
     });
+    if (AurorIQ.reports) AurorIQ.reports.render('studyplanner', plan, els.screens.plan);
     show('plan');
   }
 

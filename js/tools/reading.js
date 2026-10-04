@@ -62,7 +62,7 @@
   /* ---------------- pure engine (unit-tested in Node) ---------------- */
 
   function countWords(text) {
-    const m = text.trim().match(/\S+/g);
+    const m = String(text == null ? '' : text).trim().match(/\S+/g);
     return m ? m.length : 0;
   }
 
@@ -72,23 +72,31 @@
   }
 
   function gradeComprehension(passage, answers) {
+    const questions = passage && Array.isArray(passage.questions) ? passage.questions : [];
+    answers = Array.isArray(answers) ? answers : [];
     let correct = 0;
-    passage.questions.forEach(function (item, i) {
-      if (answers[i] === item.answer) correct += 1;
+    questions.forEach(function (item, i) {
+      if (item && answers[i] === item.answer) correct += 1;
     });
-    return { correct: correct, total: passage.questions.length };
+    return { correct: correct, total: questions.length };
   }
 
   function scoreReading(passage, elapsedMs, answers) {
     const stats = AurorIQ.stats;
+    const validPassage = passage && typeof passage.text === 'string' && Array.isArray(passage.questions) && passage.questions.length > 0;
+    const validElapsed = Number.isFinite(elapsedMs) && elapsedMs > 0;
+    if (!validPassage || !validElapsed) {
+      return { valid: false, words: 0, rawWpm: 0, effectiveWpm: 0, comprehension: { correct: 0, total: 0 }, comprehensionPct: 0, passed: false, tooFast: false, percentile: null };
+    }
     const words = countWords(passage.text);
     const rawWpm = stats.wpm(words, elapsedMs);
     const grade = gradeComprehension(passage, answers);
-    const comprehension = grade.correct / grade.total;
+    const comprehension = grade.total ? grade.correct / grade.total : 0;
     const passed = comprehension >= PASS_THRESHOLD;
     const tooFast = elapsedMs < MIN_PLAUSIBLE_MS;
     const effectiveWpm = Math.round(rawWpm * comprehension);
     return {
+      valid: true,
       words: words,
       rawWpm: rawWpm,
       effectiveWpm: effectiveWpm,
@@ -96,9 +104,7 @@
       comprehensionPct: Math.round(comprehension * 100),
       passed: passed && !tooFast,
       tooFast: tooFast,
-      percentile: passed && !tooFast
-        ? stats.percentile(effectiveWpm, NORMS.mean, NORMS.sd)
-        : null
+      percentile: passed && !tooFast ? stats.percentile(effectiveWpm, NORMS.mean, NORMS.sd) : null
     };
   }
 
@@ -212,8 +218,9 @@
     } else {
       const p = r.percentile;
       els.results.pct.textContent = '~' + p + ordinal(p);
-      els.results.verdict.textContent = 'Percentile reflects your effective speed \u2014 raw pace scaled by comprehension \u2014 against approximate adult norms.';
+      els.results.verdict.textContent = 'Percentile reflects your effective speed \u2014 raw pace scaled by comprehension \u2014 against an illustrative internal reference, not a validated population sample.';
     }
+    if (AurorIQ.reports) AurorIQ.reports.render('reading', r, els.screens.results);
     show('results');
   }
 

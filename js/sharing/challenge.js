@@ -29,7 +29,7 @@
     try {
       const json = decodeURIComponent(global.atob(token));
       const payload = JSON.parse(json);
-      if (typeof payload.s === 'number' && payload.a && payload.t) return payload;
+      if (Number.isFinite(payload.s) && payload.s >= 40 && payload.s <= 160 && typeof payload.a === 'string' && payload.a.length <= 64 && typeof payload.t === 'string' && payload.t.length <= 64) return payload;
     } catch (e) {}
     return null;
   }

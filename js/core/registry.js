@@ -63,7 +63,7 @@
       status: 'live',
       duration: '~15 min',
       tagline: 'The flagship instrument',
-      description: '25 adaptive questions across five reasoning domains — a real percentile, a 95% confidence interval, and a cognitive archetype.'
+      description: '25 adaptive questions across five reasoning domains — a model-based estimate, an uncertainty range, and a cognitive archetype.'
     },
     {
       id: 'personality',

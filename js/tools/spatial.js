@@ -123,36 +123,33 @@
 
   function scoreTest(items, answers, times) {
     const stats = AurorIQ.stats;
+    items = Array.isArray(items) ? items : [];
+    answers = Array.isArray(answers) ? answers : [];
+    times = Array.isArray(times) ? times : [];
     let correct = 0;
     const correctTimes = [];
     items.forEach(function (item, i) {
+      if (!item) return;
       if (answers[i] === item.answer) {
         correct += 1;
-        if (times && typeof times[i] === 'number') correctTimes.push(times[i]);
+        if (Number.isFinite(times[i]) && times[i] >= 0) correctTimes.push(times[i]);
       }
     });
     const total = items.length;
+    if (!total) {
+      return { valid: false, correct: 0, total: 0, accuracy: 0, medianMs: null, composite: null, atChance: false };
+    }
     const accuracy = Math.round((correct / total) * 100);
-    const medianMs = correctTimes.length ? Math.round(stats.median(correctTimes)) : null;
-
-    /* Composite 1-99, approximate. Accuracy above chance (50%) is the signal;
-     * a small speed bonus rewards fast-and-accurate rotation. */
-    const aboveChance = Math.max(0, (correct / total - 0.5) / 0.5); /* 0..1 */
+    const median = correctTimes.length ? stats.median(correctTimes) : null;
+    const medianMs = median === null ? null : Math.round(median);
+    const aboveChance = Math.max(0, (correct / total - 0.5) / 0.5);
     let composite = Math.round(aboveChance * 98) + 1;
     if (medianMs !== null && accuracy >= 75) {
       if (medianMs < 3000) composite = Math.min(99, composite + 6);
       else if (medianMs > 8000) composite = Math.max(1, composite - 6);
     }
     composite = Math.min(99, Math.max(1, composite));
-
-    return {
-      correct: correct,
-      total: total,
-      accuracy: accuracy,
-      medianMs: medianMs,
-      composite: composite,
-      atChance: accuracy <= 58   /* flag guessing */
-    };
+    return { valid: true, correct: correct, total: total, accuracy: accuracy, medianMs: medianMs, composite: composite, atChance: accuracy <= 58 };
   }
 
   /* Render a cell set as an SVG string (pure; testable for structure). */
@@ -257,15 +254,16 @@
 
   function finish() {
     const r = AurorIQ.spatialEngine.scoreTest(items, answers, times);
-    els.results.composite.textContent = '~' + r.composite + ordinal(r.composite);
+    els.results.composite.textContent = r.composite + '/100';
     els.results.accuracy.textContent = r.accuracy + '%';
     els.results.correct.textContent = r.correct + ' / ' + r.total;
     els.results.speed.textContent = r.medianMs !== null
       ? (r.medianMs / 1000).toFixed(1) + ' s' : '\u2014';
     els.results.verdict.textContent = r.atChance
       ? 'Your accuracy is close to guessing (50% is chance on a two-choice task), so the score is withheld as unreliable \u2014 try again when you can give it full attention.'
-      : 'The percentile is approximate: a twelve-item, two-choice test is a rough snapshot of spatial ability, not a precise measurement.';
+      : 'The composite is an internal index, not a population percentile: a twelve-item, two-choice test is a rough snapshot of spatial ability, not a precise measurement.';
     if (r.atChance) els.results.composite.textContent = '\u2014';
+    if (AurorIQ.reports) AurorIQ.reports.render('spatial', r, els.screens.results);
     show('results');
   }
 
